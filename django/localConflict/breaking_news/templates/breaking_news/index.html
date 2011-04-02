@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+
+<h2>Todas las muertes registradas en la base de datos</h2>
+
+{% if all_news %}
+   {% for s in all_news %}
+      <div class="{% cycle 'span-7 prepend-1 append-bottom' 'span-7 append-bottom' 'span-7 append-bottom last' %}">
+         {% thumbnail s.img "x169" as im %}
+         <a href="/breaking_news/search/{{s.id}}/"><img border="0" alt="{{s.team}}" src="{{im.url}}" width="{{im.x}}" height="{{im.y}}"></a>
+         {% endthumbnail %}
+         <div class="headline">
+            <a href="/breaking_news/search/{{s.id}}/"><b>Muere miembro del equipo {{s.team}}</b></a>
+         </div>
+      </div> 
+   {% endfor %}
+{% else %}
+<h1>No hay eventos registrados en la base de datos</h1>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+syntax: glob
+*/obj/*
+*.swp
+*.depend
+*.layout
+*.pyc
+*.pyo
+*.py~
+*.html~
+*/localConflict-env/*
+localConflict/media/img-up/*
+localConflict/media/cache/*
+*.css~
+*.db
+
+syntax: regexp
+/bin/(?!data)

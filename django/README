@@ -1,0 +1,24 @@
+setup
+-----
+
+necesita easy_install, pip
+
+//Actualiza pip y virtualenv
+sudo easy_install -U pip
+sudo pip install -U virtualenv
+
+crea el virtual env:
+virtualenv --no-site-packages --distribute localConflict-env  
+
+*** instala las dependencias del proyecto
+pip install -E localConflict-env -r python_requirements.txt
+
+*** esto es necesario para actualizar la lista de dependencias
+instala yolk (lista paquetes):
+pip install -E localConflict-env yolk
+
+instala django:
+pip install -E localConflict-env django
+
+para generar el archivo de depencias:
+pip freeze -E localConflict-env > python_requirements.txt

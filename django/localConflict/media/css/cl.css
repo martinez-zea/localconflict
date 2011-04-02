@@ -1,0 +1,34 @@
+#header{
+   background-color: #CA0002;
+   height: 84px;
+   color: white;
+}
+
+#title{
+   color: white;
+   font-size: 44px;
+}
+
+#info{
+   color: gray;
+}
+
+.headline{
+   background-color: black;
+   color: white;
+   padding: 5px;
+}
+
+.headline a{
+   color: white;
+   text-decoration: none;
+}
+
+.headline a:hover{
+   color: #CA0002;
+   text-decoration: none;
+}
+
+#detail_time{
+   color: gray;
+}
