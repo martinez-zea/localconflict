@@ -1,0 +1,738 @@
+.TH "Low-level OSC API" 3 "5 Dec 2007" "Version 0.24" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Low-level OSC API \- 
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef long double \fBlo_hires\fP"
+.br
+.RI "\fIType used to represent numerical values in conversions between OSC types. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBlo_send_message\fP (\fBlo_address\fP targ, const char *path, \fBlo_message\fP msg)"
+.br
+.RI "\fIsend a lo_message object to target targ \fP"
+.ti -1c
+.RI "int \fBlo_send_message_from\fP (\fBlo_address\fP targ, \fBlo_server\fP serv, const char *path, \fBlo_message\fP msg)"
+.br
+.RI "\fIsend a lo_message object to target targ from address of serv \fP"
+.ti -1c
+.RI "int \fBlo_send_bundle\fP (\fBlo_address\fP targ, \fBlo_bundle\fP b)"
+.br
+.RI "\fIsend a lo_bundle object to address targ \fP"
+.ti -1c
+.RI "int \fBlo_send_bundle_from\fP (\fBlo_address\fP targ, \fBlo_server\fP serv, \fBlo_bundle\fP b)"
+.br
+.RI "\fIsend a lo_bundle object to address targ from address of serv \fP"
+.ti -1c
+.RI "\fBlo_message\fP \fBlo_message_new\fP ()"
+.br
+.RI "\fICreate a new lo_message object. \fP"
+.ti -1c
+.RI "void \fBlo_message_free\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIFree memory allocated by lo_message_new and any subsequent lo_message_add*() calls. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_int32\fP (\fBlo_message\fP m, int32_t a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_float\fP (\fBlo_message\fP m, float a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_string\fP (\fBlo_message\fP m, const char *a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_blob\fP (\fBlo_message\fP m, \fBlo_blob\fP a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_int64\fP (\fBlo_message\fP m, int64_t a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_timetag\fP (\fBlo_message\fP m, \fBlo_timetag\fP a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_double\fP (\fBlo_message\fP m, double a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_symbol\fP (\fBlo_message\fP m, const char *a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_char\fP (\fBlo_message\fP m, char a)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_midi\fP (\fBlo_message\fP m, uint8_t a[4])"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_true\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_false\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_nil\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "void \fBlo_message_add_infinitum\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIAppend a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. \fP"
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_message_get_source\fP (\fBlo_message\fP m)"
+.br
+.RI "\fIReturns the source (lo_address) of an incoming message. \fP"
+.ti -1c
+.RI "size_t \fBlo_message_length\fP (\fBlo_message\fP m, const char *path)"
+.br
+.RI "\fIReturn the length of a message in bytes. \fP"
+.ti -1c
+.RI "void * \fBlo_message_serialise\fP (\fBlo_message\fP m, const char *path, void *to, size_t *size)"
+.br
+.RI "\fISerialise the message object to an area of memory and return a pointer to the serialised form. \fP"
+.ti -1c
+.RI "const char * \fBlo_address_get_hostname\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the hostname of a lo_address object. \fP"
+.ti -1c
+.RI "const char * \fBlo_address_get_port\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the port/service name of a lo_address object. \fP"
+.ti -1c
+.RI "int \fBlo_address_get_protocol\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the protocol of a lo_address object. \fP"
+.ti -1c
+.RI "char * \fBlo_address_get_url\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn a URL representing an OSC address. \fP"
+.ti -1c
+.RI "\fBlo_bundle\fP \fBlo_bundle_new\fP (\fBlo_timetag\fP tt)"
+.br
+.RI "\fICreate a new bundle object. \fP"
+.ti -1c
+.RI "void \fBlo_bundle_add_message\fP (\fBlo_bundle\fP b, const char *path, \fBlo_message\fP m)"
+.br
+.RI "\fIAdds an OSC message to an existing bundle. \fP"
+.ti -1c
+.RI "size_t \fBlo_bundle_length\fP (\fBlo_bundle\fP b)"
+.br
+.RI "\fIReturn the length of a bundle in bytes. \fP"
+.ti -1c
+.RI "void * \fBlo_bundle_serialise\fP (\fBlo_bundle\fP b, void *to, size_t *size)"
+.br
+.RI "\fISerialise the bundle object to an area of memory and return a pointer to the serialised form. \fP"
+.ti -1c
+.RI "void \fBlo_bundle_free\fP (\fBlo_bundle\fP b)"
+.br
+.RI "\fIFrees the memory taken by a bundle object. \fP"
+.ti -1c
+.RI "int \fBlo_is_numerical_type\fP (\fBlo_type\fP a)"
+.br
+.RI "\fIreturn true if the type specified has a numerical value, such as LO_INT32, LO_FLOAT etc. \fP"
+.ti -1c
+.RI "int \fBlo_is_string_type\fP (\fBlo_type\fP a)"
+.br
+.RI "\fIreturn true if the type specified has a textual value, such as LO_STRING or LO_SYMBOL. \fP"
+.ti -1c
+.RI "int \fBlo_coerce\fP (\fBlo_type\fP type_to, \fBlo_arg\fP *to, \fBlo_type\fP type_from, \fBlo_arg\fP *from)"
+.br
+.RI "\fIattempt to convert one OSC type to another. \fP"
+.ti -1c
+.RI "\fBlo_hires\fP \fBlo_hires_val\fP (\fBlo_type\fP type, \fBlo_arg\fP *p)"
+.br
+.RI "\fIreturn the numerical value of the given argument with the maximum native system precision. \fP"
+.ti -1c
+.RI "size_t \fBlo_arg_size\fP (\fBlo_type\fP type, void *data)"
+.br
+.RI "\fIReturn the storage size, in bytes, of the given argument. \fP"
+.ti -1c
+.RI "void \fBlo_arg_host_endian\fP (\fBlo_type\fP type, void *data)"
+.br
+.RI "\fIConvert the speficed argument to host endianness where neccesary. \fP"
+.ti -1c
+.RI "\fBlo_server\fP \fBlo_server_new\fP (const char *port, \fBlo_err_handler\fP err_h)"
+.br
+.RI "\fICreate a new server instance. \fP"
+.ti -1c
+.RI "\fBlo_server\fP \fBlo_server_new_with_proto\fP (const char *port, int proto, \fBlo_err_handler\fP err_h)"
+.br
+.RI "\fICreate a new server instance, specifying protocol. \fP"
+.ti -1c
+.RI "void \fBlo_server_free\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIFree up memory used by the lo_server object. \fP"
+.ti -1c
+.RI "int \fBlo_server_recv_noblock\fP (\fBlo_server\fP s, int timeout)"
+.br
+.RI "\fILook for an OSC message waiting to be received. \fP"
+.ti -1c
+.RI "int \fBlo_server_recv\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIBlock, waiting for an OSC message to be received. \fP"
+.ti -1c
+.RI "\fBlo_method\fP \fBlo_server_add_method\fP (\fBlo_server\fP s, const char *path, const char *typespec, \fBlo_method_handler\fP h, void *user_data)"
+.br
+.RI "\fIAdd an OSC method to the specifed server. \fP"
+.ti -1c
+.RI "void \fBlo_server_del_method\fP (\fBlo_server\fP s, const char *path, const char *typespec)"
+.br
+.RI "\fIDelete an OSC method from the specifed server. \fP"
+.ti -1c
+.RI "int \fBlo_server_get_socket_fd\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn the file descriptor of the server socket. \fP"
+.ti -1c
+.RI "int \fBlo_server_get_port\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn the port number that the server has bound to. \fP"
+.ti -1c
+.RI "int \fBlo_server_get_protocol\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn the protocol that the server is using. \fP"
+.ti -1c
+.RI "char * \fBlo_server_get_url\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn an OSC URL that can be used to contact the server. \fP"
+.ti -1c
+.RI "int \fBlo_server_events_pending\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn true if there are scheduled events (eg. from bundles) waiting to be dispatched by the server. \fP"
+.ti -1c
+.RI "double \fBlo_server_next_event_delay\fP (\fBlo_server\fP s)"
+.br
+.RI "\fIReturn the time in seconds until the next scheduled event. \fP"
+.ti -1c
+.RI "char * \fBlo_url_get_protocol\fP (const char *url)"
+.br
+.RI "\fIReturn the protocol portion of an OSC URL, eg. udp, tcp. \fP"
+.ti -1c
+.RI "char * \fBlo_url_get_hostname\fP (const char *url)"
+.br
+.RI "\fIReturn the hostname portion of an OSC URL. \fP"
+.ti -1c
+.RI "char * \fBlo_url_get_port\fP (const char *url)"
+.br
+.RI "\fIReturn the port portion of an OSC URL. \fP"
+.ti -1c
+.RI "char * \fBlo_url_get_path\fP (const char *url)"
+.br
+.RI "\fIReturn the path portion of an OSC URL. \fP"
+.ti -1c
+.RI "int \fBlo_strsize\fP (const char *s)"
+.br
+.RI "\fIA function to calculate the amount of OSC message space required by a C char *. \fP"
+.ti -1c
+.RI "uint32_t \fBlo_blobsize\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIA function to calculate the amount of OSC message space required by a lo_blob object. \fP"
+.ti -1c
+.RI "int \fBlo_pattern_match\fP (const char *str, const char *p)"
+.br
+.RI "\fITest a string against an OSC pattern glob. \fP"
+.ti -1c
+.RI "int \fBlo_send_internal\fP (\fBlo_address\fP t, const char *file, const int line, const char *path, const char *types,...)"
+.br
+.RI "\fIthe real send function (don't call directly) \fP"
+.ti -1c
+.RI "int \fBlo_send_timestamped_internal\fP (\fBlo_address\fP t, const char *file, const int line, \fBlo_timetag\fP ts, const char *path, const char *types,...)"
+.br
+.RI "\fIthe real send_timestamped function (don't call directly) \fP"
+.ti -1c
+.RI "int \fBlo_send_from_internal\fP (\fBlo_address\fP targ, \fBlo_server\fP from, const char *file, const int line, const \fBlo_timetag\fP ts, const char *path, const char *types,...)"
+.br
+.RI "\fIthe real lo_send_from function (don't call directly) \fP"
+.ti -1c
+.RI "double \fBlo_timetag_diff\fP (\fBlo_timetag\fP a, \fBlo_timetag\fP b)"
+.br
+.RI "\fIFind the time difference between two timetags. \fP"
+.ti -1c
+.RI "void \fBlo_timetag_now\fP (\fBlo_timetag\fP *t)"
+.br
+.RI "\fIReturn a timetag for the current time. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Use these functions if you require more precices control over OSC message contruction or handling that what is provided in the high-level functions described in liblo. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef long double \fBlo_hires\fP"
+.PP
+Type used to represent numerical values in conversions between OSC types. 
+.PP
+.SH "Function Documentation"
+.PP 
+.SS "const char* lo_address_get_hostname (\fBlo_address\fP a)"
+.PP
+Return the hostname of a lo_address object. 
+.PP
+Returned value most not be modified or free'd. Value will be a dotted quad, colon'd IPV6 address, or resolvable name. 
+.SS "const char* lo_address_get_port (\fBlo_address\fP a)"
+.PP
+Return the port/service name of a lo_address object. 
+.PP
+Returned value most not be modified or free'd. Value will be a service name or ASCII representation of the port number. 
+.SS "int lo_address_get_protocol (\fBlo_address\fP a)"
+.PP
+Return the protocol of a lo_address object. 
+.PP
+Returned value will be one of LO_UDP, LO_TCP or LO_UNIX. 
+.SS "char* lo_address_get_url (\fBlo_address\fP a)"
+.PP
+Return a URL representing an OSC address. 
+.PP
+Returned value must be free'd. 
+.SS "void lo_arg_host_endian (\fBlo_type\fP type, void * data)"
+.PP
+Convert the speficed argument to host endianness where neccesary. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP The OSC type of the data item (eg. LO_FLOAT). 
+.br
+\fIdata\fP A pointer to the data item to be converted. It is change in-place. 
+.RE
+.PP
+
+.SS "size_t lo_arg_size (\fBlo_type\fP type, void * data)"
+.PP
+Return the storage size, in bytes, of the given argument. 
+.PP
+.SS "uint32_t lo_blobsize (\fBlo_blob\fP b)"
+.PP
+A function to calculate the amount of OSC message space required by a lo_blob object. 
+.PP
+Returns the storage size in bytes, will always be a multiple of four. 
+.SS "void lo_bundle_add_message (\fBlo_bundle\fP b, const char * path, \fBlo_message\fP m)"
+.PP
+Adds an OSC message to an existing bundle. 
+.PP
+The message passsed is appended to the list of messages in the bundle to be dispatched to 'path'. 
+.SS "void lo_bundle_free (\fBlo_bundle\fP b)"
+.PP
+Frees the memory taken by a bundle object. 
+.PP
+.SS "size_t lo_bundle_length (\fBlo_bundle\fP b)"
+.PP
+Return the length of a bundle in bytes. 
+.PP
+Includes the marker and typetage length.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The bundle to be sized 
+.RE
+.PP
+
+.SS "\fBlo_bundle\fP lo_bundle_new (\fBlo_timetag\fP tt)"
+.PP
+Create a new bundle object. 
+.PP
+OSC Bundles ecapsulate one or more OSC messages and may include a timestamp indicating when the bundle should be dispatched.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItt\fP The timestamp when the bundle should be handled by the receiver. Pass LO_TT_IMMEDIATE if you want the receiving server to dispatch the bundle as soon as it receives it. 
+.RE
+.PP
+
+.SS "void* lo_bundle_serialise (\fBlo_bundle\fP b, void * to, size_t * size)"
+.PP
+Serialise the bundle object to an area of memory and return a pointer to the serialised form. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The bundle to be serialised 
+.br
+\fIto\fP The address to serialise to, memory will be allocated if to is NULL. 
+.br
+\fIsize\fP If this pointer is non-NULL the size of the memory area will be written here
+.RE
+.PP
+The returned form is suitable to be sent over a low level OSC transport, having the correct endianess and bit-packed structure. 
+.SS "int lo_coerce (\fBlo_type\fP type_to, \fBlo_arg\fP * to, \fBlo_type\fP type_from, \fBlo_arg\fP * from)"
+.PP
+attempt to convert one OSC type to another. 
+.PP
+Numerical types (eg LO_INT32, LO_FLOAT etc.) may be converted to other numerical types and string types (LO_STRING and LO_SYMBOL) may be converted to the other type. This is done automatically if a received message matches the path, but not the exact types, and is coercible (ie. all numerical types in numerical positions).
+.PP
+On failure no translation occurs and false is returned.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype_to\fP The type of the destination variable. 
+.br
+\fIto\fP A pointer to the destination variable. 
+.br
+\fItype_from\fP The type of the source variable. 
+.br
+\fIfrom\fP A pointer to the source variable. 
+.RE
+.PP
+
+.SS "\fBlo_hires\fP lo_hires_val (\fBlo_type\fP type, \fBlo_arg\fP * p)"
+.PP
+return the numerical value of the given argument with the maximum native system precision. 
+.PP
+.SS "int lo_is_numerical_type (\fBlo_type\fP a)"
+.PP
+return true if the type specified has a numerical value, such as LO_INT32, LO_FLOAT etc. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP The type to be tested. 
+.RE
+.PP
+
+.SS "int lo_is_string_type (\fBlo_type\fP a)"
+.PP
+return true if the type specified has a textual value, such as LO_STRING or LO_SYMBOL. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP The type to be tested. 
+.RE
+.PP
+
+.SS "void lo_message_add_blob (\fBlo_message\fP m, \fBlo_blob\fP a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_char (\fBlo_message\fP m, char a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_double (\fBlo_message\fP m, double a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_false (\fBlo_message\fP m)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_float (\fBlo_message\fP m, float a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_infinitum (\fBlo_message\fP m)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_int32 (\fBlo_message\fP m, int32_t a)"
+.PP
+Append a data item and typechar of the specified type to a message. 
+.PP
+The data will be added in OSC byteorder (bigendian).
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The message to be extended. 
+.br
+\fIa\fP The data item. 
+.RE
+.PP
+
+.SS "void lo_message_add_int64 (\fBlo_message\fP m, int64_t a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_midi (\fBlo_message\fP m, uint8_t a[4])"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_nil (\fBlo_message\fP m)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_string (\fBlo_message\fP m, const char * a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_symbol (\fBlo_message\fP m, const char * a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_timetag (\fBlo_message\fP m, \fBlo_timetag\fP a)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_add_true (\fBlo_message\fP m)"
+.PP
+Append a data item and typechar of the specified type to a message. See \fBlo_message_add_int32()\fP for details. 
+.PP
+.SS "void lo_message_free (\fBlo_message\fP m)"
+.PP
+Free memory allocated by lo_message_new and any subsequent lo_message_add*() calls. 
+.PP
+.SS "\fBlo_address\fP lo_message_get_source (\fBlo_message\fP m)"
+.PP
+Returns the source (lo_address) of an incoming message. 
+.PP
+Returns NULL if the message is outgoing. Do not free the returned address. 
+.SS "size_t lo_message_length (\fBlo_message\fP m, const char * path)"
+.PP
+Return the length of a message in bytes. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The message to be sized 
+.br
+\fIpath\fP The path the message will be sent to 
+.RE
+.PP
+
+.SS "\fBlo_message\fP lo_message_new ()"
+.PP
+Create a new lo_message object. 
+.PP
+.SS "void* lo_message_serialise (\fBlo_message\fP m, const char * path, void * to, size_t * size)"
+.PP
+Serialise the message object to an area of memory and return a pointer to the serialised form. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The mesaage to be serialised 
+.br
+\fIpath\fP The path the message will be sent to 
+.br
+\fIto\fP The address to serialise to, memory will be allocated if to is NULL. 
+.br
+\fIsize\fP If this pointer is non-NULL the size of the memory area will be written here
+.RE
+.PP
+The returned form is suitable to be sent over a low level OSC transport, having the correct endianess and bit-packed structure. 
+.SS "int lo_pattern_match (const char * str, const char * p)"
+.PP
+Test a string against an OSC pattern glob. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP The tring to test 
+.br
+\fIp\fP The pattern to test against 
+.RE
+.PP
+
+.SS "int lo_send_bundle (\fBlo_address\fP targ, \fBlo_bundle\fP b)"
+.PP
+send a lo_bundle object to address targ 
+.PP
+Bundles are constructed with the \fBlo_bundle_new()\fP and \fBlo_bundle_add_message()\fP functions. 
+.SS "int lo_send_bundle_from (\fBlo_address\fP targ, \fBlo_server\fP serv, \fBlo_bundle\fP b)"
+.PP
+send a lo_bundle object to address targ from address of serv 
+.PP
+Bundles are constructed with the \fBlo_bundle_new()\fP and \fBlo_bundle_add_message()\fP functions.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarg\fP The address to send the bundle to 
+.br
+\fIserv\fP The server socket to send the bundle from (can be NULL to use new socket) 
+.br
+\fIb\fP The bundle itself 
+.RE
+.PP
+
+.SS "int lo_send_from_internal (\fBlo_address\fP targ, \fBlo_server\fP from, const char * file, const int line, const \fBlo_timetag\fP ts, const char * path, const char * types,  ...)"
+.PP
+the real lo_send_from function (don't call directly) 
+.PP
+.SS "int lo_send_internal (\fBlo_address\fP t, const char * file, const int line, const char * path, const char * types,  ...)"
+.PP
+the real send function (don't call directly) 
+.PP
+.SS "int lo_send_message (\fBlo_address\fP targ, const char * path, \fBlo_message\fP msg)"
+.PP
+send a lo_message object to target targ 
+.PP
+This is slightly more efficient than lo_send if you want to send a lot of similar messages. The messages are constructed with the \fBlo_message_new()\fP and lo_message_add*() functions. 
+.SS "int lo_send_message_from (\fBlo_address\fP targ, \fBlo_server\fP serv, const char * path, \fBlo_message\fP msg)"
+.PP
+send a lo_message object to target targ from address of serv 
+.PP
+This is slightly more efficient than lo_send if you want to send a lot of similar messages. The messages are constructed with the \fBlo_message_new()\fP and lo_message_add*() functions.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarg\fP The address to send the message to 
+.br
+\fIserv\fP The server socket to send the message from (can be NULL to use new socket) 
+.br
+\fIpath\fP The path to send the message to 
+.br
+\fImsg\fP The bundle itself 
+.RE
+.PP
+
+.SS "int lo_send_timestamped_internal (\fBlo_address\fP t, const char * file, const int line, \fBlo_timetag\fP ts, const char * path, const char * types,  ...)"
+.PP
+the real send_timestamped function (don't call directly) 
+.PP
+.SS "\fBlo_method\fP lo_server_add_method (\fBlo_server\fP s, const char * path, const char * typespec, \fBlo_method_handler\fP h, void * user_data)"
+.PP
+Add an OSC method to the specifed server. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP The server the method is to be added to. 
+.br
+\fIpath\fP The OSC path to register the method to. If NULL is passed the method will match all paths. 
+.br
+\fItypespec\fP The typespec the method accepts. Incoming messages with similar typespecs (e.g. ones with numerical types in the same position) will be coerced to the typespec given here. 
+.br
+\fIh\fP The method handler callback function that will be called if a matching message is received 
+.br
+\fIuser_data\fP A value that will be passed to the callback function, h, when its invoked matching from this method. 
+.RE
+.PP
+
+.SS "void lo_server_del_method (\fBlo_server\fP s, const char * path, const char * typespec)"
+.PP
+Delete an OSC method from the specifed server. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP The server the method is to be removed from. 
+.br
+\fIpath\fP The OSC path of the method to delete. If NULL is passed the method will match the generic handler. 
+.br
+\fItypespec\fP The typespec the method accepts. 
+.RE
+.PP
+
+.SS "int lo_server_events_pending (\fBlo_server\fP s)"
+.PP
+Return true if there are scheduled events (eg. from bundles) waiting to be dispatched by the server. 
+.PP
+.SS "void lo_server_free (\fBlo_server\fP s)"
+.PP
+Free up memory used by the lo_server object. 
+.PP
+.SS "int lo_server_get_port (\fBlo_server\fP s)"
+.PP
+Return the port number that the server has bound to. 
+.PP
+Useful when NULL is passed for the port number and you wish to know how to address the server. 
+.SS "int lo_server_get_protocol (\fBlo_server\fP s)"
+.PP
+Return the protocol that the server is using. 
+.PP
+Returned value will be one of LO_UDP, LO_TCP or LO_UNIX. 
+.SS "int lo_server_get_socket_fd (\fBlo_server\fP s)"
+.PP
+Return the file descriptor of the server socket. 
+.PP
+If the server protocol supports exposing the server's underlying receive mechanism for monitoring with select() or poll(), this function returns the file descriptor needed, otherwise, it returns -1.
+.PP
+WARNING: when using this function beware that not all OSC packets that are received are dispatched immediatly. \fBlo_server_events_pending()\fP and \fBlo_server_next_event_delay()\fP can be used to tell if there are pending events and how long before you should attempt to receive them. 
+.SS "char* lo_server_get_url (\fBlo_server\fP s)"
+.PP
+Return an OSC URL that can be used to contact the server. 
+.PP
+The return value should bee free()'d when it is no longer needed. 
+.SS "\fBlo_server\fP lo_server_new (const char * port, \fBlo_err_handler\fP err_h)"
+.PP
+Create a new server instance. 
+.PP
+lo_servers block until they receive OSC messages. if you want non-blocking behaviour see the lo_server_thread_* functions.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP If NULL is passed then an unused UDP port will be chosen by the system, its number may be retreived with \fBlo_server_thread_get_port()\fP so it can be passed to clients. Otherwise a decimal port number, service name or UNIX domain socket path may be passed. 
+.br
+\fIerr_h\fP An error callback function that will be called if there is an error in messge reception or server creation. Pass NULL if you do not want error handling. 
+.RE
+.PP
+
+.SS "\fBlo_server\fP lo_server_new_with_proto (const char * port, int proto, \fBlo_err_handler\fP err_h)"
+.PP
+Create a new server instance, specifying protocol. 
+.PP
+lo_servers block until they receive OSC messages. if you want non-blocking behaviour see the lo_server_thread_* functions.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP If using UDP then NULL may be passed to find an unused port. Otherwise a decimal port number orservice name or may be passed. If using UNIX domain sockets then a socket path should be passed here. 
+.br
+\fIproto\fP The protocol to use, should be one of LO_UDP, LO_TCP or LO_UNIX. 
+.br
+\fIerr_h\fP An error callback function that will be called if there is an error in messge reception or server creation. Pass NULL if you do not want error handling. 
+.RE
+.PP
+
+.SS "double lo_server_next_event_delay (\fBlo_server\fP s)"
+.PP
+Return the time in seconds until the next scheduled event. 
+.PP
+If the delay is greater than 100 seconds then it will return 100.0. 
+.SS "int lo_server_recv (\fBlo_server\fP s)"
+.PP
+Block, waiting for an OSC message to be received. 
+.PP
+The return value is the number of bytes in the received message. The message will be dispatched to a matching method if one is found. 
+.SS "int lo_server_recv_noblock (\fBlo_server\fP s, int timeout)"
+.PP
+Look for an OSC message waiting to be received. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP The server to wait for connections on. 
+.br
+\fItimeout\fP A timeout in milliseconds to wait for the incoming packet. a value of 0 will return immediatly.
+.RE
+.PP
+The return value is the number of bytes in the received message or 0 is there is no message. The message will be dispatched to a matching method if one is found. 
+.SS "int lo_strsize (const char * s)"
+.PP
+A function to calculate the amount of OSC message space required by a C char *. 
+.PP
+Returns the storage size in bytes, will always be a multiple of four. 
+.SS "double lo_timetag_diff (\fBlo_timetag\fP a, \fBlo_timetag\fP b)"
+.PP
+Find the time difference between two timetags. 
+.PP
+Returns a - b in seconds. 
+.SS "void lo_timetag_now (\fBlo_timetag\fP * t)"
+.PP
+Return a timetag for the current time. 
+.PP
+On exit the timetag pointed to by t is filled with the OSC represenation of this instant in time. 
+.SS "char* lo_url_get_hostname (const char * url)"
+.PP
+Return the hostname portion of an OSC URL. 
+.PP
+The return value should bee free()'d when it is no longer needed. 
+.SS "char* lo_url_get_path (const char * url)"
+.PP
+Return the path portion of an OSC URL. 
+.PP
+The return value should bee free()'d when it is no longer needed. 
+.SS "char* lo_url_get_port (const char * url)"
+.PP
+Return the port portion of an OSC URL. 
+.PP
+The return value should bee free()'d when it is no longer needed. 
+.SS "char* lo_url_get_protocol (const char * url)"
+.PP
+Return the protocol portion of an OSC URL, eg. udp, tcp. 
+.PP
+This library uses OSC URLs of the form: osc.prot://hostname:port/path if the prot part is missing, UDP is assumed.
+.PP
+The return value should bee free()'d when it is no longer needed. 

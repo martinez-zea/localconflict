@@ -1,0 +1,116 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/unix/setup
+file:///user/r/rob/svn
+
+
+
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+setup.xml
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+57be6bc70f440ed74a2fd08be5b746ca
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+doit
+file
+
+
+
+
+2008-05-08T21:25:21.000000Z
+c1d11c5b7a6abb7a72007e9f0988cecd
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+pkg
+dir
+
+Solaris_pkg.sh
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+ed8cd96e3b26a1009ae2120a6ba15fd5
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+preuninstall.sh
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+64958935425c6d288e8cf25f38872902
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+ioq3demo.sh
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+24e40d1686f275cc38e9c920ea4257f4
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+ioquake3.sh
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+837e68047d25dba164b5c99f152ddcec
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+splash.xpm
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+bf8fdfa2183055f6c0d595548b856f4e
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+Makefile
+file
+
+
+
+
+2008-05-08T21:25:20.000000Z
+abf86864631beb5b83e5ad16fa5f5974
+2008-05-08T21:44:00.880012Z
+2
+rob
+

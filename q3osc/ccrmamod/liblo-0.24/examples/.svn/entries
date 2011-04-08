@@ -1,0 +1,133 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/liblo-0.24/examples
+file:///user/r/rob/svn
+
+
+
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+example_server
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+eb43a29e54c7bb157b8ad6456f8e9e80
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+Makefile.in
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+692fb687a346922208ed53cbae777420
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+example_server.c
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+06675c4568a0130591d065afce21fd2b
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+nonblocking_server_example
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+3c93f3354f79b285a37f942ba9105885
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+nonblocking_server_example.c
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+86c532ea348cecb28993a09c6e0997c7
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+.libs
+dir
+
+Makefile.am
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+4f888c1ac0535fcb7f081b7e61ca7b1c
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+.deps
+dir
+
+example_client
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+ca96e19624b368f8407df45809d99c55
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+example_client.c
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+358c18ea0255d99b0547c636c3bce0df
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+Makefile
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+aac3e94d9ca9932548c7264c5339d735
+2008-05-08T21:44:00.880012Z
+2
+rob
+

@@ -1,0 +1,42 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/libs/macosx
+file:///user/r/rob/svn
+
+
+
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+libSDL-1.2.0.dylib
+file
+
+
+
+
+2008-05-08T21:25:13.000000Z
+20a3b63e75a81fe7fb915a11a4caed1b
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+libSDLmain.a
+file
+
+
+
+
+2008-05-08T21:25:13.000000Z
+aea6dfbf333af3f6bd67d3c6b64a0233
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+

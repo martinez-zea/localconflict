@@ -1,0 +1,5 @@
+\section{liblo Data Structures}
+Here are the data structures with brief descriptions:\begin{CompactList}
+\item\contentsline{section}{\hyperlink{unionlo__arg}{lo\_\-arg} (Union used to read values from incoming messages )}{\pageref{unionlo__arg}}{}
+\item\contentsline{section}{\hyperlink{structlo__timetag}{lo\_\-timetag} (A structure to store OSC Time\-Tag values )}{\pageref{structlo__timetag}}{}
+\end{CompactList}

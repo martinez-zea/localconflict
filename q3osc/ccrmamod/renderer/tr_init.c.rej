@@ -1,0 +1,17 @@
+***************
+*** 1122,1127 ****
+  
+  	R_Register();
+  
+  	max_polys = r_maxpolys->integer;
+  	if (max_polys < MAX_POLYS)
+  		max_polys = MAX_POLYS;
+--- 1122,1129 ----
+  
+  	R_Register();
+  
++ 	R_BloomInit();
++ 
+  	max_polys = r_maxpolys->integer;
+  	if (max_polys < MAX_POLYS)
+  		max_polys = MAX_POLYS;

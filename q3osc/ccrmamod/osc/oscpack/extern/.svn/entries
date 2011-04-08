@@ -1,0 +1,89 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/osc/oscpack/extern
+file:///user/r/rob/svn
+
+
+
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+test.cpp
+file
+
+
+
+
+2008-05-08T21:25:26.000000Z
+074134befea4bc977ac716238452ccc9
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+test.c
+file
+
+
+
+
+2008-05-08T21:25:26.000000Z
+9077310a80c7b18ef1b373e16ba4f6a2
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+test.h
+file
+
+
+
+
+2008-05-08T21:25:25.000000Z
+be74f9523be00dedf6a206cbfbbcb417
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+test.h.gch
+file
+
+
+
+
+2008-05-08T21:25:26.000000Z
+f6ddeceb30cbfffffdeaeb1c5f06f975
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+testc.h
+file
+
+
+
+
+2008-05-08T21:25:25.000000Z
+be74f9523be00dedf6a206cbfbbcb417
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+externs.h
+file
+
+
+
+
+2008-05-08T21:25:26.000000Z
+cdbfbeb73057c9526aa18615257572df
+2008-05-08T21:44:00.880012Z
+2
+rob
+

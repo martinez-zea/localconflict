@@ -1,0 +1,124 @@
+\hypertarget{lo__types_8h}{
+\section{lo\_\-types.h File Reference}
+\label{lo__types_8h}\index{lo_types.h@{lo\_\-types.h}}
+}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address}
+\begin{CompactList}\small\item\em A reference to an OSC service. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}{lo\_\-blob}
+\begin{CompactList}\small\item\em A object to store an opaque binary data object. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message}
+\begin{CompactList}\small\item\em A low-level object used to represent messages passed over OSC. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle}
+\begin{CompactList}\small\item\em A low-level object used to represent bundles of messages passed over OSC. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method}
+\begin{CompactList}\small\item\em An object representing an method on a server. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server}
+\begin{CompactList}\small\item\em An object representing an instance of an OSC server. \item\end{CompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{lo\_\-server\_\-thread}
+\begin{CompactList}\small\item\em An object representing a thread containing an OSC server. \item\end{CompactList}\item 
+typedef void($\ast$) \hyperlink{lo__types_8h_6663024c5970f397af12afdb906ab9bd}{lo\_\-err\_\-handler} (int num, const char $\ast$msg, const char $\ast$where)
+\begin{CompactList}\small\item\em A callback function to receive notifcation of an error in a server or server thread. \item\end{CompactList}\item 
+typedef int($\ast$) \hyperlink{lo__types_8h_4551cfeeee8917dea22bf1c7e858fd2b}{lo\_\-method\_\-handler} (const char $\ast$path, const char $\ast$types, \hyperlink{unionlo__arg}{lo\_\-arg} $\ast$$\ast$argv, int argc, \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} msg, void $\ast$user\_\-data)
+\begin{CompactList}\small\item\em A callback function to receive notifcation of matching message arriving in the server or server thread. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{
+\index{lo_types.h@{lo\_\-types.h}!lo_address@{lo\_\-address}}
+\index{lo_address@{lo\_\-address}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-address]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address}}}
+\label{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}
+
+
+A reference to an OSC service. 
+
+Created by calls to \hyperlink{group__liblo_ge5af61a02ab08871d3ea070c8f770cfe}{lo\_\-address\_\-new()} or \hyperlink{group__liblo_g1af2cb3c80393cba838f64dfcdc35620}{lo\_\-address\_\-new\_\-from\_\-url()}. \hypertarget{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}{
+\index{lo_types.h@{lo\_\-types.h}!lo_blob@{lo\_\-blob}}
+\index{lo_blob@{lo\_\-blob}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-blob]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}{lo\_\-blob}}}
+\label{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}
+
+
+A object to store an opaque binary data object. 
+
+Can be passed over OSC using the 'b' type. Created by calls to \hyperlink{group__liblo_gffb2348c70cb0e1214fd50bdc7574c39}{lo\_\-blob\_\-new()}. \hypertarget{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{
+\index{lo_types.h@{lo\_\-types.h}!lo_bundle@{lo\_\-bundle}}
+\index{lo_bundle@{lo\_\-bundle}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-bundle]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle}}}
+\label{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}
+
+
+A low-level object used to represent bundles of messages passed over OSC. 
+
+Created by calls to \hyperlink{group__liblolowlevel_g330a4a4e6227b185b3ec6219ff3e2859}{lo\_\-bundle\_\-new()}, messages can be added with calls to \hyperlink{group__liblolowlevel_g44e0e03554e91e76e5856e99fbb8afad}{lo\_\-bundle\_\-add\_\-message()}. \hypertarget{lo__types_8h_6663024c5970f397af12afdb906ab9bd}{
+\index{lo_types.h@{lo\_\-types.h}!lo_err_handler@{lo\_\-err\_\-handler}}
+\index{lo_err_handler@{lo\_\-err\_\-handler}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-err\_\-handler]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$) \hyperlink{lo__types_8h_6663024c5970f397af12afdb906ab9bd}{lo\_\-err\_\-handler}(int num, const char $\ast$msg, const char $\ast$where)}}
+\label{lo__types_8h_6663024c5970f397af12afdb906ab9bd}
+
+
+A callback function to receive notifcation of an error in a server or server thread. 
+
+On callback the paramters will be set to the following values:
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em num}]An error number that can be used to identify this condition. \item[{\em msg}]An error message describing the condidtion. \item[{\em where}]A string describing the place the error occured - typically either a function call or method path. \end{description}
+\end{Desc}
+\hypertarget{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{
+\index{lo_types.h@{lo\_\-types.h}!lo_message@{lo\_\-message}}
+\index{lo_message@{lo\_\-message}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-message]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message}}}
+\label{lo__types_8h_d126083c98d941f00eb72d1690b38d63}
+
+
+A low-level object used to represent messages passed over OSC. 
+
+Created by calls to \hyperlink{group__liblolowlevel_g2cce2e97452e3e9d6b5d3af33bb1d153}{lo\_\-message\_\-new()}, arguments can be added with calls to lo\_\-message\_\-add\_\-$\ast$(). \hypertarget{lo__types_8h_66faedf5da13231d8c0166870477dce5}{
+\index{lo_types.h@{lo\_\-types.h}!lo_method@{lo\_\-method}}
+\index{lo_method@{lo\_\-method}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-method]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method}}}
+\label{lo__types_8h_66faedf5da13231d8c0166870477dce5}
+
+
+An object representing an method on a server. 
+
+Returned by calls to \hyperlink{group__liblo_gcff9c90a8efc400448276b2d20831010}{lo\_\-server\_\-thread\_\-add\_\-method()} and \hyperlink{group__liblolowlevel_g0c183cabaac67eb9aad3265ae1efa580}{lo\_\-server\_\-add\_\-method()}. \hypertarget{lo__types_8h_4551cfeeee8917dea22bf1c7e858fd2b}{
+\index{lo_types.h@{lo\_\-types.h}!lo_method_handler@{lo\_\-method\_\-handler}}
+\index{lo_method_handler@{lo\_\-method\_\-handler}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-method\_\-handler]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$) \hyperlink{lo__types_8h_4551cfeeee8917dea22bf1c7e858fd2b}{lo\_\-method\_\-handler}(const char $\ast$path, const char $\ast$types, \hyperlink{unionlo__arg}{lo\_\-arg} $\ast$$\ast$argv, int argc, \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} msg, void $\ast$user\_\-data)}}
+\label{lo__types_8h_4551cfeeee8917dea22bf1c7e858fd2b}
+
+
+A callback function to receive notifcation of matching message arriving in the server or server thread. 
+
+On callback the paramters will be set to the following values:
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em path}]That path that the incoming message was sent to \item[{\em types}]If you specided types in your method creation call then this will match those and the incoming types will have been coerced to match, otherwise it will be the types of the arguments of the incoming message. \item[{\em argv}]An array of \hyperlink{unionlo__arg}{lo\_\-arg} types containing the values, e.g. if the first argument of the incoming message is of type 'f' then the vlaue will be found in argv\mbox{[}0\mbox{]}-$>$f. \item[{\em argc}]The number of argumets received. \item[{\em msg}]A structure containing the original raw message as received. No type coercion will have occured and the data will be in OSC byte order (bigendian). \item[{\em user\_\-data}]This contains the user\_\-data value passed in the call to lo\_\-server\_\-thread\_\-add\_\-method. \end{description}
+\end{Desc}
+\hypertarget{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{
+\index{lo_types.h@{lo\_\-types.h}!lo_server@{lo\_\-server}}
+\index{lo_server@{lo\_\-server}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-server]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server}}}
+\label{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}
+
+
+An object representing an instance of an OSC server. 
+
+Created by calls to \hyperlink{group__liblolowlevel_g78cfb23346e44465695293d4393447ae}{lo\_\-server\_\-new()}. If you with the library to take care of the threading as well you can just use server threads instead. \hypertarget{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{
+\index{lo_types.h@{lo\_\-types.h}!lo_server_thread@{lo\_\-server\_\-thread}}
+\index{lo_server_thread@{lo\_\-server\_\-thread}!lo_types.h@{lo\_\-types.h}}
+\subsubsection[lo\_\-server\_\-thread]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ \hyperlink{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{lo\_\-server\_\-thread}}}
+\label{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}
+
+
+An object representing a thread containing an OSC server. 
+
+Created by calls to \hyperlink{group__liblo_gbe3e0c31189adfd7624de6c507b610ba}{lo\_\-server\_\-thread\_\-new()}. 

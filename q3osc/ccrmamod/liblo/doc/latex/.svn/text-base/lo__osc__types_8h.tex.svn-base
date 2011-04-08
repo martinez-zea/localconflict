@@ -1,0 +1,39 @@
+\hypertarget{lo__osc__types_8h}{
+\section{lo\_\-osc\_\-types.h File Reference}
+\label{lo__osc__types_8h}\index{lo_osc_types.h@{lo\_\-osc\_\-types.h}}
+}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structlo__timetag}{lo\_\-timetag}
+\begin{CompactList}\small\item\em A structure to store OSC Time\-Tag values. \item\end{CompactList}\item 
+union \hyperlink{unionlo__arg}{lo\_\-arg}
+\begin{CompactList}\small\item\em Union used to read values from incoming messages. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group__liblo_gfa8cfc08b763b0c039fb64a73c4c77da}{LO\_\-TT\_\-IMMEDIATE}~((\hyperlink{structlo__timetag}{lo\_\-timetag})\{0U,0U\})
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} \{ \par
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347364ba0490216baf238719e1200325b037d}{LO\_\-INT32} =  'i', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736b3245e1b7edacde57f71d200840b0aa3}{LO\_\-FLOAT} =  'f', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347366121bddbedc79af47d86a8a25af47ad2}{LO\_\-STRING} =  's', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736140f48c944b6c888846b8109ceaeb98b}{LO\_\-BLOB} =  'b', 
+\par
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736cfabb7d6ec1d4f9d033227de24c76b30}{LO\_\-INT64} =  'h', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347360516741a260e7109d2b0ed0c92beddbe}{LO\_\-TIMETAG} =  't', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347360ca92c843dfb45f4edabdefd60cdeca6}{LO\_\-DOUBLE} =  'd', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347364ae18ed5170672498406c36b16e7a948}{LO\_\-SYMBOL} =  'S', 
+\par
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736f93c0cdf731b1edf4b9d44ad7d7dba26}{LO\_\-CHAR} =  'c', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736d295b5f7669a7220102082e20fd14ec0}{LO\_\-MIDI} =  'm', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736ce8c12ac58d6aaee426dc41cfa609009}{LO\_\-TRUE} =  'T', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd7434736e85a45e7bc3999069d82da7245d172f4}{LO\_\-FALSE} =  'F', 
+\par
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd743473680fcaab02318c562b094ca407f81d2b3}{LO\_\-NIL} =  'N', 
+\hyperlink{group__liblo_gg11838c576b0197c255ce805fd74347369b77e96b653de1f91344549b9b9a0273}{LO\_\-INFINITUM} =  'I'
+ \}
+\begin{CompactList}\small\item\em An enumeration of the OSC types liblo can send and receive. \item\end{CompactList}\end{CompactItemize}

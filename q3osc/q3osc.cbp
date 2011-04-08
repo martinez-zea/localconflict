@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="q3osc" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/q3osc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/q3osc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_consolecmds.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_draw.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_drawtools.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_effects.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_ents.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_event.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_info.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_localents.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_main.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_marks.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_players.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_playerstate.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_predict.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_scoreboard.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_servercmds.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_snapshot.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_syscalls.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_view.d" />
+		<Unit filename="build/release-linux-i386/ccrma/cgame/cg_weapons.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_chat.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_cmd.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_dmnet.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_dmq3.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_main.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_team.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/ai_vcmd.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/bg_misc.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/bg_pmove.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/bg_slidemove.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_active.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_arenas.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_bot.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_client.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_cmds.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_combat.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_items.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_main.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_mem.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_misc.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_missile.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_mover.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_session.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_spawn.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_svcmds.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_syscalls.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_target.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_team.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_trigger.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_utils.d" />
+		<Unit filename="build/release-linux-i386/ccrma/game/g_weapon.d" />
+		<Unit filename="build/release-linux-i386/ccrma/qcommon/q_math.d" />
+		<Unit filename="build/release-linux-i386/ccrma/qcommon/q_shared.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_addbots.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_atoms.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_cdkey.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_cinematics.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_confirm.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_connect.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_controls2.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_credits.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_demo2.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_display.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_gameinfo.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_ingame.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_loadconfig.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_main.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_menu.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_mfield.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_mods.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_network.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_options.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_playermodel.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_players.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_playersettings.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_preferences.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_qmenu.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_removebots.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_saveconfig.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_serverinfo.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_servers2.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_setup.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_sound.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_sparena.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_specifyserver.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_splevel.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_sppostgame.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_spskill.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_startserver.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_team.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_teamorders.d" />
+		<Unit filename="build/release-linux-i386/ccrma/ui/ui_video.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_bspq3.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_cluster.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_debug.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_entity.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_file.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_main.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_move.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_optimize.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_reach.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_route.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_routealt.d" />
+		<Unit filename="build/release-linux-i386/client/be_aas_sample.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_char.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_chat.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_gen.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_goal.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_move.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_weap.d" />
+		<Unit filename="build/release-linux-i386/client/be_ai_weight.d" />
+		<Unit filename="build/release-linux-i386/client/be_ea.d" />
+		<Unit filename="build/release-linux-i386/client/be_interface.d" />
+		<Unit filename="build/release-linux-i386/client/cl_avi.d" />
+		<Unit filename="build/release-linux-i386/client/cl_cgame.d" />
+		<Unit filename="build/release-linux-i386/client/cl_cin.d" />
+		<Unit filename="build/release-linux-i386/client/cl_console.d" />
+		<Unit filename="build/release-linux-i386/client/cl_curl.d" />
+		<Unit filename="build/release-linux-i386/client/cl_input.d" />
+		<Unit filename="build/release-linux-i386/client/cl_keys.d" />
+		<Unit filename="build/release-linux-i386/client/cl_main.d" />
+		<Unit filename="build/release-linux-i386/client/cl_net_chan.d" />
+		<Unit filename="build/release-linux-i386/client/cl_parse.d" />
+		<Unit filename="build/release-linux-i386/client/cl_scrn.d" />
+		<Unit filename="build/release-linux-i386/client/cl_ui.d" />
+		<Unit filename="build/release-linux-i386/client/cm_load.d" />
+		<Unit filename="build/release-linux-i386/client/cm_patch.d" />
+		<Unit filename="build/release-linux-i386/client/cm_polylib.d" />
+		<Unit filename="build/release-linux-i386/client/cm_test.d" />
+		<Unit filename="build/release-linux-i386/client/cm_trace.d" />
+		<Unit filename="build/release-linux-i386/client/cmd.d" />
+		<Unit filename="build/release-linux-i386/client/common.d" />
+		<Unit filename="build/release-linux-i386/client/cvar.d" />
+		<Unit filename="build/release-linux-i386/client/files.d" />
+		<Unit filename="build/release-linux-i386/client/ftola.d" />
+		<Unit filename="build/release-linux-i386/client/huffman.d" />
+		<Unit filename="build/release-linux-i386/client/jcapimin.d" />
+		<Unit filename="build/release-linux-i386/client/jccoefct.d" />
+		<Unit filename="build/release-linux-i386/client/jccolor.d" />
+		<Unit filename="build/release-linux-i386/client/jcdctmgr.d" />
+		<Unit filename="build/release-linux-i386/client/jchuff.d" />
+		<Unit filename="build/release-linux-i386/client/jcinit.d" />
+		<Unit filename="build/release-linux-i386/client/jcmainct.d" />
+		<Unit filename="build/release-linux-i386/client/jcmarker.d" />
+		<Unit filename="build/release-linux-i386/client/jcmaster.d" />
+		<Unit filename="build/release-linux-i386/client/jcomapi.d" />
+		<Unit filename="build/release-linux-i386/client/jcparam.d" />
+		<Unit filename="build/release-linux-i386/client/jcphuff.d" />
+		<Unit filename="build/release-linux-i386/client/jcprepct.d" />
+		<Unit filename="build/release-linux-i386/client/jcsample.d" />
+		<Unit filename="build/release-linux-i386/client/jdapimin.d" />
+		<Unit filename="build/release-linux-i386/client/jdapistd.d" />
+		<Unit filename="build/release-linux-i386/client/jdatasrc.d" />
+		<Unit filename="build/release-linux-i386/client/jdcoefct.d" />
+		<Unit filename="build/release-linux-i386/client/jdcolor.d" />
+		<Unit filename="build/release-linux-i386/client/jddctmgr.d" />
+		<Unit filename="build/release-linux-i386/client/jdhuff.d" />
+		<Unit filename="build/release-linux-i386/client/jdinput.d" />
+		<Unit filename="build/release-linux-i386/client/jdmainct.d" />
+		<Unit filename="build/release-linux-i386/client/jdmarker.d" />
+		<Unit filename="build/release-linux-i386/client/jdmaster.d" />
+		<Unit filename="build/release-linux-i386/client/jdpostct.d" />
+		<Unit filename="build/release-linux-i386/client/jdsample.d" />
+		<Unit filename="build/release-linux-i386/client/jdtrans.d" />
+		<Unit filename="build/release-linux-i386/client/jerror.d" />
+		<Unit filename="build/release-linux-i386/client/jfdctflt.d" />
+		<Unit filename="build/release-linux-i386/client/jidctflt.d" />
+		<Unit filename="build/release-linux-i386/client/jmemmgr.d" />
+		<Unit filename="build/release-linux-i386/client/jmemnobs.d" />
+		<Unit filename="build/release-linux-i386/client/jutils.d" />
+		<Unit filename="build/release-linux-i386/client/l_crc.d" />
+		<Unit filename="build/release-linux-i386/client/l_libvar.d" />
+		<Unit filename="build/release-linux-i386/client/l_log.d" />
+		<Unit filename="build/release-linux-i386/client/l_memory.d" />
+		<Unit filename="build/release-linux-i386/client/l_precomp.d" />
+		<Unit filename="build/release-linux-i386/client/l_script.d" />
+		<Unit filename="build/release-linux-i386/client/l_struct.d" />
+		<Unit filename="build/release-linux-i386/client/linux_glimp.d" />
+		<Unit filename="build/release-linux-i386/client/linux_glimp_smp.d" />
+		<Unit filename="build/release-linux-i386/client/linux_joystick.d" />
+		<Unit filename="build/release-linux-i386/client/linux_qgl.d" />
+		<Unit filename="build/release-linux-i386/client/linux_signals.d" />
+		<Unit filename="build/release-linux-i386/client/linux_snd.d" />
+		<Unit filename="build/release-linux-i386/client/matha.d" />
+		<Unit filename="build/release-linux-i386/client/md4.d" />
+		<Unit filename="build/release-linux-i386/client/md5.d" />
+		<Unit filename="build/release-linux-i386/client/msg.d" />
+		<Unit filename="build/release-linux-i386/client/net_chan.d" />
+		<Unit filename="build/release-linux-i386/client/q_math.d" />
+		<Unit filename="build/release-linux-i386/client/q_shared.d" />
+		<Unit filename="build/release-linux-i386/client/qal.d" />
+		<Unit filename="build/release-linux-i386/client/sdl_glimp.d" />
+		<Unit filename="build/release-linux-i386/client/sdl_glimp_smp.d" />
+		<Unit filename="build/release-linux-i386/client/sdl_snd.d" />
+		<Unit filename="build/release-linux-i386/client/snapvectora.d" />
+		<Unit filename="build/release-linux-i386/client/snd_adpcm.d" />
+		<Unit filename="build/release-linux-i386/client/snd_codec.d" />
+		<Unit filename="build/release-linux-i386/client/snd_codec_ogg.d" />
+		<Unit filename="build/release-linux-i386/client/snd_codec_wav.d" />
+		<Unit filename="build/release-linux-i386/client/snd_dma.d" />
+		<Unit filename="build/release-linux-i386/client/snd_main.d" />
+		<Unit filename="build/release-linux-i386/client/snd_mem.d" />
+		<Unit filename="build/release-linux-i386/client/snd_mix.d" />
+		<Unit filename="build/release-linux-i386/client/snd_mixa.d" />
+		<Unit filename="build/release-linux-i386/client/snd_openal.d" />
+		<Unit filename="build/release-linux-i386/client/snd_wavelet.d" />
+		<Unit filename="build/release-linux-i386/client/sv_bot.d" />
+		<Unit filename="build/release-linux-i386/client/sv_ccmds.d" />
+		<Unit filename="build/release-linux-i386/client/sv_client.d" />
+		<Unit filename="build/release-linux-i386/client/sv_game.d" />
+		<Unit filename="build/release-linux-i386/client/sv_init.d" />
+		<Unit filename="build/release-linux-i386/client/sv_main.d" />
+		<Unit filename="build/release-linux-i386/client/sv_net_chan.d" />
+		<Unit filename="build/release-linux-i386/client/sv_snapshot.d" />
+		<Unit filename="build/release-linux-i386/client/sv_world.d" />
+		<Unit filename="build/release-linux-i386/client/tr_animation.d" />
+		<Unit filename="build/release-linux-i386/client/tr_backend.d" />
+		<Unit filename="build/release-linux-i386/client/tr_bloom.d" />
+		<Unit filename="build/release-linux-i386/client/tr_bsp.d" />
+		<Unit filename="build/release-linux-i386/client/tr_cmds.d" />
+		<Unit filename="build/release-linux-i386/client/tr_curve.d" />
+		<Unit filename="build/release-linux-i386/client/tr_flares.d" />
+		<Unit filename="build/release-linux-i386/client/tr_font.d" />
+		<Unit filename="build/release-linux-i386/client/tr_image.d" />
+		<Unit filename="build/release-linux-i386/client/tr_init.d" />
+		<Unit filename="build/release-linux-i386/client/tr_light.d" />
+		<Unit filename="build/release-linux-i386/client/tr_main.d" />
+		<Unit filename="build/release-linux-i386/client/tr_marks.d" />
+		<Unit filename="build/release-linux-i386/client/tr_mesh.d" />
+		<Unit filename="build/release-linux-i386/client/tr_model.d" />
+		<Unit filename="build/release-linux-i386/client/tr_noise.d" />
+		<Unit filename="build/release-linux-i386/client/tr_scene.d" />
+		<Unit filename="build/release-linux-i386/client/tr_shade.d" />
+		<Unit filename="build/release-linux-i386/client/tr_shade_calc.d" />
+		<Unit filename="build/release-linux-i386/client/tr_shader.d" />
+		<Unit filename="build/release-linux-i386/client/tr_shadows.d" />
+		<Unit filename="build/release-linux-i386/client/tr_sky.d" />
+		<Unit filename="build/release-linux-i386/client/tr_surface.d" />
+		<Unit filename="build/release-linux-i386/client/tr_world.d" />
+		<Unit filename="build/release-linux-i386/client/unix_main.d" />
+		<Unit filename="build/release-linux-i386/client/unix_net.d" />
+		<Unit filename="build/release-linux-i386/client/unix_shared.d" />
+		<Unit filename="build/release-linux-i386/client/unzip.d" />
+		<Unit filename="build/release-linux-i386/client/vm.d" />
+		<Unit filename="build/release-linux-i386/client/vm_interpreted.d" />
+		<Unit filename="build/release-linux-i386/client/vm_x86.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_bspq3.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_cluster.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_debug.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_entity.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_file.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_main.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_move.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_optimize.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_reach.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_route.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_routealt.d" />
+		<Unit filename="build/release-linux-i386/ded/be_aas_sample.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_char.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_chat.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_gen.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_goal.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_move.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_weap.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ai_weight.d" />
+		<Unit filename="build/release-linux-i386/ded/be_ea.d" />
+		<Unit filename="build/release-linux-i386/ded/be_interface.d" />
+		<Unit filename="build/release-linux-i386/ded/cm_load.d" />
+		<Unit filename="build/release-linux-i386/ded/cm_patch.d" />
+		<Unit filename="build/release-linux-i386/ded/cm_polylib.d" />
+		<Unit filename="build/release-linux-i386/ded/cm_test.d" />
+		<Unit filename="build/release-linux-i386/ded/cm_trace.d" />
+		<Unit filename="build/release-linux-i386/ded/cmd.d" />
+		<Unit filename="build/release-linux-i386/ded/common.d" />
+		<Unit filename="build/release-linux-i386/ded/cvar.d" />
+		<Unit filename="build/release-linux-i386/ded/files.d" />
+		<Unit filename="build/release-linux-i386/ded/ftola.d" />
+		<Unit filename="build/release-linux-i386/ded/huffman.d" />
+		<Unit filename="build/release-linux-i386/ded/l_crc.d" />
+		<Unit filename="build/release-linux-i386/ded/l_libvar.d" />
+		<Unit filename="build/release-linux-i386/ded/l_log.d" />
+		<Unit filename="build/release-linux-i386/ded/l_memory.d" />
+		<Unit filename="build/release-linux-i386/ded/l_precomp.d" />
+		<Unit filename="build/release-linux-i386/ded/l_script.d" />
+		<Unit filename="build/release-linux-i386/ded/l_struct.d" />
+		<Unit filename="build/release-linux-i386/ded/linux_signals.d" />
+		<Unit filename="build/release-linux-i386/ded/matha.d" />
+		<Unit filename="build/release-linux-i386/ded/md4.d" />
+		<Unit filename="build/release-linux-i386/ded/msg.d" />
+		<Unit filename="build/release-linux-i386/ded/net_chan.d" />
+		<Unit filename="build/release-linux-i386/ded/null_client.d" />
+		<Unit filename="build/release-linux-i386/ded/null_input.d" />
+		<Unit filename="build/release-linux-i386/ded/null_snddma.d" />
+		<Unit filename="build/release-linux-i386/ded/q_math.d" />
+		<Unit filename="build/release-linux-i386/ded/q_shared.d" />
+		<Unit filename="build/release-linux-i386/ded/snapvectora.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_bot.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_ccmds.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_client.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_game.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_init.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_main.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_net_chan.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_snapshot.d" />
+		<Unit filename="build/release-linux-i386/ded/sv_world.d" />
+		<Unit filename="build/release-linux-i386/ded/unix_main.d" />
+		<Unit filename="build/release-linux-i386/ded/unix_net.d" />
+		<Unit filename="build/release-linux-i386/ded/unix_shared.d" />
+		<Unit filename="build/release-linux-i386/ded/unzip.d" />
+		<Unit filename="build/release-linux-i386/ded/vm.d" />
+		<Unit filename="build/release-linux-i386/ded/vm_interpreted.d" />
+		<Unit filename="build/release-linux-i386/ded/vm_x86.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_consolecmds.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_draw.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_drawtools.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_effects.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_ents.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_event.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_info.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_localents.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_main.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_marks.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_newdraw.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_players.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_playerstate.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_predict.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_scoreboard.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_servercmds.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_snapshot.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_syscalls.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_view.d" />
+		<Unit filename="build/release-linux-i386/missionpack/cgame/cg_weapons.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_chat.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_cmd.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_dmnet.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_dmq3.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_main.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_team.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/ai_vcmd.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/bg_misc.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/bg_pmove.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/bg_slidemove.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_active.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_arenas.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_bot.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_client.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_cmds.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_combat.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_items.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_main.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_mem.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_misc.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_missile.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_mover.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_session.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_spawn.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_svcmds.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_syscalls.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_target.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_team.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_trigger.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_utils.d" />
+		<Unit filename="build/release-linux-i386/missionpack/game/g_weapon.d" />
+		<Unit filename="build/release-linux-i386/missionpack/qcommon/q_math.d" />
+		<Unit filename="build/release-linux-i386/missionpack/qcommon/q_shared.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_atoms.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_gameinfo.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_main.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_players.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_shared.d" />
+		<Unit filename="build/release-linux-i386/missionpack/ui/ui_syscalls.d" />
+		<Unit filename="ccrmamod/AL/al.h" />
+		<Unit filename="ccrmamod/AL/alc.h" />
+		<Unit filename="ccrmamod/AL/alctypes.h" />
+		<Unit filename="ccrmamod/AL/altypes.h" />
+		<Unit filename="ccrmamod/AL/alut.h" />
+		<Unit filename="ccrmamod/OSC-Kit/NetworkReturnAddress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/NetworkReturnAddress.h" />
+		<Unit filename="ccrmamod/OSC-Kit/NetworkUDP.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-address-space.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-address-space.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-callbacklist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-callbacklist.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-common.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-dispatch.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-drop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-drop.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-internal-messages.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-pattern-match.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-pattern-match.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-priority-queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-priority-queue.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-receive.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-receive.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-string-help.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-string-help.h" />
+		<Unit filename="ccrmamod/OSC-Kit/OSC-system-dependent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-timetag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/OSC-timetag.h" />
+		<Unit filename="ccrmamod/OSC-Kit/simplesynth-osc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/test-priority-queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/OSC-Kit/testOSC.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/SDL12/include/SDL.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_active.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_audio.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_byteorder.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_cdrom.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_amiga.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_dreamcast.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_macos.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_macosx.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_minimal.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_os2.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_config_win32.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_copying.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_cpuinfo.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_endian.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_error.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_events.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_getenv.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_joystick.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_keyboard.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_keysym.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_loadso.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_main.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_mouse.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_mutex.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_name.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_opengl.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_platform.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_quit.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_rwops.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_stdinc.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_syswm.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_thread.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_timer.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_types.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_version.h" />
+		<Unit filename="ccrmamod/SDL12/include/SDL_video.h" />
+		<Unit filename="ccrmamod/SDL12/include/begin_code.h" />
+		<Unit filename="ccrmamod/SDL12/include/close_code.h" />
+		<Unit filename="ccrmamod/botlib/aasfile.h" />
+		<Unit filename="ccrmamod/botlib/be_aas.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_bsp.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_bspq3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_cluster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_cluster.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_debug.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_def.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_entity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_entity.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_file.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_funcs.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_main.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_move.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_move.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_optimize.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_optimize.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_reach.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_reach.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_route.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_route.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_routealt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_routealt.h" />
+		<Unit filename="ccrmamod/botlib/be_aas_sample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_aas_sample.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_char.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_char.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_chat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_chat.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_gen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_gen.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_goal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_goal.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_move.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_move.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_weap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_weap.h" />
+		<Unit filename="ccrmamod/botlib/be_ai_weight.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ai_weight.h" />
+		<Unit filename="ccrmamod/botlib/be_ea.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_ea.h" />
+		<Unit filename="ccrmamod/botlib/be_interface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/be_interface.h" />
+		<Unit filename="ccrmamod/botlib/botlib.h" />
+		<Unit filename="ccrmamod/botlib/l_crc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_crc.h" />
+		<Unit filename="ccrmamod/botlib/l_libvar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_libvar.h" />
+		<Unit filename="ccrmamod/botlib/l_log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_log.h" />
+		<Unit filename="ccrmamod/botlib/l_memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_memory.h" />
+		<Unit filename="ccrmamod/botlib/l_precomp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_precomp.h" />
+		<Unit filename="ccrmamod/botlib/l_script.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_script.h" />
+		<Unit filename="ccrmamod/botlib/l_struct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/botlib/l_struct.h" />
+		<Unit filename="ccrmamod/botlib/l_utils.h" />
+		<Unit filename="ccrmamod/cgame/cg_consolecmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_drawtools.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_effects.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_ents.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_info.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_local.h" />
+		<Unit filename="ccrmamod/cgame/cg_localents.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_marks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_newdraw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_particles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_players.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_playerstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_predict.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_public.h" />
+		<Unit filename="ccrmamod/cgame/cg_scoreboard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_servercmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_snapshot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_syscalls.asm" />
+		<Unit filename="ccrmamod/cgame/cg_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_view.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/cgame/cg_weapons.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_avi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_cgame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_cin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_console.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_curl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_curl.h" />
+		<Unit filename="ccrmamod/client/cl_input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_keys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_net_chan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_scrn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/cl_ui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/client.h" />
+		<Unit filename="ccrmamod/client/keycodes.h" />
+		<Unit filename="ccrmamod/client/keys.h" />
+		<Unit filename="ccrmamod/client/qal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/qal.h" />
+		<Unit filename="ccrmamod/client/snd_adpcm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_codec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_codec.h" />
+		<Unit filename="ccrmamod/client/snd_codec_ogg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_codec_wav.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_local.h" />
+		<Unit filename="ccrmamod/client/snd_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_mix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_openal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/client/snd_public.h" />
+		<Unit filename="ccrmamod/client/snd_wavelet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_chat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_chat.h" />
+		<Unit filename="ccrmamod/game/ai_cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_cmd.h" />
+		<Unit filename="ccrmamod/game/ai_dmnet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_dmnet.h" />
+		<Unit filename="ccrmamod/game/ai_dmq3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_dmq3.h" />
+		<Unit filename="ccrmamod/game/ai_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_main.h" />
+		<Unit filename="ccrmamod/game/ai_team.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_team.h" />
+		<Unit filename="ccrmamod/game/ai_vcmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/ai_vcmd.h" />
+		<Unit filename="ccrmamod/game/bg_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/bg_lib.h" />
+		<Unit filename="ccrmamod/game/bg_local.h" />
+		<Unit filename="ccrmamod/game/bg_misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/bg_pmove.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/bg_public.h" />
+		<Unit filename="ccrmamod/game/bg_slidemove.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/chars.h" />
+		<Unit filename="ccrmamod/game/g_active.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_arenas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_bot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_cmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_combat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_items.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_local.h" />
+		<Unit filename="ccrmamod/game/g_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_missile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_mover.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_public.h" />
+		<Unit filename="ccrmamod/game/g_rankings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_rankings.h" />
+		<Unit filename="ccrmamod/game/g_session.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_spawn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_svcmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_syscalls.asm" />
+		<Unit filename="ccrmamod/game/g_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_target.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_team.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_team.h" />
+		<Unit filename="ccrmamod/game/g_trigger.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/g_weapon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/game/inv.h" />
+		<Unit filename="ccrmamod/game/match.h" />
+		<Unit filename="ccrmamod/game/syn.h" />
+		<Unit filename="ccrmamod/jpeg-6/jcapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jccoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jccolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcdctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jchuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jchuff.h" />
+		<Unit filename="ccrmamod/jpeg-6/jcinit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcomapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jconfig.h" />
+		<Unit filename="ccrmamod/jpeg-6/jcparam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcphuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcprepct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jcsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jctrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdatadst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdatasrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdcoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdcolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdct.h" />
+		<Unit filename="ccrmamod/jpeg-6/jddctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdhuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdhuff.h" />
+		<Unit filename="ccrmamod/jpeg-6/jdinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdmerge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdphuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdpostct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jdtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jerror.h" />
+		<Unit filename="ccrmamod/jpeg-6/jfdctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jfdctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jfdctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jidctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jidctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jidctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jidctred.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jinclude.h" />
+		<Unit filename="ccrmamod/jpeg-6/jload.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemansi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemdos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemname.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemnobs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jmemsys.h" />
+		<Unit filename="ccrmamod/jpeg-6/jmorecfg.h" />
+		<Unit filename="ccrmamod/jpeg-6/jpegint.h" />
+		<Unit filename="ccrmamod/jpeg-6/jpeglib.h" />
+		<Unit filename="ccrmamod/jpeg-6/jpegtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jquant1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jquant2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jutils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/jpeg-6/jversion.h" />
+		<Unit filename="ccrmamod/libOSC/OSC-client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/libOSC/OSC-client.h" />
+		<Unit filename="ccrmamod/libOSC/OSC-timetag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/libOSC/OSC-timetag.h" />
+		<Unit filename="ccrmamod/libOSC/test_OSC.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/libOSC/test_OSC_timeTag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/libcurl/curl/curl.h" />
+		<Unit filename="ccrmamod/libcurl/curl/curlver.h" />
+		<Unit filename="ccrmamod/libcurl/curl/easy.h" />
+		<Unit filename="ccrmamod/libcurl/curl/mprintf.h" />
+		<Unit filename="ccrmamod/libcurl/curl/multi.h" />
+		<Unit filename="ccrmamod/libcurl/curl/stdcheaders.h" />
+		<Unit filename="ccrmamod/libcurl/curl/types.h" />
+		<Unit filename="ccrmamod/liblo-0.24/config.h" />
+		<Unit filename="ccrmamod/liblo-0.24/examples/example_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/examples/example_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/examples/nonblocking_server_example.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_endian.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_errors.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_lowlevel.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_macros.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_osc_types.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_throw.h" />
+		<Unit filename="ccrmamod/liblo-0.24/lo/lo_types.h" />
+		<Unit filename="ccrmamod/liblo-0.24/src/address.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/blob.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/bundle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/lo_types_internal.h" />
+		<Unit filename="ccrmamod/liblo-0.24/src/message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/method.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/pattern_match.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/send.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/server_thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/subtest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/testlo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo-0.24/src/timetag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/config.h" />
+		<Unit filename="ccrmamod/liblo/examples/example_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/examples/example_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/examples/nonblocking_server_example.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/lo/lo.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_endian.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_errors.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_lowlevel.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_macros.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_osc_types.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_throw.h" />
+		<Unit filename="ccrmamod/liblo/lo/lo_types.h" />
+		<Unit filename="ccrmamod/liblo/src/address.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/blob.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/bundle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/lo_types_internal.h" />
+		<Unit filename="ccrmamod/liblo/src/message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/method.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/pattern_match.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/send.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/server_thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/subtest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/testlo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/liblo/src/timetag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/mac_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_glimp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/null/null_snddma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/osc/SimpleSend.cpp" />
+		<Unit filename="ccrmamod/osc/osc.cpp" />
+		<Unit filename="ccrmamod/osc/osc.h" />
+		<Unit filename="ccrmamod/osc/oscpack/examples/OscDump.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/examples/SimpleReceive.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/examples/SimpleSend.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/extern/externs.h" />
+		<Unit filename="ccrmamod/osc/oscpack/extern/test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/osc/oscpack/extern/test.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/extern/test.h" />
+		<Unit filename="ccrmamod/osc/oscpack/extern/testc.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/IpEndpointName.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/IpEndpointName.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/NetworkingUtils.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/PacketListener.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/TimerListener.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/UdpSocket.h" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/posix/NetworkingUtils.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/posix/UdpSocket.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/win32/NetworkingUtils.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/ip/win32/UdpSocket.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/MessageMappingOscPacketListener.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscException.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscHostEndianness.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscOutboundPacketStream.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscOutboundPacketStream.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscPacketListener.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscPrintReceivedElements.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscPrintReceivedElements.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscReceivedElements.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscReceivedElements.h" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscTypes.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/osc/OscTypes.h" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscReceiveTest.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscReceiveTest.h" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscSendTests.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscSendTests.h" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscUnitTests.cpp" />
+		<Unit filename="ccrmamod/osc/oscpack/tests/OscUnitTests.h" />
+		<Unit filename="ccrmamod/osc/test.cpp" />
+		<Unit filename="ccrmamod/osc/test.h" />
+		<Unit filename="ccrmamod/q3_ui/ui_addbots.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_atoms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_cdkey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_cinematics.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_confirm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_connect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_controls2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_credits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_demo2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_gameinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_ingame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_loadconfig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_local.h" />
+		<Unit filename="ccrmamod/q3_ui/ui_login.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_mfield.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_mods.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_network.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_options.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_playermodel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_players.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_playersettings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_preferences.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_qmenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_rankings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_rankstatus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_removebots.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_saveconfig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_serverinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_servers2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_setup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_signup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_sound.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_sparena.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_specifyleague.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_specifyserver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_splevel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_sppostgame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_spreset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_spskill.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_startserver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_team.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_teamorders.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/q3_ui/ui_video.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cm_load.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cm_local.h" />
+		<Unit filename="ccrmamod/qcommon/cm_patch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cm_patch.h" />
+		<Unit filename="ccrmamod/qcommon/cm_polylib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cm_polylib.h" />
+		<Unit filename="ccrmamod/qcommon/cm_public.h" />
+		<Unit filename="ccrmamod/qcommon/cm_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cm_trace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/cvar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/files.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/huffman.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/md4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/msg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/net_chan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/q_math.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/q_platform.h" />
+		<Unit filename="ccrmamod/qcommon/q_shared.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/q_shared.h" />
+		<Unit filename="ccrmamod/qcommon/qcommon.h" />
+		<Unit filename="ccrmamod/qcommon/qfiles.h" />
+		<Unit filename="ccrmamod/qcommon/surfaceflags.h" />
+		<Unit filename="ccrmamod/qcommon/unzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/unzip.h" />
+		<Unit filename="ccrmamod/qcommon/vm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_interpreted.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_local.h" />
+		<Unit filename="ccrmamod/qcommon/vm_none.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_ppc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_ppc_new.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_x86.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/qcommon/vm_x86_64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/qgl.h" />
+		<Unit filename="ccrmamod/renderer/qgl_linked.h" />
+		<Unit filename="ccrmamod/renderer/tr_animation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_backend.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_bloom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_bsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_cmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_curve.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_flares.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_font.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_light.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_local.h" />
+		<Unit filename="ccrmamod/renderer/tr_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_marks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_mesh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_model.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_noise.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_public.h" />
+		<Unit filename="ccrmamod/renderer/tr_scene.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_shade.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_shade_calc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_shader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_shadows.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_sky.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_surface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/renderer/tr_types.h" />
+		<Unit filename="ccrmamod/renderer/tr_world.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/server.h" />
+		<Unit filename="ccrmamod/server/sv_bot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_ccmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_net_chan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_rankings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_snapshot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/server/sv_world.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/asm/cmdlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/asm/cmdlib.h" />
+		<Unit filename="ccrmamod/tools/asm/mathlib.h" />
+		<Unit filename="ccrmamod/tools/asm/opstrings.h" />
+		<Unit filename="ccrmamod/tools/asm/q3asm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/cpp.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/eval.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/getopt.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/hideset.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/include.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/lex.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/macro.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/nlist.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/tokens.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/cpp/unix.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/etc/bytecode.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/etc/lcc.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/lburg/gram.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/lburg/lburg.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/alloc.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/bind.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/bytecode.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/dag.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/dagcheck.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/dagcheck.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/decl.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/enode.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/error.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/event.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/expr.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/gen.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/init.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/inits.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/input.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/lex.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/list.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/main.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/null.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/output.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/prof.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/profio.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/simp.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/stmt.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/string.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/sym.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/symbolic.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/trace.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/tree.d" />
+		<Unit filename="ccrmamod/tools/lcc/build-linux-i386/rcc/types.d" />
+		<Unit filename="ccrmamod/tools/lcc/cpp/cpp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/cpp.h" />
+		<Unit filename="ccrmamod/tools/lcc/cpp/eval.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/getopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/hideset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/include.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/lex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/macro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/nlist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/tokens.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/cpp/unix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/etc/bytecode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/etc/lcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/lburg/gram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/lburg/lburg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/lburg/lburg.h" />
+		<Unit filename="ccrmamod/tools/lcc/src/alloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/bind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/bytecode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/c.h" />
+		<Unit filename="ccrmamod/tools/lcc/src/config.h" />
+		<Unit filename="ccrmamod/tools/lcc/src/dag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/decl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/enode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/expr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/gen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/inits.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/lex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/null.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/prof.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/profio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/simp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/stmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/sym.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/symbolic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/token.h" />
+		<Unit filename="ccrmamod/tools/lcc/src/trace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/tree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/tools/lcc/src/types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/menudef.h" />
+		<Unit filename="ccrmamod/ui/ui_atoms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/ui_gameinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/ui_local.h" />
+		<Unit filename="ccrmamod/ui/ui_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/ui_players.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/ui_public.h" />
+		<Unit filename="ccrmamod/ui/ui_shared.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/ui/ui_shared.h" />
+		<Unit filename="ccrmamod/ui/ui_syscalls.asm" />
+		<Unit filename="ccrmamod/ui/ui_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/ftola.s" />
+		<Unit filename="ccrmamod/unix/linux_glimp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/linux_joystick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/linux_local.h" />
+		<Unit filename="ccrmamod/unix/linux_qgl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/linux_signals.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/linux_snd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/matha.s" />
+		<Unit filename="ccrmamod/unix/qasm.h" />
+		<Unit filename="ccrmamod/unix/sdl_glimp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/sdl_snd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/snapvectora.s" />
+		<Unit filename="ccrmamod/unix/snd_mixa.s" />
+		<Unit filename="ccrmamod/unix/unix_glw.h" />
+		<Unit filename="ccrmamod/unix/unix_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/unix_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/unix/unix_shared.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/glw_win.h" />
+		<Unit filename="ccrmamod/win32/resource.h" />
+		<Unit filename="ccrmamod/win32/win_gamma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_glimp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_local.h" />
+		<Unit filename="ccrmamod/win32/win_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_qgl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_shared.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_snd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_syscon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/win_wndproc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ccrmamod/win32/winquake.rc" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

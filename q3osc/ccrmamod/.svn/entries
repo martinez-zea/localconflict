@@ -1,0 +1,97 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod
+file:///user/r/rob/svn
+
+
+
+2008-06-19T20:54:30.849512Z
+6
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6fc08ca2-b985-401d-8be3-29ace1d9d286
+
+q3_ui
+dir
+
+liblo-0.24
+dir
+
+unix
+dir
+
+osc
+dir
+
+SDL12
+dir
+
+jpeg-6
+dir
+
+libs
+dir
+
+AL
+dir
+
+libcurl
+dir
+
+tools
+dir
+
+liblo
+dir
+
+win32
+dir
+
+server
+dir
+
+renderer
+dir
+
+game
+dir
+
+OSC-Kit
+dir
+
+qcommon
+dir
+
+null
+dir
+
+libOSC
+dir
+
+botlib
+dir
+
+cgame
+dir
+
+ui
+dir
+
+client
+dir
+

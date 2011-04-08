@@ -1,0 +1,30 @@
+ifndef MOUNT_DIR
+MOUNT_DIR=ccrmamod
+endif
+
+BUILD_CLIENT     = 1
+BUILD_CLIENT_SMP = 1
+BUILD_SERVER     = 1
+BUILD_GAME_SO    = 1
+BUILD_GAME_QVM   = 0
+
+#rkh: added oscdir
+#OSCDIR=$(MOUNT_DIR)/oscpack/extern/
+OSCPACK_OSC=$(MOUNT_DIR)/osc/oscpack/osc/
+OSCPACK_IP=$(MOUNT_DIR)/osc/oscpack/ip/
+OSCPACK_IP_POSIX=$(MOUNT_DIR)/osc/oscpack/ip/posix/
+
+OSCDIR=$(MOUNT_DIR)/osc/
+
+ifeq ($(PLATFORM),linux)
+
+  #rkh: added g++
+  CPP=g++ 
+
+  #rkh: added cPPFLAGS
+  BASE_CPPFLAGS = -v -Wall
+
+endif
+
+#rkh: add possible g++ compilation flags
+#DO_CPP=$(CPP) $(BASE_CPPFLAGS) -o $@ -c $<

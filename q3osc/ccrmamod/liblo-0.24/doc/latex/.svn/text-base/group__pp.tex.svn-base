@@ -1,0 +1,76 @@
+\hypertarget{group__pp}{
+\section{Prettyprinting functions}
+\label{group__pp}\index{Prettyprinting functions@{Prettyprinting functions}}
+}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group__pp_g97e508300ee8b57d4ba1f20a1c4d0235}{lo\_\-bundle\_\-pp} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\item 
+void \hyperlink{group__pp_g5fa7f79f6f490d9a462d6cd894df3b76}{lo\_\-message\_\-pp} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\item 
+void \hyperlink{group__pp_g1699678a3a2d4221bb55fa2e05326ef0}{lo\_\-arg\_\-pp} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type, void $\ast$data)
+\item 
+void \hyperlink{group__pp_g31b1944c9f06645d87bdffbf769a1945}{lo\_\-server\_\-pp} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\item 
+void \hyperlink{group__pp_g220be2c9f4cfe4516ebcb5c4687a2b9f}{lo\_\-method\_\-pp} (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} m)
+\item 
+void \hyperlink{group__pp_g1ea3369b4cf60368cba3336682afcaad}{lo\_\-method\_\-pp\_\-prefix} (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} m, const char $\ast$p)
+\item 
+void \hyperlink{group__pp_g6ba794aacbb04dada6939980ce71381a}{lo\_\-server\_\-thread\_\-pp} (\hyperlink{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{lo\_\-server\_\-thread} st)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+These functions all print an ASCII representation of thier argument to stdout. Useful for debugging. 
+
+\subsection{Function Documentation}
+\hypertarget{group__pp_g1699678a3a2d4221bb55fa2e05326ef0}{
+\index{pp@{pp}!lo_arg_pp@{lo\_\-arg\_\-pp}}
+\index{lo_arg_pp@{lo\_\-arg\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-arg\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-arg\_\-pp (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} {\em type}, void $\ast$ {\em data})}}
+\label{group__pp_g1699678a3a2d4221bb55fa2e05326ef0}
+
+
+\hypertarget{group__pp_g97e508300ee8b57d4ba1f20a1c4d0235}{
+\index{pp@{pp}!lo_bundle_pp@{lo\_\-bundle\_\-pp}}
+\index{lo_bundle_pp@{lo\_\-bundle\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-bundle\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-bundle\_\-pp (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} {\em b})}}
+\label{group__pp_g97e508300ee8b57d4ba1f20a1c4d0235}
+
+
+\hypertarget{group__pp_g5fa7f79f6f490d9a462d6cd894df3b76}{
+\index{pp@{pp}!lo_message_pp@{lo\_\-message\_\-pp}}
+\index{lo_message_pp@{lo\_\-message\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-message\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-message\_\-pp (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} {\em m})}}
+\label{group__pp_g5fa7f79f6f490d9a462d6cd894df3b76}
+
+
+\hypertarget{group__pp_g220be2c9f4cfe4516ebcb5c4687a2b9f}{
+\index{pp@{pp}!lo_method_pp@{lo\_\-method\_\-pp}}
+\index{lo_method_pp@{lo\_\-method\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-method\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-method\_\-pp (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} {\em m})}}
+\label{group__pp_g220be2c9f4cfe4516ebcb5c4687a2b9f}
+
+
+\hypertarget{group__pp_g1ea3369b4cf60368cba3336682afcaad}{
+\index{pp@{pp}!lo_method_pp_prefix@{lo\_\-method\_\-pp\_\-prefix}}
+\index{lo_method_pp_prefix@{lo\_\-method\_\-pp\_\-prefix}!pp@{pp}}
+\subsubsection[lo\_\-method\_\-pp\_\-prefix]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-method\_\-pp\_\-prefix (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} {\em m}, const char $\ast$ {\em p})}}
+\label{group__pp_g1ea3369b4cf60368cba3336682afcaad}
+
+
+\hypertarget{group__pp_g31b1944c9f06645d87bdffbf769a1945}{
+\index{pp@{pp}!lo_server_pp@{lo\_\-server\_\-pp}}
+\index{lo_server_pp@{lo\_\-server\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-server\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-server\_\-pp (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} {\em s})}}
+\label{group__pp_g31b1944c9f06645d87bdffbf769a1945}
+
+
+\hypertarget{group__pp_g6ba794aacbb04dada6939980ce71381a}{
+\index{pp@{pp}!lo_server_thread_pp@{lo\_\-server\_\-thread\_\-pp}}
+\index{lo_server_thread_pp@{lo\_\-server\_\-thread\_\-pp}!pp@{pp}}
+\subsubsection[lo\_\-server\_\-thread\_\-pp]{\setlength{\rightskip}{0pt plus 5cm}void lo\_\-server\_\-thread\_\-pp (\hyperlink{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{lo\_\-server\_\-thread} {\em st})}}
+\label{group__pp_g6ba794aacbb04dada6939980ce71381a}
+
+

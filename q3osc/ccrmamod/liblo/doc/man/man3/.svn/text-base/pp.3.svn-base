@@ -1,0 +1,50 @@
+.TH "Prettyprinting functions" 3 "5 Dec 2007" "Version 0.24" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Prettyprinting functions \- 
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBlo_bundle_pp\fP (\fBlo_bundle\fP b)"
+.br
+.ti -1c
+.RI "void \fBlo_message_pp\fP (\fBlo_message\fP m)"
+.br
+.ti -1c
+.RI "void \fBlo_arg_pp\fP (\fBlo_type\fP type, void *data)"
+.br
+.ti -1c
+.RI "void \fBlo_server_pp\fP (\fBlo_server\fP s)"
+.br
+.ti -1c
+.RI "void \fBlo_method_pp\fP (\fBlo_method\fP m)"
+.br
+.ti -1c
+.RI "void \fBlo_method_pp_prefix\fP (\fBlo_method\fP m, const char *p)"
+.br
+.ti -1c
+.RI "void \fBlo_server_thread_pp\fP (\fBlo_server_thread\fP st)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+These functions all print an ASCII representation of thier argument to stdout. Useful for debugging. 
+.SH "Function Documentation"
+.PP 
+.SS "void lo_arg_pp (\fBlo_type\fP type, void * data)"
+.PP
+.SS "void lo_bundle_pp (\fBlo_bundle\fP b)"
+.PP
+.SS "void lo_message_pp (\fBlo_message\fP m)"
+.PP
+.SS "void lo_method_pp (\fBlo_method\fP m)"
+.PP
+.SS "void lo_method_pp_prefix (\fBlo_method\fP m, const char * p)"
+.PP
+.SS "void lo_server_pp (\fBlo_server\fP s)"
+.PP
+.SS "void lo_server_thread_pp (\fBlo_server_thread\fP st)"
+.PP
+

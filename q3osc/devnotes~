@@ -1,0 +1,38 @@
+
+g_local.h
+----------
+add boolean to clientPersistant_t
+
+declare visible and findradus 
+
+
+g_cmds.c
+--------
+modify ClientCommand function to recognize "homing" flag
+
+add function Cmn_SetHoming_f which is called by ClientCommand and sets pers.homing_status flag
+
+g_utils.c
+---------
+add function findradius
+
+add visible function to see if view between target and source is occluded by wall
+
+
+g_missle.c
+-----------
+add G_HomingMissile to define homing missile's behaviors
+
+modify fire_rocket to check for self->client->pers.homing_status and act accordingly
+
+add Missile_Smooth_H to smooth rocket flight behaviors
+
+Call Missile_Smooth_H from G_RunMissile
+
+
+
+g_client.c
+----------
+in ClientBegin function, set default client->pers.homing_status val to off
+
+

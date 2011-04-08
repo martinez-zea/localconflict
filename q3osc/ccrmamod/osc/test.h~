@@ -1,0 +1,10 @@
+#if defined(__cplusplus) || defined(_cplusplus)
+   extern "C" {
+#endif
+
+int	foo(int i);
+void	sendOSCMessage(int clientno);
+
+#if defined(__cplusplus) || defined(_cplusplus)
+   }
+#endif

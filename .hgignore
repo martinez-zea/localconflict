@@ -10,6 +10,8 @@ syntax: glob
 */localConflict-env/*
 localConflict/media/img-up/*
 localConflict/media/cache/*
+q3osc/build/*
+q3osc/doc/*
 *.css~
 *.db
 

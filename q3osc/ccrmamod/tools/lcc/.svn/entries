@@ -1,0 +1,130 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/tools/lcc
+file:///user/r/rob/svn
+
+
+
+2008-06-17T01:11:44.710484Z
+5
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6fc08ca2-b985-401d-8be3-29ace1d9d286
+
+LOG
+file
+
+
+
+
+2008-05-08T21:25:24.000000Z
+28ecdebbfdd8dc2416ab9ab92574a83e
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+cpp
+dir
+
+build-linux-i386
+dir
+
+doc
+dir
+
+buildnt.bat
+file
+
+
+
+
+2008-05-08T21:25:22.000000Z
+1b487e199fa89042197634a14a648296
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+src
+dir
+
+COPYRIGHT
+file
+
+
+
+
+2008-05-08T21:25:22.000000Z
+b68c468bde8703605e9fa4caf11da372
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+README.id
+file
+
+
+
+
+2008-05-08T21:25:24.000000Z
+bfa123789d1cb97038dc54695a842cff
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+etc
+dir
+
+lburg
+dir
+
+makefile.nt
+file
+
+
+
+
+2008-05-08T21:25:22.000000Z
+1e2d0951c88f1798d3277a16eed2e598
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+README
+file
+
+
+
+
+2008-05-08T21:25:22.000000Z
+63eb3aebee8506dabf0a4772241f3a2b
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+Makefile
+file
+
+
+
+
+2008-05-08T21:25:22.000000Z
+37c8395bc7179591880804e60afae8c1
+2008-05-08T21:44:00.880012Z
+2
+rob
+

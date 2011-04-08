@@ -1,0 +1,55 @@
+8
+
+dir
+6
+file:///user/r/rob/svn/q3osc/ccrmamod/liblo-0.24/examples/.libs
+file:///user/r/rob/svn
+
+
+
+2008-05-08T21:44:00.880012Z
+2
+rob
+
+
+svn:special svn:externals svn:needs-lock
+
+example_server
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+e9169a18eec883f113a48d48732789a7
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+nonblocking_server_example
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+2998f38a1e79577e70ae98db3da10400
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+
+example_client
+file
+
+
+
+
+2008-05-08T21:25:11.000000Z
+a8c05a2f48e0d69c865a8b9758b050ef
+2008-05-08T21:44:00.880012Z
+2
+rob
+has-props
+

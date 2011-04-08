@@ -1,0 +1,152 @@
+\hypertarget{lo__lowlevel_8h}{
+\section{lo\_\-lowlevel.h File Reference}
+\label{lo__lowlevel_8h}\index{lo_lowlevel.h@{lo\_\-lowlevel.h}}
+}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef long double \hyperlink{group__liblolowlevel_g0062385786b0375d4b6954ba1fb8d52b}{lo\_\-hires}
+\begin{CompactList}\small\item\em Type used to represent numerical values in conversions between OSC types. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__liblolowlevel_g175a13c6d81adf5c346cdca9bbdcf225}{lo\_\-send\_\-message} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} targ, const char $\ast$path, \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} msg)
+\begin{CompactList}\small\item\em send a lo\_\-message object to target targ \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_g9d1aa7c1ee1ce60fe0cf7e3f1e5a6822}{lo\_\-send\_\-message\_\-from} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} targ, \hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} serv, const char $\ast$path, \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} msg)
+\begin{CompactList}\small\item\em send a lo\_\-message object to target targ from address of serv \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gd1138d0f777693ae0321e3da65aee53e}{lo\_\-send\_\-bundle} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} targ, \hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\begin{CompactList}\small\item\em send a lo\_\-bundle object to address targ \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gb5de220b7d6d7c2bf6b0ca4316a54b7a}{lo\_\-send\_\-bundle\_\-from} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} targ, \hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} serv, \hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\begin{CompactList}\small\item\em send a lo\_\-bundle object to address targ from address of serv \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} \hyperlink{group__liblolowlevel_g2cce2e97452e3e9d6b5d3af33bb1d153}{lo\_\-message\_\-new} ()
+\begin{CompactList}\small\item\em Create a new lo\_\-message object. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g93d3687e77ae20167b82830c917a3e50}{lo\_\-message\_\-free} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Free memory allocated by lo\_\-message\_\-new and any subsequent lo\_\-message\_\-add$\ast$() calls. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, int32\_\-t a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g4704d1b80cb0fd005a1310f57ca46b00}{lo\_\-message\_\-add\_\-float} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, float a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g79458d53ab8f13ce3369b764d094d3c4}{lo\_\-message\_\-add\_\-string} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, const char $\ast$a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gdd46df28da46be3f526151051410c935}{lo\_\-message\_\-add\_\-blob} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, \hyperlink{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}{lo\_\-blob} a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gcc804708784d2ab1397c65bf99403864}{lo\_\-message\_\-add\_\-int64} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, int64\_\-t a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g2cbd8e6222b589b3ccb7b47f7ee147cc}{lo\_\-message\_\-add\_\-timetag} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, \hyperlink{structlo__timetag}{lo\_\-timetag} a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gd620fb686a8bdaf23e4bbe7a74b2ae66}{lo\_\-message\_\-add\_\-double} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, double a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_ga8e9583532819604e6b706e5d4a3cf1f}{lo\_\-message\_\-add\_\-symbol} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, const char $\ast$a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_ga40601d4b2be072f4c7e63def43a062e}{lo\_\-message\_\-add\_\-char} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, char a)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g4cd51119cad150e868987ba150a6b14b}{lo\_\-message\_\-add\_\-midi} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, uint8\_\-t a\mbox{[}4\mbox{]})
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g079bba28d38b8e5f83cc7498574eadb3}{lo\_\-message\_\-add\_\-true} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g422d7d8c097533bbf035cd3dfbe1721e}{lo\_\-message\_\-add\_\-false} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gc5061d92c52c03b9d23eff012cc1b496}{lo\_\-message\_\-add\_\-nil} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g826a762ee506b7f95fd27aadae82d56d}{lo\_\-message\_\-add\_\-infinitum} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Append a data item and typechar of the specified type to a message. See \hyperlink{group__liblolowlevel_g31ac1e4c0ec6c61f665ce3f9bbdc53c3}{lo\_\-message\_\-add\_\-int32()} for details. \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} \hyperlink{group__liblolowlevel_g1f4e07e4f8b67edc98f4b300412a3dbb}{lo\_\-message\_\-get\_\-source} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Returns the source (lo\_\-address) of an incoming message. \item\end{CompactList}\item 
+size\_\-t \hyperlink{group__liblolowlevel_g0855039d071b7031727213272857c27e}{lo\_\-message\_\-length} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, const char $\ast$path)
+\begin{CompactList}\small\item\em Return the length of a message in bytes. \item\end{CompactList}\item 
+void $\ast$ \hyperlink{group__liblolowlevel_g5a14045edea33d63792e9a4c82e13b02}{lo\_\-message\_\-serialise} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m, const char $\ast$path, void $\ast$to, size\_\-t $\ast$size)
+\begin{CompactList}\small\item\em Serialise the message object to an area of memory and return a pointer to the serialised form. \item\end{CompactList}\item 
+const char $\ast$ \hyperlink{group__liblolowlevel_g7dbaa4a6dfc9d7369cfbca195809be3c}{lo\_\-address\_\-get\_\-hostname} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} a)
+\begin{CompactList}\small\item\em Return the hostname of a lo\_\-address object. \item\end{CompactList}\item 
+const char $\ast$ \hyperlink{group__liblolowlevel_g75bc15ab78de049c0e0d7e24a0d6d0c1}{lo\_\-address\_\-get\_\-port} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} a)
+\begin{CompactList}\small\item\em Return the port/service name of a lo\_\-address object. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gaae09ebb4cf42e92504fe9aa7e7b2184}{lo\_\-address\_\-get\_\-protocol} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} a)
+\begin{CompactList}\small\item\em Return the protocol of a lo\_\-address object. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_g85d7101e9e3a3339544445b539e3a5d2}{lo\_\-address\_\-get\_\-url} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} a)
+\begin{CompactList}\small\item\em Return a URL representing an OSC address. \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} \hyperlink{group__liblolowlevel_g330a4a4e6227b185b3ec6219ff3e2859}{lo\_\-bundle\_\-new} (\hyperlink{structlo__timetag}{lo\_\-timetag} tt)
+\begin{CompactList}\small\item\em Create a new bundle object. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g44e0e03554e91e76e5856e99fbb8afad}{lo\_\-bundle\_\-add\_\-message} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b, const char $\ast$path, \hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\begin{CompactList}\small\item\em Adds an OSC message to an existing bundle. \item\end{CompactList}\item 
+size\_\-t \hyperlink{group__liblolowlevel_ga105f1c5b97a16beabdb6b4ab7af2b46}{lo\_\-bundle\_\-length} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\begin{CompactList}\small\item\em Return the length of a bundle in bytes. \item\end{CompactList}\item 
+void $\ast$ \hyperlink{group__liblolowlevel_gea61bc73c281efe4e2f95456e4d0f9f5}{lo\_\-bundle\_\-serialise} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b, void $\ast$to, size\_\-t $\ast$size)
+\begin{CompactList}\small\item\em Serialise the bundle object to an area of memory and return a pointer to the serialised form. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g2ba37901788d863d08a2b7d6ca4250e6}{lo\_\-bundle\_\-free} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\begin{CompactList}\small\item\em Frees the memory taken by a bundle object. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gce222e42c35d0256f115e00b84e8f853}{lo\_\-is\_\-numerical\_\-type} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} a)
+\begin{CompactList}\small\item\em return true if the type specified has a numerical value, such as LO\_\-INT32, LO\_\-FLOAT etc. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_geb9f59d9f7bf8d50f21809e44889eee7}{lo\_\-is\_\-string\_\-type} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} a)
+\begin{CompactList}\small\item\em return true if the type specified has a textual value, such as LO\_\-STRING or LO\_\-SYMBOL. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gf85d7a54ab80e1b2a3d17c4cfef38402}{lo\_\-coerce} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type\_\-to, \hyperlink{unionlo__arg}{lo\_\-arg} $\ast$to, \hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type\_\-from, \hyperlink{unionlo__arg}{lo\_\-arg} $\ast$from)
+\begin{CompactList}\small\item\em attempt to convert one OSC type to another. \item\end{CompactList}\item 
+\hyperlink{group__liblolowlevel_g0062385786b0375d4b6954ba1fb8d52b}{lo\_\-hires} \hyperlink{group__liblolowlevel_gfb7036664581480c9f2e898e57704c1b}{lo\_\-hires\_\-val} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type, \hyperlink{unionlo__arg}{lo\_\-arg} $\ast$p)
+\begin{CompactList}\small\item\em return the numerical value of the given argument with the maximum native system precision. \item\end{CompactList}\item 
+size\_\-t \hyperlink{group__liblolowlevel_gf793bbd32346a91d7d680d91ae68d1bd}{lo\_\-arg\_\-size} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type, void $\ast$data)
+\begin{CompactList}\small\item\em Return the storage size, in bytes, of the given argument. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_g29fc246595334f29d97d11b0186b17bd}{lo\_\-arg\_\-host\_\-endian} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type, void $\ast$data)
+\begin{CompactList}\small\item\em Convert the speficed argument to host endianness where neccesary. \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} \hyperlink{group__liblolowlevel_g78cfb23346e44465695293d4393447ae}{lo\_\-server\_\-new} (const char $\ast$port, \hyperlink{lo__types_8h_6663024c5970f397af12afdb906ab9bd}{lo\_\-err\_\-handler} err\_\-h)
+\begin{CompactList}\small\item\em Create a new server instance. \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} \hyperlink{group__liblolowlevel_g4afa474b11ed0d4511857ae79c56aaa1}{lo\_\-server\_\-new\_\-with\_\-proto} (const char $\ast$port, int proto, \hyperlink{lo__types_8h_6663024c5970f397af12afdb906ab9bd}{lo\_\-err\_\-handler} err\_\-h)
+\begin{CompactList}\small\item\em Create a new server instance, specifying protocol. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gd3dc9193e1eef0d71a4b046242b64216}{lo\_\-server\_\-free} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Free up memory used by the lo\_\-server object. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_g784a257252d05cc0e7210f4691f0661b}{lo\_\-server\_\-recv\_\-noblock} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s, int timeout)
+\begin{CompactList}\small\item\em Look for an OSC message waiting to be received. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gebef3611d24e4b5f60f16cce76a9e271}{lo\_\-server\_\-recv} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Block, waiting for an OSC message to be received. \item\end{CompactList}\item 
+\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} \hyperlink{group__liblolowlevel_g0c183cabaac67eb9aad3265ae1efa580}{lo\_\-server\_\-add\_\-method} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s, const char $\ast$path, const char $\ast$typespec, \hyperlink{lo__types_8h_4551cfeeee8917dea22bf1c7e858fd2b}{lo\_\-method\_\-handler} h, void $\ast$user\_\-data)
+\begin{CompactList}\small\item\em Add an OSC method to the specifed server. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gf834a6d62de7dcceaede62325e74c763}{lo\_\-server\_\-del\_\-method} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s, const char $\ast$path, const char $\ast$typespec)
+\begin{CompactList}\small\item\em Delete an OSC method from the specifed server. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_ge11ca5a5b4ec2943d5a04642ba5052ae}{lo\_\-server\_\-get\_\-socket\_\-fd} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return the file descriptor of the server socket. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_g532ef6e1b8675b23e65dd19eeb648c1d}{lo\_\-server\_\-get\_\-port} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return the port number that the server has bound to. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gb40a599fe8440512b18479dac333e89f}{lo\_\-server\_\-get\_\-protocol} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return the protocol that the server is using. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_g33df48c641833d330a8ba6704caf4977}{lo\_\-server\_\-get\_\-url} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return an OSC URL that can be used to contact the server. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_g04feb1063c3f4df6fec41405b28dd99a}{lo\_\-server\_\-events\_\-pending} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return true if there are scheduled events (eg. from bundles) waiting to be dispatched by the server. \item\end{CompactList}\item 
+double \hyperlink{group__liblolowlevel_g750076fdd75e2a7d3e442f6bd5968fb9}{lo\_\-server\_\-next\_\-event\_\-delay} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\begin{CompactList}\small\item\em Return the time in seconds until the next scheduled event. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_g58266d3085b73fc4dc5e1913de810b22}{lo\_\-url\_\-get\_\-protocol} (const char $\ast$url)
+\begin{CompactList}\small\item\em Return the protocol portion of an OSC URL, eg. udp, tcp. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_gb1b7df7061a0b2cd0db31d3fca1b399b}{lo\_\-url\_\-get\_\-hostname} (const char $\ast$url)
+\begin{CompactList}\small\item\em Return the hostname portion of an OSC URL. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_g488fb8e96fb86320590c1a8ca389593d}{lo\_\-url\_\-get\_\-port} (const char $\ast$url)
+\begin{CompactList}\small\item\em Return the port portion of an OSC URL. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__liblolowlevel_g617d046cc702a2c5ab8539659381ef18}{lo\_\-url\_\-get\_\-path} (const char $\ast$url)
+\begin{CompactList}\small\item\em Return the path portion of an OSC URL. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_ge62aa870bad161e4507f6338820ac243}{lo\_\-strsize} (const char $\ast$s)
+\begin{CompactList}\small\item\em A function to calculate the amount of OSC message space required by a C char $\ast$. \item\end{CompactList}\item 
+uint32\_\-t \hyperlink{group__liblolowlevel_g2315f71c3832c365bce25d9b21726043}{lo\_\-blobsize} (\hyperlink{lo__types_8h_8e780f8c09e3e4dd737fe249f11d16fc}{lo\_\-blob} b)
+\begin{CompactList}\small\item\em A function to calculate the amount of OSC message space required by a lo\_\-blob object. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gc26f3d15dbd23f34d4f9e4f6f0b81bbb}{lo\_\-pattern\_\-match} (const char $\ast$str, const char $\ast$p)
+\begin{CompactList}\small\item\em Test a string against an OSC pattern glob. \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_ga7dc23a688fb08e2af1f5b981d7b0798}{lo\_\-send\_\-internal} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} t, const char $\ast$file, const int line, const char $\ast$path, const char $\ast$types,...)
+\begin{CompactList}\small\item\em the real send function (don't call directly) \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gdeddaa8c418eec4600ef1f3099d24f42}{lo\_\-send\_\-timestamped\_\-internal} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} t, const char $\ast$file, const int line, \hyperlink{structlo__timetag}{lo\_\-timetag} ts, const char $\ast$path, const char $\ast$types,...)
+\begin{CompactList}\small\item\em the real send\_\-timestamped function (don't call directly) \item\end{CompactList}\item 
+int \hyperlink{group__liblolowlevel_gcf95994303f815825ed7053b9519ca3f}{lo\_\-send\_\-from\_\-internal} (\hyperlink{lo__types_8h_bf9b53223467de596b89e1377b0f3f3d}{lo\_\-address} targ, \hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} from, const char $\ast$file, const int line, const \hyperlink{structlo__timetag}{lo\_\-timetag} ts, const char $\ast$path, const char $\ast$types,...)
+\begin{CompactList}\small\item\em the real lo\_\-send\_\-from function (don't call directly) \item\end{CompactList}\item 
+double \hyperlink{group__liblolowlevel_g9937fce1bfce695b01cd3289ead8b919}{lo\_\-timetag\_\-diff} (\hyperlink{structlo__timetag}{lo\_\-timetag} a, \hyperlink{structlo__timetag}{lo\_\-timetag} b)
+\begin{CompactList}\small\item\em Find the time difference between two timetags. \item\end{CompactList}\item 
+void \hyperlink{group__liblolowlevel_gd687e21ed611e68748e962502ae63d8e}{lo\_\-timetag\_\-now} (\hyperlink{structlo__timetag}{lo\_\-timetag} $\ast$t)
+\begin{CompactList}\small\item\em Return a timetag for the current time. \item\end{CompactList}\item 
+void \hyperlink{group__pp_g97e508300ee8b57d4ba1f20a1c4d0235}{lo\_\-bundle\_\-pp} (\hyperlink{lo__types_8h_96254950ad34e9cfbf8a6613fc74025b}{lo\_\-bundle} b)
+\item 
+void \hyperlink{group__pp_g5fa7f79f6f490d9a462d6cd894df3b76}{lo\_\-message\_\-pp} (\hyperlink{lo__types_8h_d126083c98d941f00eb72d1690b38d63}{lo\_\-message} m)
+\item 
+void \hyperlink{group__pp_g1699678a3a2d4221bb55fa2e05326ef0}{lo\_\-arg\_\-pp} (\hyperlink{group__liblo_g11838c576b0197c255ce805fd7434736}{lo\_\-type} type, void $\ast$data)
+\item 
+void \hyperlink{group__pp_g31b1944c9f06645d87bdffbf769a1945}{lo\_\-server\_\-pp} (\hyperlink{lo__types_8h_59067bf50cf8abb4371da6f03c9036c9}{lo\_\-server} s)
+\item 
+void \hyperlink{group__pp_g220be2c9f4cfe4516ebcb5c4687a2b9f}{lo\_\-method\_\-pp} (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} m)
+\item 
+void \hyperlink{group__pp_g1ea3369b4cf60368cba3336682afcaad}{lo\_\-method\_\-pp\_\-prefix} (\hyperlink{lo__types_8h_66faedf5da13231d8c0166870477dce5}{lo\_\-method} m, const char $\ast$p)
+\item 
+void \hyperlink{group__pp_g6ba794aacbb04dada6939980ce71381a}{lo\_\-server\_\-thread\_\-pp} (\hyperlink{lo__types_8h_09996ffb6bde21b8fb6106897b88feae}{lo\_\-server\_\-thread} st)
+\end{CompactItemize}
