@@ -12,6 +12,8 @@ localConflict/media/img-up/*
 localConflict/media/cache/*
 *.css~
 *.db
+*.metadata/
+*/img_up/*
 
 syntax: regexp
 /bin/(?!data)

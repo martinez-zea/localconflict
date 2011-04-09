@@ -9,5 +9,5 @@ class new(models.Model):
     team = models.CharField(max_length=10)
     weapon = models.CharField(max_length=100)
     message = models.TextField()
-    img = models.ImageField(upload_to="img_up")
+    img = models.ImageField(upload_to="img_up", blank = True)
     
