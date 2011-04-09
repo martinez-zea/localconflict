@@ -74,8 +74,8 @@ extern	float	pm_flightfriction;
 extern	int		c_pmove;
 
 
-// rkh - 
-extern 	int	g_plasma_rate;
+// rkh -
+//extern 	int	g_plasma_rate;
 
 void PM_ClipVelocity( vec3_t in, vec3_t normal, vec3_t out, float overbounce );
 void PM_AddTouchEnt( int entityNum );

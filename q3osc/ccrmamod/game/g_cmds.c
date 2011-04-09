@@ -235,9 +235,8 @@ void Cmd_Give_f (gentity_t *ent)
 	qboolean	give_all;
 	gentity_t		*it_ent;
 	trace_t		trace;
-
 	// rkh - get rid of give commands
-	return; // comment this out to get back give commands
+	//return; // comment this out to get back give commands
 
 	if ( !CheatsOk( ent ) ) {
 		return;
@@ -388,7 +387,7 @@ void Cmd_Noclip_f( gentity_t *ent ) {
 	char	*msg;
 
 // rkh - kill noclip
-	return;
+	//return;
 
 	if ( !CheatsOk( ent ) ) {
 		return;
@@ -1623,171 +1622,171 @@ void Cmd_SetHoming_f (gentity_t *ent)
 Cmd_SetParentHoming - rkh homing mod
 =================
 */
-void Cmd_SetParentHoming_f (gentity_t *ent)
-{
-	if (ent->client->pers.homing_parent ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing is off.\n\""));
-	ent->client->pers.homing_parent = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing is on.\n\""));
-	ent->client->pers.homing_parent = 1;
-	}
-}
+//////void Cmd_SetParentHoming_f (gentity_t *ent)
+//////{
+//////	if (ent->client->pers.homing_parent ==1)
+//////	{
+//////	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing is off.\n\""));
+//////	ent->client->pers.homing_parent = 0;
+//////	}
+//////	else
+//////	{
+//////	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing is on.\n\""));
+//////	ent->client->pers.homing_parent = 1;
+//////	}
+//////}
 
 /*
 =================
 Cmd_SetParentHomingOnly - rkh homing mod
 =================
 */
-void Cmd_SetParentHomingOnly_f (gentity_t *ent)
-{
-	if (ent->client->pers.homing_parent_only ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing Only is off.\n\""));
-	ent->client->pers.homing_parent_only = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing Only is on.\n\""));
-	ent->client->pers.homing_parent_only = 1;
-	}
-}
+//void Cmd_SetParentHomingOnly_f (gentity_t *ent)
+//{
+//	if (ent->client->pers.homing_parent_only ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing Only is off.\n\""));
+//	ent->client->pers.homing_parent_only = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Parent Homing Only is on.\n\""));
+//	ent->client->pers.homing_parent_only = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetBFGBounce - rkh bounce mod
 =================
 */
-void Cmd_SetBFGBounce_f (gentity_t *ent)
-{
-	if (ent->client->pers.bfg_bounce ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG-bounce is off.\n\""));
-	ent->client->pers.bfg_bounce = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG-bounce is on.\n\""));
-	ent->client->pers.bfg_bounce = 1;
-	}
-}
+//void Cmd_SetBFGBounce_f (gentity_t *ent)
+//{
+//	if (ent->client->pers.bfg_bounce ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG-bounce is off.\n\""));
+//	ent->client->pers.bfg_bounce = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG-bounce is on.\n\""));
+//	ent->client->pers.bfg_bounce = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetPlasmaBounce - rkh bounce mod
 =================
 */
-void Cmd_SetPlasmaBounce_f (gentity_t *ent)
-{
-	if (ent->client->pers.plasma_bounce ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma-bounce is off.\n\""));
-	ent->client->pers.plasma_bounce = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma-bounce is on.\n\""));
-	ent->client->pers.plasma_bounce = 1;
-	}
-}
+//void Cmd_SetPlasmaBounce_f (gentity_t *ent)
+//{
+//	if (ent->client->pers.plasma_bounce ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma-bounce is off.\n\""));
+//	ent->client->pers.plasma_bounce = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma-bounce is on.\n\""));
+//	ent->client->pers.plasma_bounce = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetPlasmaPersist - rkh homing mod
 =================
 */
-void Cmd_SetPlasmaPersist_f (gentity_t *ent)
-{
-	if (g_plasma_persist.integer ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Persist is off.\n\""));
-	g_plasma_persist.integer = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Persist is on.\n\""));
-	g_plasma_persist.integer = 1;
-	}
-}
+//void Cmd_SetPlasmaPersist_f (gentity_t *ent)
+//{
+//	if (g_plasma_persist.integer ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Persist is off.\n\""));
+//	g_plasma_persist.integer = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Persist is on.\n\""));
+//	g_plasma_persist.integer = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetBFGPersist - rkh homing mod
 =================
 */
-void Cmd_SetBFGPersist_f (gentity_t *ent)
-{
-	if (g_bfg_persist.integer ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG Persist is off.\n\""));
-	g_bfg_persist.integer = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG Persist is on.\n\""));
-	g_bfg_persist.integer = 1;
-	}
-}
+//void Cmd_SetBFGPersist_f (gentity_t *ent)
+//{
+//	if (g_bfg_persist.integer ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG Persist is off.\n\""));
+//	g_bfg_persist.integer = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG Persist is on.\n\""));
+//	g_bfg_persist.integer = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetBFGHomingPersist - rkh homing mod
 =================
-*/
-void Cmd_SetBFGHomingPersist_f (gentity_t *ent)
-{
-	if (g_bfg_homing_persist.integer ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG Homing Persist is off.\n\""));
-	g_bfg_homing_persist.integer = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"BFG Homing Persist is on.\n\""));
-	g_bfg_homing_persist.integer = 1;
-	}
-}
+//*/
+//void Cmd_SetBFGHomingPersist_f (gentity_t *ent)
+//{
+//	if (g_bfg_homing_persist.integer ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG Homing Persist is off.\n\""));
+//	g_bfg_homing_persist.integer = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"BFG Homing Persist is on.\n\""));
+//	g_bfg_homing_persist.integer = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetPlasmaHomingPersist - rkh homing mod
 =================
 */
-void Cmd_SetPlasmaHomingPersist_f (gentity_t *ent)
-{
-	if (g_plasma_homing_persist.integer ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Homing Persist is off.\n\""));
-	g_plasma_homing_persist.integer = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Homing Persist is on.\n\""));
-	g_plasma_homing_persist.integer = 1;
-	}
-}
+//void Cmd_SetPlasmaHomingPersist_f (gentity_t *ent)
+//{
+//	if (g_plasma_homing_persist.integer ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Homing Persist is off.\n\""));
+//	g_plasma_homing_persist.integer = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Plasma Homing Persist is on.\n\""));
+//	g_plasma_homing_persist.integer = 1;
+//	}
+//}
 
 /*
 =================
 Cmd_SetDamage - rkh homing mod
 =================
 */
-void Cmd_SetWeaponDamage_f (gentity_t *ent)
-{
-	if (g_weapondamage.integer ==1)
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Weapon damage is off.\n\""));
-	g_weapondamage.integer = 0;
-	}
-	else
-	{
-	trap_SendServerCommand( ent-g_entities, va("print \"Weapon damage is on.\n\""));
-	g_weapondamage.integer = 1;
-	}
-}
+//void Cmd_SetWeaponDamage_f (gentity_t *ent)
+//{
+//	if (g_weapondamage.integer ==1)
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Weapon damage is off.\n\""));
+//	g_weapondamage.integer = 0;
+//	}
+//	else
+//	{
+//	trap_SendServerCommand( ent-g_entities, va("print \"Weapon damage is on.\n\""));
+//	g_weapondamage.integer = 1;
+//	}
+//}
 
 /*
 =================
@@ -1895,6 +1894,7 @@ void ClientCommand( int clientNum ) {
 		Cmd_SetViewpos_f( ent );
 	else if (Q_stricmp (cmd, "stats") == 0)
 		Cmd_Stats_f( ent );
+	/*
 	else if (Q_stricmp (cmd, "homing") == 0)	//rkh - homing mod
 		Cmd_SetHoming_f( ent );			//rkh
 	else if (Q_stricmp (cmd, "bounce") == 0)	//rkh - bounce mod
@@ -1915,6 +1915,7 @@ void ClientCommand( int clientNum ) {
 		Cmd_SetBFGHomingPersist_f( ent);
 	else if (Q_stricmp (cmd, "weapondamage") == 0)
 		Cmd_SetWeaponDamage_f( ent);
+	*/
 	else
 		trap_SendServerCommand( clientNum, va("print \"unknown cmd %s\n\"", cmd ) );
 }

@@ -83,71 +83,72 @@ vmCvar_t	g_rankings;
 vmCvar_t	g_listEntity;
 
 /* RKH - plasma vars*/
-vmCvar_t        g_plasma_speed;
-vmCvar_t        g_plasma_time;
-vmCvar_t        g_plasma_explode;
-vmCvar_t        g_plasma_bounce;
-vmCvar_t        g_plasma_rate;
 
-/* RKH - rockets*/
-vmCvar_t        g_rocket_speed;
-vmCvar_t        g_rocket_time;
-vmCvar_t        g_homing_speed;
-vmCvar_t        g_homing_radius;
-vmCvar_t        g_homing_status;
-vmCvar_t        g_bfg_bounce;
-vmCvar_t        g_bfg_speed;
-vmCvar_t        g_bfg_time;
+//vmCvar_t        g_plasma_speed;
+//vmCvar_t        g_plasma_time;
+//vmCvar_t        g_plasma_explode;
+//vmCvar_t        g_plasma_bounce;
+//vmCvar_t        g_plasma_rate;
+//
+///* RKH - rockets*/
+//vmCvar_t        g_rocket_speed;
+//vmCvar_t        g_rocket_time;
+//vmCvar_t        g_homing_speed;
+//vmCvar_t        g_homing_radius;
+//vmCvar_t        g_homing_status;
+//vmCvar_t        g_bfg_bounce;
+//vmCvar_t        g_bfg_speed;
+//vmCvar_t        g_bfg_time;
 
 /* RKH - osc*/
 vmCvar_t        osc_hostname;		//RKH - osc vars
 vmCvar_t        osc_port;		//RKH - osc vars
 vmCvar_t        osc_open;		//RKH - osc vars
 vmCvar_t        osc_rate;		//RKH - osc vars
-vmCvar_t        osc_hostname1;
-vmCvar_t        osc_hostname2;
-vmCvar_t        osc_hostname3;
-vmCvar_t        osc_hostname4;
-vmCvar_t        osc_hostname5;
-vmCvar_t        osc_hostname6;
-vmCvar_t        osc_hostname7;
-vmCvar_t        osc_hostname8;
-vmCvar_t        osc_hostname9;
-vmCvar_t        osc_hostname10;
-vmCvar_t        osc_hostname11;
-vmCvar_t        osc_hostname12;
-vmCvar_t        osc_hostname13;
-vmCvar_t        osc_hostname14;
-vmCvar_t        osc_hostname15;
-vmCvar_t        osc_hostname16;
-vmCvar_t        osc_hostname17;
-vmCvar_t        osc_hostname18;
-vmCvar_t        osc_hostname19;
-vmCvar_t        osc_hostname20;
+//vmCvar_t        osc_hostname1;
+//vmCvar_t        osc_hostname2;
+//vmCvar_t        osc_hostname3;
+//vmCvar_t        osc_hostname4;
+//vmCvar_t        osc_hostname5;
+//vmCvar_t        osc_hostname6;
+//vmCvar_t        osc_hostname7;
+//vmCvar_t        osc_hostname8;
+//vmCvar_t        osc_hostname9;
+//vmCvar_t        osc_hostname10;
+//vmCvar_t        osc_hostname11;
+//vmCvar_t        osc_hostname12;
+//vmCvar_t        osc_hostname13;
+//vmCvar_t        osc_hostname14;
+//vmCvar_t        osc_hostname15;
+//vmCvar_t        osc_hostname16;
+//vmCvar_t        osc_hostname17;
+//vmCvar_t        osc_hostname18;
+//vmCvar_t        osc_hostname19;
+//vmCvar_t        osc_hostname20;
 
 /* RKH - addtl osc */
 vmCvar_t        osc_client_hostname;		//RKH - osc vars
 vmCvar_t        osc_client_port;		//RKH - osc vars
-vmCvar_t        osc_projectile_hostname;		//RKH - osc vars
-vmCvar_t        osc_projectile_port;		//RKH - osc vars
+//vmCvar_t        osc_projectile_hostname;		//RKH - osc vars
+//vmCvar_t        osc_projectile_port;		//RKH - osc vars
 vmCvar_t        osc_send_client;
-vmCvar_t        osc_send_projectile;
+//vmCvar_t        osc_send_projectile;
 vmCvar_t	osc_broadcast;
 vmCvar_t	osc_bundle;
 
 /* RKH - parent attractor flag */
-vmCvar_t	g_homing_parent;
-vmCvar_t	g_homing_parent_only;
+//vmCvar_t	g_homing_parent;
+//vmCvar_t	g_homing_parent_only;
 
 /* RKH - random*/
-vmCvar_t	g_flight_time;
-vmCvar_t	g_bfg_persist;
-vmCvar_t	g_plasma_persist;
-vmCvar_t	g_bfg_homing_persist;
-vmCvar_t	g_plasma_homing_persist;
-vmCvar_t	g_homing_persist;
-vmCvar_t	g_weapondamage;
-vmCvar_t	slork_switch;
+//vmCvar_t	g_flight_time;
+//vmCvar_t	g_bfg_persist;
+//vmCvar_t	g_plasma_persist;
+//vmCvar_t	g_bfg_homing_persist;
+//vmCvar_t	g_plasma_homing_persist;
+//vmCvar_t	g_homing_persist;
+//vmCvar_t	g_weapondamage;
+//vmCvar_t	slork_switch;
 
 
 #ifdef MISSIONPACK
@@ -229,70 +230,70 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_listEntity, "g_listEntity", "0", 0, 0, qfalse },
 
 /*RKH - plasma */
-	{ &g_plasma_speed, "g_plasma_speed", "2000", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_time, "g_plasma_time", "10000", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_explode, "g_plasma_explode", "1", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_bounce, "g_plasma_bounce", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_rate, "g_plasma_rate", "100", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_speed, "g_plasma_speed", "2000", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_time, "g_plasma_time", "10000", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_explode, "g_plasma_explode", "1", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_bounce, "g_plasma_bounce", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_rate, "g_plasma_rate", "100", CVAR_ARCHIVE, 0, qfalse },
 
 /*RKH - rockets*/
-	{ &g_rocket_speed, "g_rocket_speed", "100", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_rocket_time, "g_rocket_time", "10000", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_homing_speed, "g_homing_speed", "100", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_homing_status, "g_homing_status", "1", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_homing_radius, "g_homing_radius", "1000", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_bounce, "g_bfg_bounce", "1", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_speed, "g_bfg_speed", "100", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_time, "g_bfg_time", "10000", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_rocket_speed, "g_rocket_speed", "100", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_rocket_time, "g_rocket_time", "10000", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_homing_speed, "g_homing_speed", "100", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_homing_status, "g_homing_status", "1", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_homing_radius, "g_homing_radius", "1000", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_bfg_bounce, "g_bfg_bounce", "1", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_bfg_speed, "g_bfg_speed", "100", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_bfg_time, "g_bfg_time", "10000", CVAR_ARCHIVE, 0, qfalse },
 /*RKH - osc*/
 	{ &osc_hostname, "osc_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_port, "osc_port", "6662", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_rate, "osc_rate", "0", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_open, "osc_open", "0", 0, 0, qfalse },
-	{ &osc_hostname1, "osc_hostname1", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname2, "osc_hostname2", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname3, "osc_hostname3", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname4, "osc_hostname4", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname5, "osc_hostname5", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname6, "osc_hostname6", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname7, "osc_hostname7", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname8, "osc_hostname8", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname9, "osc_hostname9", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname10, "osc_hostname10", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname11, "osc_hostname11", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname12, "osc_hostname12", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname13, "osc_hostname13", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname14, "osc_hostname14", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname15, "osc_hostname15", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname16, "osc_hostname16", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname17, "osc_hostname17", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname18, "osc_hostname18", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname19, "osc_hostname19", "", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_hostname20, "osc_hostname20", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname1, "osc_hostname1", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname2, "osc_hostname2", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname3, "osc_hostname3", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname4, "osc_hostname4", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname5, "osc_hostname5", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname6, "osc_hostname6", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname7, "osc_hostname7", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname8, "osc_hostname8", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname9, "osc_hostname9", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname10, "osc_hostname10", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname11, "osc_hostname11", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname12, "osc_hostname12", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname13, "osc_hostname13", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname14, "osc_hostname14", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname15, "osc_hostname15", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname16, "osc_hostname16", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname17, "osc_hostname17", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname18, "osc_hostname18", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname19, "osc_hostname19", "", CVAR_ARCHIVE, 0, qfalse },
+//	{ &osc_hostname20, "osc_hostname20", "", CVAR_ARCHIVE, 0, qfalse },
 
 /* RKH - multiple osc hosts and ports*/
 	{ &osc_client_hostname, "osc_client_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_client_port, "osc_client_port", "6662", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_projectile_hostname, "osc_projectile_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_projectile_port, "osc_projectile_port", "6662", CVAR_ARCHIVE, 0, qfalse },
+	//{ &osc_projectile_hostname, "osc_projectile_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },
+	//{ &osc_projectile_port, "osc_projectile_port", "6662", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_send_client, "osc_send_client", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &osc_send_projectile, "osc_send_projectile", "1", CVAR_ARCHIVE, 0, qfalse },
+	//{ &osc_send_projectile, "osc_send_projectile", "1", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_broadcast, "osc_broadcast", "0", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_bundle, "osc_bundle", "0", CVAR_ARCHIVE, 0, qfalse },
 
 /* RKH - parent attractor flag */
-	{ &g_homing_parent, "g_homing_parent", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_homing_parent_only, "g_homing_parent_only", "0", CVAR_ARCHIVE, 0, qfalse },
+	//{ &g_homing_parent, "g_homing_parent", "0", CVAR_ARCHIVE, 0, qfalse },
+	//{ &g_homing_parent_only, "g_homing_parent_only", "0", CVAR_ARCHIVE, 0, qfalse },
 
 /* RKH - random */
-	{ &g_flight_time, "g_flight_time", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_persist, "g_bfg_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_persist, "g_plasma_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_homing_persist, "g_bfg_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_homing_persist, "g_plasma_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_homing_persist, "g_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_weapondamage, "g_weapondamage", "1", CVAR_ARCHIVE, 0, qfalse },
-	{ &slork_switch, "slork_switch", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_flight_time, "g_flight_time", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_bfg_persist, "g_bfg_persist", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_persist, "g_plasma_persist", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_bfg_homing_persist, "g_bfg_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_plasma_homing_persist, "g_plasma_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_homing_persist, "g_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
+//	{ &g_weapondamage, "g_weapondamage", "1", CVAR_ARCHIVE, 0, qfalse },
+//	{ &slork_switch, "slork_switch", "0", CVAR_ARCHIVE, 0, qfalse },
 
 #ifdef MISSIONPACK
 	{ &g_obeliskHealth, "g_obeliskHealth", "2500", 0, 0, qfalse },

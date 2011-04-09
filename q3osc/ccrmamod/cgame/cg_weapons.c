@@ -495,8 +495,8 @@ static void CG_PlasmaTrail( centity_t *cent, const weaponInfo_t *wi ) {
 	le->leMarkType = LEMT_NONE;
 
 	le->startTime = cg.time;
-	le->endTime = le->startTime + cg_plasma_trail_length.integer; //was 600 rkh plasma trail
-
+	//le->endTime = le->startTime + cg_plasma_trail_length.integer; //was 600 rkh plasma trail
+	le->endTime = le->startTime + 600;
 	le->pos.trType = TR_GRAVITY;
 	le->pos.trTime = cg.time;
 
@@ -1229,12 +1229,13 @@ void CG_AddPlayerWeapon( refEntity_t *parent, playerState_t *ps, centity_t *cent
 	weapon_t	weaponNum;
 	weaponInfo_t	*weapon;
 	centity_t	*nonPredictedCent;
+    orientation_t	lerped;
 //	int	col;
 
 	// rkh - try to take out weapons
-	if (weapon == WP_LIGHTNING || weapon == WP_GAUNTLET)  {
-		return;
-	}
+	//if (weapon == WP_LIGHTNING || weapon == WP_GAUNTLET)  {
+		//return;
+	//}
 	weaponNum = cent->currentState.weapon;
 
 	CG_RegisterWeapon( weaponNum );
@@ -2255,21 +2256,21 @@ void CG_Bullet( vec3_t end, int sourceEntityNum, vec3_t normal, qboolean flesh, 
 
 // rkh - constant bubble trail
 			// do a complete bubble trail if necessary
-//			if ( ( sourceContentType == destContentType ) && ( sourceContentType & CONTENTS_WATER ) ) {
-			if(cg_railbubbles.integer ==1) {
+            if ( ( sourceContentType == destContentType ) && ( sourceContentType & CONTENTS_WATER ) ) {
+			//if(cg_railbubbles.integer ==1) {
 				CG_BubbleTrail( start, end, 32 ); //rkh was 32
 			}
-//			}
+			//}
 			// bubble trail from water into air
-//			else if ( ( sourceContentType & CONTENTS_WATER ) ) {
-//				trap_CM_BoxTrace( &trace, end, start, NULL, NULL, 0, CONTENTS_WATER );
-//				CG_BubbleTrail( start, trace.endpos, 32 );
-//			}
+			else if ( ( sourceContentType & CONTENTS_WATER ) ) {
+				trap_CM_BoxTrace( &trace, end, start, NULL, NULL, 0, CONTENTS_WATER );
+				CG_BubbleTrail( start, trace.endpos, 32 );
+			}
 			// bubble trail from air into water
-//			else if ( ( destContentType & CONTENTS_WATER ) ) {
-//				trap_CM_BoxTrace( &trace, start, end, NULL, NULL, 0, CONTENTS_WATER );
-//				CG_BubbleTrail( trace.endpos, end, 32 );
-//			}
+			else if ( ( destContentType & CONTENTS_WATER ) ) {
+				trap_CM_BoxTrace( &trace, start, end, NULL, NULL, 0, CONTENTS_WATER );
+				CG_BubbleTrail( trace.endpos, end, 32 );
+			}
 /*
 			// do a complete bubble trail if necessary
 			if ( ( sourceContentType == destContentType ) && ( sourceContentType & CONTENTS_WATER ) ) {

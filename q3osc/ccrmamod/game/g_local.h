@@ -275,12 +275,12 @@ typedef struct {
 	int			teamVoteCount;		// to prevent people from constantly calling votes
 	qboolean	teamInfo;			// send team overlay updates?
 	//qboolean	homing_status;		//rkh - homing mod
-	qboolean	plasma_bounce;		//rkh
-	qboolean	bfg_bounce;
-	qboolean	homing_parent;		//rkh - parent/shooter self attraction flag for bounding box detection
-	qboolean	homing_parent_only;
+	//qboolean	plasma_bounce;		//rkh
+	//qboolean	bfg_bounce;
+	//qboolean	homing_parent;		//rkh - parent/shooter self attraction flag for bounding box detection
+	//qboolean	homing_parent_only;
 	qboolean	osc_send_client;	//rkh
-	qboolean	osc_send_projectile;	//rkh
+	//qboolean	osc_send_projectile;	//rkh
 	qboolean	osc_bundle;	//rkh
 	qboolean	osc_broadcast; //rkh
 } clientPersistant_t;
@@ -825,25 +825,25 @@ extern	vmCvar_t	g_singlePlayer;
 extern	vmCvar_t	g_proxMineTimeout;
 
 /* RKH - plasma vars*/
-extern  vmCvar_t        g_plasma_speed;
-extern  vmCvar_t        g_plasma_time;
-extern  vmCvar_t        g_plasma_explode;
-extern  vmCvar_t        g_plasma_bounce;
+//extern  vmCvar_t        g_plasma_speed;
+//extern  vmCvar_t        g_plasma_time;
+//extern  vmCvar_t        g_plasma_explode;
+//extern  vmCvar_t        g_plasma_bounce;
 
 
 /* RKH - osc and rockets*/
-extern  vmCvar_t        g_rocket_speed;
-extern	vmCvar_t	g_rocket_time;
-extern  vmCvar_t        g_homing_speed;
-extern 	vmCvar_t	g_homing_radius;
-extern 	vmCvar_t	g_homing_status;
-extern  vmCvar_t        g_bfg_bounce;
-extern  vmCvar_t        g_bfg_speed;
-extern	vmCvar_t	g_bfg_time;
+//extern  vmCvar_t        g_rocket_speed;
+//extern	vmCvar_t	g_rocket_time;
+//extern  vmCvar_t        g_homing_speed;
+//extern 	vmCvar_t	g_homing_radius;
+//extern 	vmCvar_t	g_homing_status;
+//extern  vmCvar_t        g_bfg_bounce;
+//extern  vmCvar_t        g_bfg_speed;
+//extern	vmCvar_t	g_bfg_time;
 
 /* RKH - parent attractor flag*/
-extern	vmCvar_t	g_homing_parent;
-extern	vmCvar_t	g_homing_parent_only;
+//extern	vmCvar_t	g_homing_parent;
+//extern	vmCvar_t	g_homing_parent_only;
 
 /* RKH - OSC host and ports */
 extern  vmCvar_t        osc_hostname;
@@ -852,41 +852,41 @@ extern  vmCvar_t        osc_open;
 extern  vmCvar_t        osc_rate;
 extern  vmCvar_t        osc_client_hostname;
 extern  vmCvar_t        osc_client_port;
-extern  vmCvar_t        osc_projectile_hostname;
-extern  vmCvar_t        osc_projectile_port;
+//extern  vmCvar_t        osc_projectile_hostname;
+//extern  vmCvar_t        osc_projectile_port;
 extern 	vmCvar_t	osc_send_client;
-extern 	vmCvar_t	osc_send_projectile;
+//extern 	vmCvar_t	osc_send_projectile;
 extern 	vmCvar_t	osc_broadcast;
 extern 	vmCvar_t	osc_bundle;
-extern  vmCvar_t        osc_hostname1;
-extern  vmCvar_t        osc_hostname2;
-extern  vmCvar_t        osc_hostname3;
-extern  vmCvar_t        osc_hostname4;
-extern  vmCvar_t        osc_hostname5;
-extern  vmCvar_t        osc_hostname6;
-extern  vmCvar_t        osc_hostname7;
-extern  vmCvar_t        osc_hostname8;
-extern  vmCvar_t        osc_hostname9;
-extern  vmCvar_t        osc_hostname10;
-extern  vmCvar_t        osc_hostname11;
-extern  vmCvar_t        osc_hostname12;
-extern  vmCvar_t        osc_hostname13;
-extern  vmCvar_t        osc_hostname14;
-extern  vmCvar_t        osc_hostname15;
-extern  vmCvar_t        osc_hostname16;
-extern  vmCvar_t        osc_hostname17;
-extern  vmCvar_t        osc_hostname18;
-extern  vmCvar_t        osc_hostname19;
-extern  vmCvar_t        osc_hostname20;
+//extern  vmCvar_t        osc_hostname1;
+//extern  vmCvar_t        osc_hostname2;
+//extern  vmCvar_t        osc_hostname3;
+//extern  vmCvar_t        osc_hostname4;
+//extern  vmCvar_t        osc_hostname5;
+//extern  vmCvar_t        osc_hostname6;
+//extern  vmCvar_t        osc_hostname7;
+//extern  vmCvar_t        osc_hostname8;
+//extern  vmCvar_t        osc_hostname9;
+//extern  vmCvar_t        osc_hostname10;
+//extern  vmCvar_t        osc_hostname11;
+//extern  vmCvar_t        osc_hostname12;
+//extern  vmCvar_t        osc_hostname13;
+//extern  vmCvar_t        osc_hostname14;
+//extern  vmCvar_t        osc_hostname15;
+//extern  vmCvar_t        osc_hostname16;
+//extern  vmCvar_t        osc_hostname17;
+//extern  vmCvar_t        osc_hostname18;
+//extern  vmCvar_t        osc_hostname19;
+//extern  vmCvar_t        osc_hostname20;
 /* RKH - random*/
-extern vmCvar_t		g_flight_time;
-extern vmCvar_t		g_bfg_persist;
-extern vmCvar_t		g_plasma_persist;
-extern vmCvar_t		g_bfg_homing_persist;
-extern vmCvar_t		g_plasma_homing_persist;
-extern vmCvar_t		g_homing_persist;
-extern vmCvar_t		g_weapondamage;
-extern vmCvar_t		slork_switch;
+//extern vmCvar_t		g_flight_time;
+//extern vmCvar_t		g_bfg_persist;
+//extern vmCvar_t		g_plasma_persist;
+//extern vmCvar_t		g_bfg_homing_persist;
+//extern vmCvar_t		g_plasma_homing_persist;
+//extern vmCvar_t		g_homing_persist;
+//extern vmCvar_t		g_weapondamage;
+//extern vmCvar_t		slork_switch;
 
 
 void	trap_Printf( const char *fmt );
@@ -1094,9 +1094,9 @@ int		trap_GeneticParentsAndChildSelection(int numranks, float *ranks, int *paren
 void	trap_SnapVector( float *v );
 
 // rkh homing mod
-qboolean visible( gentity_t *ent1, gentity_t *ent2 );
-gentity_t *findradius (gentity_t *from, vec3_t org, float rad);
-gentity_t *findspecificradius (gentity_t *from, vec3_t org, float rad, int userid);
+//qboolean visible( gentity_t *ent1, gentity_t *ent2 );
+//gentity_t *findradius (gentity_t *from, vec3_t org, float rad);
+//gentity_t *findspecificradius (gentity_t *from, vec3_t org, float rad, int userid);
 //void *clearEntities();
-void Missile_Smooth_H( gentity_t *ent, vec3_t origin, trace_t *tr);
+//void Missile_Smooth_H( gentity_t *ent, vec3_t origin, trace_t *tr);
 

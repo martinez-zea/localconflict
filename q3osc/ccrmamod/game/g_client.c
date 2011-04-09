@@ -1001,12 +1001,12 @@ void ClientBegin( int clientNum ) {
 	client = level.clients + clientNum;
 
 	//client->pers.homing_status = 0;	//rkh homing mod
-	client->pers.plasma_bounce = 0; //rkh bounce mod - hard-code default enabled
-	client->pers.bfg_bounce = 0; //rkh bfg bounce mod - hard-code default enabled
-	client->pers.homing_parent = 0;
-	client->pers.homing_parent_only = 0;
+	//client->pers.plasma_bounce = 0; //rkh bounce mod - hard-code default enabled
+	//client->pers.bfg_bounce = 0; //rkh bfg bounce mod - hard-code default enabled
+	//client->pers.homing_parent = 0;
+	//client->pers.homing_parent_only = 0;
 	client->pers.osc_send_client = 0;
-	client->pers.osc_send_projectile = 0;
+	//client->pers.osc_send_projectile = 0;
 
 	if ( ent->r.linked ) {
 		trap_UnlinkEntity( ent );
@@ -1199,7 +1199,7 @@ void ClientSpawn(gentity_t *ent) {
 //	client->ps.stats[STAT_WEAPONS] = (1 << WP_PLASMAGUN) | (1 << WP_BFG);
 //	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_BFG ); //rkh - added
 	//client->ps.ammo[WP_BFG] = -1; // rkh - added
-	client->ps.ammo[WP_PLASMAGUN] = -1; // rkh - added
+	//client->ps.ammo[WP_PLASMAGUN] = -1; // rkh - added
 
 	// health will count down towards max_health
 	ent->health = client->ps.stats[STAT_HEALTH] = client->ps.stats[STAT_MAX_HEALTH] + 25;
@@ -1250,7 +1250,7 @@ void ClientSpawn(gentity_t *ent) {
 		// spawn given items have fired
 		// rkh - commented out below and set hard to Plasma Gun to start
 //		client->ps.weapon = 8;
-		//client->ps.weapon = 1;
+		client->ps.weapon = 1;
 		for ( i = WP_NUM_WEAPONS - 1 ; i > 0 ; i-- ) {
 			if ( client->ps.stats[STAT_WEAPONS] & ( 1 << i ) ) {
 				client->ps.weapon = i;

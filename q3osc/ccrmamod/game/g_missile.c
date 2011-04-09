@@ -80,8 +80,8 @@ void G_ExplodeMissile( gentity_t *ent ) {
 
 	//trap_SendServerCommand( -1, va("print \"explode\""));
 	// rkh - osc send flag
-	int i;
-
+	//int i;
+/*(
 	if (osc_send_projectile.integer == 1)
 	{
 		osc_projectile_vars currentProjectile;
@@ -257,7 +257,7 @@ void G_ExplodeMissile( gentity_t *ent ) {
 			}
 		}
 	}
-
+    */
 	trap_LinkEntity( ent );
 	}
 
@@ -563,9 +563,9 @@ void G_BounceMissile( gentity_t *ent, trace_t *trace ) {
 	VectorAdd( ent->r.currentOrigin, trace->plane.normal, ent->r.currentOrigin);
 	VectorCopy( ent->r.currentOrigin, ent->s.pos.trBase );
 	ent->s.pos.trTime = level.time;
-
-	int i;
-
+    //rkh
+	//int i;
+/*
 	if (osc_send_projectile.integer == 1)
 	{
 		osc_projectile_vars currentProjectile;
@@ -743,6 +743,7 @@ void G_BounceMissile( gentity_t *ent, trace_t *trace ) {
 			}
 		}
 	}
+	*/
 }
 
 
@@ -1240,7 +1241,7 @@ was: g_plasma_bounce.integer
 		VectorScale( dir, g_plasma_speed.integer, bolt->s.pos.trDelta );
     */
 
-//	VectorScale( dir, 2000, bolt->s.pos.trDelta );
+	VectorScale( dir, 2000, bolt->s.pos.trDelta );
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
 
 	VectorCopy (start, bolt->r.currentOrigin);
@@ -1333,9 +1334,9 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt->nextthink = level.time + 10000;
 	bolt->think = G_ExplodeMissile;
     //fin
-	if (self->client->pers.bfg_bounce == 1) {
-	  bolt->s.eFlags = EF_BOUNCE;
-	}
+	///if (self->client->pers.bfg_bounce == 1) {
+	 // bolt->s.eFlags = EF_BOUNCE;
+	//}
 	bolt->s.eType = ET_MISSILE;
 	bolt->r.svFlags = SVF_USE_CURRENT_ORIGIN;
 	bolt->s.weapon = WP_BFG;
@@ -1362,6 +1363,7 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 		VectorScale( dir, g_bfg_speed.integer, bolt->s.pos.trDelta );
 
     */
+    VectorScale( dir, 2000, bolt->s.pos.trDelta );
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
 	VectorCopy (start, bolt->r.currentOrigin);
 
@@ -1398,16 +1400,19 @@ gentity_t *fire_rocket (gentity_t *self, vec3_t start, vec3_t dir) {
 		bolt->splashRadius = 120;
 	}
 */
-    bolt->nextthink = level.time + g_rocket_time.integer;//15000;
+    //rkh
+    //bolt->nextthink = level.time + g_rocket_time.integer;//15000;
+    bolt->nextthink = level.time + 15000;
     bolt->think = G_ExplodeMissile;
-    bolt->damage = 100; //100
-    bolt->splashDamage = 100; //100
-    bolt->splashRadius = 120;
-	bolt->s.eType = ET_MISSILE;
-	bolt->r.svFlags = SVF_USE_CURRENT_ORIGIN;
+    bolt->s.eType = ET_MISSILE;
+    bolt->r.svFlags = SVF_USE_CURRENT_ORIGIN;
 	bolt->s.weapon = WP_ROCKET_LAUNCHER;
 	bolt->r.ownerNum = self->s.number;
 	bolt->parent = self;
+    bolt->damage = 100; //100
+    bolt->splashDamage = 100; //100
+    bolt->splashRadius = 120;
+
 	bolt->methodOfDeath = MOD_ROCKET;
 	bolt->splashMethodOfDeath = MOD_ROCKET_SPLASH;
 	bolt->clipmask = MASK_SHOT;
@@ -1421,6 +1426,7 @@ gentity_t *fire_rocket (gentity_t *self, vec3_t start, vec3_t dir) {
 	//else
 		//VectorScale( dir, 900, bolt->s.pos.trDelta );
 //		VectorScale( dir, foo(1), bolt->s.pos.trDelta );	//rkh test foo
+	VectorScale( dir, 900, bolt->s.pos.trDelta );
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
 	VectorCopy (start, bolt->r.currentOrigin);
 
@@ -1506,11 +1512,13 @@ gentity_t *fire_nail( gentity_t *self, vec3_t start, vec3_t forward, vec3_t righ
 	bolt->r.ownerNum = self->s.number;
 	bolt->parent = self;
 	// rkh - global turn off of damage
+	/*
 	if (g_weapondamage.integer == 0)
 		bolt->damage = 0;
 	else
 		bolt->damage = 20;
-//	bolt->damage = 20;
+    */
+	bolt->damage = 20;
 	bolt->methodOfDeath = MOD_NAIL;
 	bolt->clipmask = MASK_SHOT;
 	bolt->target_ent = NULL;
