@@ -104,27 +104,27 @@ vmCvar_t        osc_hostname;		//RKH - osc vars
 vmCvar_t        osc_port;		//RKH - osc vars
 vmCvar_t        osc_open;		//RKH - osc vars
 vmCvar_t        osc_rate;		//RKH - osc vars
-vmCvar_t        osc_hostname1;	
-vmCvar_t        osc_hostname2;	
-vmCvar_t        osc_hostname3;	
-vmCvar_t        osc_hostname4;	
-vmCvar_t        osc_hostname5;	
-vmCvar_t        osc_hostname6;	
-vmCvar_t        osc_hostname7;	
-vmCvar_t        osc_hostname8;	
-vmCvar_t        osc_hostname9;	
+vmCvar_t        osc_hostname1;
+vmCvar_t        osc_hostname2;
+vmCvar_t        osc_hostname3;
+vmCvar_t        osc_hostname4;
+vmCvar_t        osc_hostname5;
+vmCvar_t        osc_hostname6;
+vmCvar_t        osc_hostname7;
+vmCvar_t        osc_hostname8;
+vmCvar_t        osc_hostname9;
 vmCvar_t        osc_hostname10;
-vmCvar_t        osc_hostname11;	
-vmCvar_t        osc_hostname12;	
-vmCvar_t        osc_hostname13;	
-vmCvar_t        osc_hostname14;	
-vmCvar_t        osc_hostname15;	
-vmCvar_t        osc_hostname16;	
-vmCvar_t        osc_hostname17;	
-vmCvar_t        osc_hostname18;	
-vmCvar_t        osc_hostname19;	
+vmCvar_t        osc_hostname11;
+vmCvar_t        osc_hostname12;
+vmCvar_t        osc_hostname13;
+vmCvar_t        osc_hostname14;
+vmCvar_t        osc_hostname15;
+vmCvar_t        osc_hostname16;
+vmCvar_t        osc_hostname17;
+vmCvar_t        osc_hostname18;
+vmCvar_t        osc_hostname19;
 vmCvar_t        osc_hostname20;
-	
+
 /* RKH - addtl osc */
 vmCvar_t        osc_client_hostname;		//RKH - osc vars
 vmCvar_t        osc_client_port;		//RKH - osc vars
@@ -229,21 +229,21 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_listEntity, "g_listEntity", "0", 0, 0, qfalse },
 
 /*RKH - plasma */
-	{ &g_plasma_speed, "g_plasma_speed", "2000", CVAR_ARCHIVE, 0, qfalse },	
-	{ &g_plasma_time, "g_plasma_time", "10000", CVAR_ARCHIVE, 0, qfalse },	
+	{ &g_plasma_speed, "g_plasma_speed", "2000", CVAR_ARCHIVE, 0, qfalse },
+	{ &g_plasma_time, "g_plasma_time", "10000", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_plasma_explode, "g_plasma_explode", "1", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_plasma_bounce, "g_plasma_bounce", "1", CVAR_ARCHIVE, 0, qfalse },
+	{ &g_plasma_bounce, "g_plasma_bounce", "0", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_plasma_rate, "g_plasma_rate", "100", CVAR_ARCHIVE, 0, qfalse },
 
 /*RKH - rockets*/
 	{ &g_rocket_speed, "g_rocket_speed", "100", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_rocket_time, "g_rocket_time", "10000", CVAR_ARCHIVE, 0, qfalse },	
+	{ &g_rocket_time, "g_rocket_time", "10000", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_homing_speed, "g_homing_speed", "100", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_homing_status, "g_homing_status", "1", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_homing_radius, "g_homing_radius", "1000", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_bfg_bounce, "g_bfg_bounce", "1", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_bfg_speed, "g_bfg_speed", "100", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_bfg_time, "g_bfg_time", "10000", CVAR_ARCHIVE, 0, qfalse },	
+	{ &g_bfg_time, "g_bfg_time", "10000", CVAR_ARCHIVE, 0, qfalse },
 /*RKH - osc*/
 	{ &osc_hostname, "osc_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },
 	{ &osc_port, "osc_port", "6662", CVAR_ARCHIVE, 0, qfalse },
@@ -291,7 +291,7 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_bfg_homing_persist, "g_bfg_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_plasma_homing_persist, "g_plasma_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
 	{ &g_homing_persist, "g_homing_persist", "0", CVAR_ARCHIVE, 0, qfalse },
-	{ &g_weapondamage, "g_weapondamage", "0", CVAR_ARCHIVE, 0, qfalse },
+	{ &g_weapondamage, "g_weapondamage", "1", CVAR_ARCHIVE, 0, qfalse },
 	{ &slork_switch, "slork_switch", "0", CVAR_ARCHIVE, 0, qfalse },
 
 #ifdef MISSIONPACK
@@ -456,11 +456,11 @@ void G_RemapTeamShaders( void ) {
 	char string[1024];
 	float f = level.time * 0.001;
 	Com_sprintf( string, sizeof(string), "team_icon/%s_red", g_redteam.string );
-	AddRemap("textures/ctf2/redteam01", string, f); 
-	AddRemap("textures/ctf2/redteam02", string, f); 
+	AddRemap("textures/ctf2/redteam01", string, f);
+	AddRemap("textures/ctf2/redteam02", string, f);
 	Com_sprintf( string, sizeof(string), "team_icon/%s_blue", g_blueteam.string );
-	AddRemap("textures/ctf2/blueteam01", string, f); 
-	AddRemap("textures/ctf2/blueteam02", string, f); 
+	AddRemap("textures/ctf2/blueteam01", string, f);
+	AddRemap("textures/ctf2/blueteam02", string, f);
 	trap_SetConfigstring(CS_SHADERSTATE, BuildShaderStateConfig());
 #endif
 }
@@ -518,7 +518,7 @@ void G_UpdateCvars( void ) {
 				cv->modificationCount = cv->vmCvar->modificationCount;
 
 				if ( cv->trackChange ) {
-					trap_SendServerCommand( -1, va("print \"Server: %s changed to %s\n\"", 
+					trap_SendServerCommand( -1, va("print \"Server: %s changed to %s\n\"",
 						cv->cvarName, cv->vmCvar->string ) );
 				}
 
@@ -604,7 +604,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	level.num_entities = MAX_CLIENTS;
 
 	// let the server system know where the entites are
-	trap_LocateGameData( level.gentities, level.num_entities, sizeof( gentity_t ), 
+	trap_LocateGameData( level.gentities, level.num_entities, sizeof( gentity_t ),
 		&level.clients[0].ps, sizeof( level.clients[0] ) );
 
 	// reserve some spots for dead player bodies
@@ -734,7 +734,7 @@ void AddTournamentPlayer( void ) {
 			continue;
 		}
 		// never select the dedicated follow or scoreboard clients
-		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD || 
+		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD ||
 			client->sess.spectatorClient < 0  ) {
 			continue;
 		}
@@ -912,7 +912,7 @@ void CalculateRanks( void ) {
 
 			if ( level.clients[i].sess.sessionTeam != TEAM_SPECTATOR ) {
 				level.numNonSpectatorClients++;
-			
+
 				// decide if this should be auto-followed
 				if ( level.clients[i].pers.connected == CON_CONNECTED ) {
 					level.numPlayingClients++;
@@ -933,7 +933,7 @@ void CalculateRanks( void ) {
 		}
 	}
 
-	qsort( level.sortedClients, level.numConnectedClients, 
+	qsort( level.sortedClients, level.numConnectedClients,
 		sizeof(level.sortedClients[0]), SortRanks );
 
 	// set the rank value for all clients that are connected and not spectators
@@ -949,7 +949,7 @@ void CalculateRanks( void ) {
 				cl->ps.persistant[PERS_RANK] = 1;
 			}
 		}
-	} else {	
+	} else {
 		rank = -1;
 		score = 0;
 		for ( i = 0;  i < level.numPlayingClients; i++ ) {
@@ -1144,7 +1144,7 @@ void BeginIntermission( void ) {
 ExitLevel
 
 When the intermission has been exited, the server is either killed
-or moved to a new level based on the "nextmap" cvar 
+or moved to a new level based on the "nextmap" cvar
 
 =============
 */
@@ -1167,7 +1167,7 @@ void ExitLevel (void) {
 			level.changemap = NULL;
 			level.intermissiontime = 0;
 		}
-		return;	
+		return;
 	}
 
 	trap_Cvar_VariableStringBuffer( "nextmap", nextmap, sizeof(nextmap) );
@@ -1409,7 +1409,7 @@ qboolean ScoreIsTied( void ) {
 	if ( level.numPlayingClients < 2 ) {
 		return qfalse;
 	}
-	
+
 	if ( g_gametype.integer >= GT_TEAM ) {
 		return level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE];
 	}
@@ -1840,7 +1840,7 @@ void G_RunThink (gentity_t *ent) {
 	if (thinktime > level.time) {
 		return;
 	}
-	
+
 	ent->nextthink = 0;
 	if (!ent->think) {
 		G_Error ( "NULL ent->think");

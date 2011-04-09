@@ -42,8 +42,8 @@ void G_ExplodeMissile( gentity_t *ent ) {
 // works - now add g_homing and g_plasma and checks for ent->type on each
 
 //	trap_SendServerCommand( -1, va("print\"%s\"", ent->classname ));
-
-//	if ((g_homing_status.integer==1)&&(g_homing_persist.integer==1)) {
+/*
+	if ((g_homing_status.integer==1)&&(g_homing_persist.integer==1)) {
 	if ((strcmp(ent->classname, "bfg"))&&(g_plasma_persist.integer==1)) {
 		ent->nextthink = level.time + 60;
 	}
@@ -51,7 +51,7 @@ void G_ExplodeMissile( gentity_t *ent ) {
 		ent->nextthink = level.time + 60;
 	}
 	else {
-
+    */
 
 // end rkh
 	vec3_t		dir;
@@ -260,13 +260,14 @@ void G_ExplodeMissile( gentity_t *ent ) {
 
 	trap_LinkEntity( ent );
 	}
-}
+
 
 /*
 =================
 G_HomingMissle: rkh homing mod
 =================
 */
+/*
 void G_HomingMissle( gentity_t *ent )
 {
 	gentity_t *target = NULL;
@@ -350,6 +351,7 @@ ent->r.currentOrigin[2]	coordinate (z?)
 
 =================================================================================== */
 	// RKH - send rocket position out over OSC
+	/*
 	int i;
 
 	if (osc_send_projectile.integer == 1)
@@ -531,7 +533,7 @@ ent->r.currentOrigin[2]	coordinate (z?)
 	}
 
 }
-
+*/
 /*
 ================
 G_BounceMissile
@@ -1132,7 +1134,7 @@ void G_RunMissile( gentity_t *ent ) {
 		VectorCopy( tr.endpos, ent->r.currentOrigin );
 	}
 	//rkh homing mod
-	Missile_Smooth_H(ent,origin,&tr);
+	//Missile_Smooth_H(ent,origin,&tr);
 
 	trap_LinkEntity( ent );
 
@@ -1183,38 +1185,43 @@ gentity_t *fire_plasma (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt = G_Spawn();
 	bolt->classname = "plasma";
 
+    //rhk commented
+    /*
 	if (self->client->pers.homing_status ==1)
 	{
 		bolt->nextthink = level.time + 60;
-		bolt->think = G_HomingMissle;
-		bolt->damage = 0;
-		bolt->splashDamage = 0;
-		bolt->splashRadius = 0;
+		//bolt->think = G_HomingMissle;
+		bolt->damage = 15; //0;
+		bolt->splashDamage = 15;
+		bolt->splashRadius = 20;
 	} else {
 		bolt->nextthink = level.time + g_plasma_time.integer;//10000;
 		bolt->think = G_ExplodeMissile;
-		bolt->damage = 0;
+		bolt->damage = 100//0;
 		bolt->splashDamage = 0;
-		bolt->splashRadius = 0;
+		bolt->splashRadius = 20;
 	}
+    */
+    //rhk commented
 
-/*
 	bolt->nextthink = level.time + 10000;
 	bolt->think = G_ExplodeMissile;
-
+/*
+comentado por rhk
 was: g_plasma_bounce.integer
-*/	if (self->client->pers.plasma_bounce == 1) {
-	  bolt->s.eFlags = EF_BOUNCE;
-	}
+*/	//if (self->client->pers.plasma_bounce == 1) {
+	  //bolt->s.eFlags = EF_BOUNCE;
+	//}
 	bolt->s.eType = ET_MISSILE;
 	bolt->r.svFlags = SVF_USE_CURRENT_ORIGIN;
 	bolt->s.weapon = WP_PLASMAGUN;
 	bolt->r.ownerNum = self->s.number;
 	bolt->parent = self;
-/*	bolt->damage = 20;
+	//bloque comentado por rhk*
+	bolt->damage = 20;
 	bolt->splashDamage = 15;
 	bolt->splashRadius = 20;
-*/
+
 	bolt->methodOfDeath = MOD_PLASMA;
 	bolt->splashMethodOfDeath = MOD_PLASMA_SPLASH;
 	bolt->clipmask = MASK_SHOT;
@@ -1224,11 +1231,14 @@ was: g_plasma_bounce.integer
 	bolt->s.pos.trTime = level.time - MISSILE_PRESTEP_TIME;		// move a bit on the very first frame
 	VectorCopy( start, bolt->s.pos.trBase );
 
+    /* MZ commented
 	// rkh - adding homing on plasma
+
 	if (self->client->pers.homing_status ==1)
 		VectorScale( dir, g_homing_speed.integer, bolt->s.pos.trDelta );
 	else
 		VectorScale( dir, g_plasma_speed.integer, bolt->s.pos.trDelta );
+    */
 
 //	VectorScale( dir, 2000, bolt->s.pos.trDelta );
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
@@ -1261,13 +1271,15 @@ gentity_t *fire_grenade (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt->s.eFlags = EF_BOUNCE_HALF;
 	bolt->r.ownerNum = self->s.number;
 	bolt->parent = self;
-
+    /* MZ commented
 	// rkh - global turn off of damage
-	if (g_weapondamage.integer == 0)
-		bolt->damage = 100;
-	else
-		bolt->damage = 0;
-//	bolt->damage = 100;
+	//if (g_weapondamage.integer == 0)
+		//bolt->damage = 100;
+	//else
+		//bolt->damage = 0;
+    */
+
+	bolt->damage = 100;
 	bolt->splashDamage = 100;
 	bolt->splashRadius = 150;
 	bolt->methodOfDeath = MOD_GRENADE;
@@ -1301,11 +1313,11 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 
 	bolt = G_Spawn();
 	bolt->classname = "bfg";
-
+/* COMMENTED BY mz
 	if (self->client->pers.homing_status ==1)
 	{
 		bolt->nextthink = level.time + 60; // change how nextthink is set for control over homing exploding?
-		bolt->think = G_HomingMissle;
+		//bolt->think = G_HomingMissle;
 		bolt->damage = 0;
 		bolt->splashDamage = 0;
 		bolt->splashRadius = 90;
@@ -1316,11 +1328,11 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 		bolt->splashDamage = 0;
 		bolt->splashRadius = 20;
 	}
-
-/*
+    */
+    //comentarios rhk
 	bolt->nextthink = level.time + 10000;
 	bolt->think = G_ExplodeMissile;
-*/
+    //fin
 	if (self->client->pers.bfg_bounce == 1) {
 	  bolt->s.eFlags = EF_BOUNCE;
 	}
@@ -1329,11 +1341,11 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt->s.weapon = WP_BFG;
 	bolt->r.ownerNum = self->s.number;
 	bolt->parent = self;
-/*
+    //bloque comentado rhk
 	bolt->damage = 100;
 	bolt->splashDamage = 100;
 	bolt->splashRadius = 120;
-*/
+    //fin
 	bolt->methodOfDeath = MOD_BFG;
 	bolt->splashMethodOfDeath = MOD_BFG_SPLASH;
 	bolt->clipmask = MASK_SHOT;
@@ -1342,13 +1354,14 @@ gentity_t *fire_bfg (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt->s.pos.trType = TR_LINEAR;
 	bolt->s.pos.trTime = level.time - MISSILE_PRESTEP_TIME;		// move a bit on the very first frame
 	VectorCopy( start, bolt->s.pos.trBase );
-
+    /*MZ commented
 	// rkh - adding homing on bfg
 	if (self->client->pers.homing_status ==1)
 		VectorScale( dir, g_homing_speed.integer, bolt->s.pos.trDelta );
 	else
 		VectorScale( dir, g_bfg_speed.integer, bolt->s.pos.trDelta );
 
+    */
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
 	VectorCopy (start, bolt->r.currentOrigin);
 
@@ -1369,22 +1382,27 @@ gentity_t *fire_rocket (gentity_t *self, vec3_t start, vec3_t dir) {
 
 	bolt = G_Spawn();
 	bolt->classname = "rocket";
-
+/*
 	if (self->client->pers.homing_status ==1)
 	{
 		bolt->nextthink = level.time + 60;
-		bolt->think = G_HomingMissle;
-		bolt->damage = 0;//15
-		bolt->splashDamage = 0; //100
+		//bolt->think = G_HomingMissle;
+		bolt->damage = 15;//15
+		bolt->splashDamage = 100; //100
 		bolt->splashRadius = 90;
 	} else {
 		bolt->nextthink = level.time + g_rocket_time.integer;//15000;
 		bolt->think = G_ExplodeMissile;
-		bolt->damage = 0; //100
-		bolt->splashDamage = 0; //100
+		bolt->damage = 100; //100
+		bolt->splashDamage = 100; //100
 		bolt->splashRadius = 120;
 	}
-
+*/
+    bolt->nextthink = level.time + g_rocket_time.integer;//15000;
+    bolt->think = G_ExplodeMissile;
+    bolt->damage = 100; //100
+    bolt->splashDamage = 100; //100
+    bolt->splashRadius = 120;
 	bolt->s.eType = ET_MISSILE;
 	bolt->r.svFlags = SVF_USE_CURRENT_ORIGIN;
 	bolt->s.weapon = WP_ROCKET_LAUNCHER;
@@ -1398,10 +1416,10 @@ gentity_t *fire_rocket (gentity_t *self, vec3_t start, vec3_t dir) {
 	bolt->s.pos.trTime = level.time - MISSILE_PRESTEP_TIME;		// move a bit on the very first frame
 	VectorCopy( start, bolt->s.pos.trBase );
 
-	if (self->client->pers.homing_status ==1)
-		VectorScale( dir, g_homing_speed.integer, bolt->s.pos.trDelta );
-	else
-		VectorScale( dir, 900, bolt->s.pos.trDelta );
+	//if (self->client->pers.homing_status ==1)
+		//VectorScale( dir, g_homing_speed.integer, bolt->s.pos.trDelta );
+	//else
+		//VectorScale( dir, 900, bolt->s.pos.trDelta );
 //		VectorScale( dir, foo(1), bolt->s.pos.trDelta );	//rkh test foo
 	SnapVector( bolt->s.pos.trDelta );			// save net bandwidth
 	VectorCopy (start, bolt->r.currentOrigin);

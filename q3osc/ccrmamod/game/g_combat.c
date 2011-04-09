@@ -1015,8 +1015,8 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 	}
 
 	// rkh - weapondamage mod
-	if (g_weapondamage.integer == 0)
-	   damage = 0;
+	//if (g_weapondamage.integer == 0)
+	  // damage = 0;
 
 	take = damage;
 	save = 0;

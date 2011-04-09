@@ -91,13 +91,13 @@ struct gentity_s {
 	char		*model;
 	char		*model2;
 	int			freetime;			// level.time when the object was freed
-	
+
 	int			eventTime;			// events will be cleared EVENT_VALID_MSEC after set
 	qboolean	freeAfterEvent;
 	qboolean	unlinkAfterEvent;
 
 	qboolean	physicsObject;		// if true, it can be pushed by movers and fall off edges
-									// all game items are physicsObjects, 
+									// all game items are physicsObjects,
 	float		physicsBounce;		// 1.0 = continuous bounce, 0.0 = no bounce
 	int			clipmask;			// brushes with this content value will be collided against
 									// when moving.  items and corpses do not collide against
@@ -244,7 +244,7 @@ typedef struct {
 //------------------------------------
 /*
 typedef struct {
-	clientConnected_t	connected;	
+	clientConnected_t	connected;
 	usercmd_t	cmd;			// we would lose angles if not persistant
 	qboolean	localClient;		// true if "ip" info key is "localhost"
 	qboolean	initialSpawn;		// the first spawn should be at a cool location
@@ -261,7 +261,7 @@ typedef struct {
 */
 // modified clientPersistant_t rkh
 typedef struct {
-	clientConnected_t	connected;	
+	clientConnected_t	connected;
 	usercmd_t	cmd;			// we would lose angles if not persistant
 	qboolean	localClient;		// true if "ip" info key is "localhost"
 	qboolean	initialSpawn;		// the first spawn should be at a cool location
@@ -274,7 +274,7 @@ typedef struct {
 	int			voteCount;			// to prevent people from constantly calling votes
 	int			teamVoteCount;		// to prevent people from constantly calling votes
 	qboolean	teamInfo;			// send team overlay updates?
-	qboolean	homing_status;		//rkh - homing mod
+	//qboolean	homing_status;		//rkh - homing mod
 	qboolean	plasma_bounce;		//rkh
 	qboolean	bfg_bounce;
 	qboolean	homing_parent;		//rkh - parent/shooter self attraction flag for bounding box detection
@@ -454,11 +454,11 @@ typedef struct {
   vec3_t origin;
   vec3_t velocity;
   vec3_t viewangles;
-  
+
   int delta_angles[3];
 
   int rkh_testval;
-  
+
   int pm_flags;
   int weapon;
   int weaponstate;

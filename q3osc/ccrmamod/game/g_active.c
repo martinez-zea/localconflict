@@ -152,7 +152,7 @@ void P_WorldEffects( gentity_t *ent ) {
 				// don't play a normal pain sound
 				ent->pain_debounce_time = level.time + 200;
 
-				G_Damage (ent, NULL, NULL, NULL, NULL, 
+				G_Damage (ent, NULL, NULL, NULL, NULL,
 					ent->damage, DAMAGE_NO_ARMOR, MOD_WATER);
 			}
 		}
@@ -164,7 +164,7 @@ void P_WorldEffects( gentity_t *ent ) {
 	//
 	// check for sizzle damage (move to pmove?)
 	//
-	if (waterlevel && 
+	if (waterlevel &&
 		(ent->watertype&(CONTENTS_LAVA|CONTENTS_SLIME)) ) {
 		if (ent->health > 0
 			&& ent->pain_debounce_time <= level.time	) {
@@ -173,12 +173,12 @@ void P_WorldEffects( gentity_t *ent ) {
 				G_AddEvent( ent, EV_POWERUP_BATTLESUIT, 0 );
 			} else {
 				if (ent->watertype & CONTENTS_LAVA) {
-					G_Damage (ent, NULL, NULL, NULL, NULL, 
+					G_Damage (ent, NULL, NULL, NULL, NULL,
 						30*waterlevel, 0, MOD_LAVA);
 				}
 
 				if (ent->watertype & CONTENTS_SLIME) {
-					G_Damage (ent, NULL, NULL, NULL, NULL, 
+					G_Damage (ent, NULL, NULL, NULL, NULL,
 						10*waterlevel, 0, MOD_SLIME);
 				}
 			}
@@ -386,8 +386,8 @@ qboolean ClientInactivityTimer( gclient_t *client ) {
 		// gameplay, everyone isn't kicked
 		client->inactivityTime = level.time + 60 * 1000;
 		client->inactivityWarning = qfalse;
-	} else if ( client->pers.cmd.forwardmove || 
-		client->pers.cmd.rightmove || 
+	} else if ( client->pers.cmd.forwardmove ||
+		client->pers.cmd.rightmove ||
 		client->pers.cmd.upmove ||
 		(client->pers.cmd.buttons & BUTTON_ATTACK) ) {
 		client->inactivityTime = level.time + g_inactivity.integer * 1000;
@@ -667,14 +667,14 @@ void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 			break;
 #endif
 		//MZ mod
-		
+
 		case EV_JUMP:
-			if (osc_send_client.integer == 1) 
+			if (osc_send_client.integer == 1)
 			{
-			osc_misc_vars currentClient;	
+			osc_misc_vars currentClient;
 			currentClient.hostname = osc_client_hostname.string;
 			currentClient.port = osc_client_port.string;
-			currentClient.msg =  "!hop"; 
+			currentClient.msg =  "!hop";
 			sendOSCmessage_misc(currentClient);
 
 			}
@@ -805,12 +805,12 @@ RKH - osc
       fudi_sockfd = -1;
       return 0;
     }
-  
+
   server.sin_family = AF_INET;
   memcpy((char *)&server.sin_addr, (char *)hp->h_addr, hp->h_length);
   server.sin_port = htons((unsigned short)fudi_port.integer);
 
-  
+
   if (connect(fudi_sockfd, (struct sockaddr *) &server, sizeof (server)) < 0)
     {
       fudi_sockerror("error calling connect");
@@ -820,7 +820,7 @@ RKH - osc
     }
 
   return 1;
-  
+
 }*/
 
 /*void osc_send_real(char *msg) {
@@ -845,7 +845,7 @@ RKH - osc
 }*/
 
 /*void osc_send(char *msg) {
-  //is the sockfd valid? 
+  //is the sockfd valid?
 
   if (fudi_sockfd>=0) {
     //yes
@@ -868,16 +868,16 @@ RKH - osc
       fudi_send_real(msg);
 
       return;
-    
+
     }
 
 
   }
 
   if(fudi_build_socket()) {
-    
+
     fudi_send_real(msg);
-    
+
   }
 
 }*/
@@ -889,7 +889,7 @@ RKH - osc
 }*/
 //#endif
 /* =================================================================
- rkh - end main declaration of fudi methods - maybe these will go in 
+ rkh - end main declaration of fudi methods - maybe these will go in
 a new file, rather than in g_active.c
 =================================================================*/
 
@@ -929,7 +929,7 @@ void ClientThink_real( gentity_t *ent ) {
 	if ( ucmd->serverTime < level.time - 1000 ) {
 		ucmd->serverTime = level.time - 1000;
 //		G_Printf("serverTime >>>>>\n" );
-	} 
+	}
 
 	msec = ucmd->serverTime - client->ps.commandTime;
 	// following others may result in bad times, but we still want
@@ -985,6 +985,7 @@ void ClientThink_real( gentity_t *ent ) {
 		client->ps.pm_type = PM_NOCLIP;
 	} else if ( client->ps.stats[STAT_HEALTH] <= 0 ) {
 		client->ps.pm_type = PM_DEAD;
+		//client->sess.spectatorState = ESPECTATOR_FOLLOW //MZ:w
 	} else {
 		client->ps.pm_type = PM_NORMAL;
 	}
@@ -1056,6 +1057,7 @@ void ClientThink_real( gentity_t *ent ) {
 
 	pm.ps = &client->ps;
 	pm.cmd = *ucmd;
+	// player move state while dead
 	if ( pm.ps->pm_type == PM_DEAD ) {
 		pm.tracemask = MASK_PLAYERSOLID & ~CONTENTS_BODY;
 	}
@@ -1096,7 +1098,7 @@ void ClientThink_real( gentity_t *ent ) {
 
 
 /* ========================================================================
-  RKH - Here's the main writing to osc 
+  RKH - Here's the main writing to osc
 	This is where the main tweaking will occur, changing from sending via
 	FUDI to OSC.update occurs every client frame, or more if fast client
 ======================================================================== */
@@ -1114,10 +1116,10 @@ void ClientThink_real( gentity_t *ent ) {
 	currentClient.classname = ent->classname;
 	//currentClient.hostname = osc_client_hostname.string;
 
-	if (osc_send_client.integer == 1) 
+	if (osc_send_client.integer == 1)
 	{
 		if(slork_switch.integer == 0){
-			currentClient.hostname = osc_client_hostname.string; 
+			currentClient.hostname = osc_client_hostname.string;
 
 			if(osc_bundle.integer == 1)
 				sendOSCbundle(currentClient);
@@ -1132,7 +1134,7 @@ void ClientThink_real( gentity_t *ent ) {
 				break;
 			case 1:
 				currentClient.hostname = osc_hostname2.string;
-				break;			
+				break;
 			case 2:
 				currentClient.hostname = osc_hostname3.string;
 				break;
@@ -1162,7 +1164,7 @@ void ClientThink_real( gentity_t *ent ) {
 				break;
 			case 11:
 				currentClient.hostname = osc_hostname12.string;
-				break;			
+				break;
 			case 12:
 				currentClient.hostname = osc_hostname13.string;
 				break;
@@ -1199,7 +1201,7 @@ void ClientThink_real( gentity_t *ent ) {
 
 		}
 		else if(slork_switch.integer > 1) {
-			
+
 			// send all osc data to slork_switch.integer number of clients
 			for(i = 0; i<slork_switch.integer; i++) {
 
@@ -1211,7 +1213,7 @@ void ClientThink_real( gentity_t *ent ) {
 					break;
 				case 1:
 					currentClient.hostname = osc_hostname2.string;
-					break;			
+					break;
 				case 2:
 					currentClient.hostname = osc_hostname3.string;
 					break;
@@ -1241,7 +1243,7 @@ void ClientThink_real( gentity_t *ent ) {
 					break;
 				case 11:
 					currentClient.hostname = osc_hostname12.string;
-					break;			
+					break;
 				case 12:
 					currentClient.hostname = osc_hostname13.string;
 					break;
@@ -1275,13 +1277,13 @@ void ClientThink_real( gentity_t *ent ) {
 					sendOSCbundle(currentClient);
 				else
 					sendOSCmessage(currentClient);
-				
-			}		
+
+			}
 
 		}
 
-	
-//	struct from q3apd in g_local.h	
+
+//	struct from q3apd in g_local.h
 //	osc_cache_t osc_cache[MAX_CLIENTS];
 
 //	clientno=pm.ps->clientNum;
@@ -1291,17 +1293,17 @@ void ClientThink_real( gentity_t *ent ) {
 //		tempHostname=currentClient.hostname;
 //		tempPort=currentClient.port;
 //	}
-	
+
 // ============================================================================
 // This is the main user-coordinate sendOSC call - rkh
 		if(osc_bundle.integer == 1)
 			sendOSCbundle(currentClient);
 		else
 			sendOSCmessage(currentClient);
-		
+
 	}
 // ============================================================================
-/* 
+/*
 
 
 
@@ -1321,7 +1323,7 @@ void ClientThink_real( gentity_t *ent ) {
 			     pm.ps->viewangles[0],pm.ps->viewangles[1],pm.ps->viewangles[2],
 			     pm.ps->delta_angles[0],pm.ps->delta_angles[1],pm.ps->delta_angles[2]);
 		    osc_send(buf);
-		    
+
 		    osc_cache[clientno].last_send=level.time;
 		  }
 
@@ -1399,12 +1401,12 @@ end rkh*/
 		// wait for the attack button to be pressed
 		if ( level.time > client->respawnTime ) {
 			// forcerespawn is to prevent users from waiting out powerups
-			if ( g_forcerespawn.integer > 0 && 
+			if ( g_forcerespawn.integer > 0 &&
 				( level.time - client->respawnTime ) > g_forcerespawn.integer * 1000 ) {
 				respawn( ent );
 				return;
 			}
-		
+
 			// pressing attack or use is the normal respawn method
 			if ( ucmd->buttons & ( BUTTON_ATTACK | BUTTON_USE_HOLDABLE ) ) {
 				respawn( ent );

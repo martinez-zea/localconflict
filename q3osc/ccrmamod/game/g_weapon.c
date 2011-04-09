@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 //
-// g_weapon.c 
+// g_weapon.c
 // perform the server side effects of a weapon firing
 
 #include "g_local.h"
@@ -114,8 +114,8 @@ qboolean CheckGauntletAttack( gentity_t *ent ) {
 	damage = 50 * s_quadFactor;
 
 	// rkh - weapondamage mod
-	if (g_weapondamage.integer == 0)
-	   damage = 0;
+	//if (g_weapondamage.integer == 0)
+	  // damage = 0;
 
 	G_Damage( traceEnt, ent, ent, forward, tr.endpos,
 		damage, 0, MOD_GAUNTLET );
@@ -138,7 +138,7 @@ SnapVectorTowards
 
 Round a vector to integers for more efficient network
 transmission, but make sure that it rounds towards a given point
-rather than blindly truncating.  This prevents it from truncating 
+rather than blindly truncating.  This prevents it from truncating
 into a wall.
 ======================
 */
@@ -177,8 +177,8 @@ void Bullet_Fire (gentity_t *ent, float spread, int damage ) {
 	damage *= s_quadFactor;
 
 	// rkh - weapondamage mod
-	if (g_weapondamage.integer == 0)
-	   damage = 0;
+	//if (g_weapondamage.integer == 0)
+	  // damage = 0;
 
 	r = random() * M_PI * 2.0f;
 	u = sin(r) * crandom() * spread * 16;
@@ -256,7 +256,7 @@ void BFG_Fire ( gentity_t *ent ) {
 	m->damage *= s_quadFactor;
 	m->splashDamage *= s_quadFactor;
 
-//	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
+	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
 }
 
 
@@ -295,10 +295,10 @@ qboolean ShotgunPellet( vec3_t start, vec3_t end, gentity_t *ent ) {
 
 		if ( traceEnt->takedamage) {
 			damage = DEFAULT_SHOTGUN_DAMAGE * s_quadFactor;
-		
+
 			// rkh - weapondamage mod
-			if (g_weapondamage.integer == 0)
-	   			damage = 0;
+			//if (g_weapondamage.integer == 0)
+	   			//damage = 0;
 #ifdef MISSIONPACK
 			if ( traceEnt->client && traceEnt->client->invulnerabilityTime > level.time ) {
 				if (G_InvulnerabilityEffect( traceEnt, forward, tr.endpos, impactpoint, bouncedir )) {
@@ -397,7 +397,7 @@ void weapon_grenadelauncher_fire (gentity_t *ent) {
 	m->damage *= s_quadFactor;
 	m->splashDamage *= s_quadFactor;
 
-//	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
+	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
 }
 
 /*
@@ -415,7 +415,7 @@ void Weapon_RocketLauncher_Fire (gentity_t *ent) {
 	m->damage *= s_quadFactor;
 	m->splashDamage *= s_quadFactor;
 
-//	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
+	VectorAdd( m->s.pos.trDelta, ent->client->ps.velocity, m->s.pos.trDelta );	// "real" physics
 }
 
 
@@ -470,8 +470,8 @@ void weapon_railgun_fire (gentity_t *ent) {
 	damage = 100 * s_quadFactor;
 
 	// rkh - weapondamage mod
-	if (g_weapondamage.integer == 0)
-	   damage = 0;
+	//if (g_weapondamage.integer == 0)
+	  // damage = 0;
 
 	VectorMA (muzzle, 8192, forward, end);
 
@@ -639,8 +639,8 @@ void Weapon_LightningFire( gentity_t *ent ) {
 	damage = 8 * s_quadFactor;
 
 	// rkh - weapondamage mod
-	if (g_weapondamage.integer == 0)
-	   damage = 0;
+	//if (g_weapondamage.integer == 0)
+	  // damage = 0;
 
 	passent = ent->s.number;
 	for (i = 0; i < 10; i++) {

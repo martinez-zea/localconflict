@@ -254,7 +254,7 @@ gentity_t *SelectSpawnPoint ( vec3_t avoidPoint, vec3_t origin, vec3_t angles ) 
 		if ( spot == nearestSpot ) {
 			// last try
 			spot = SelectRandomDeathmatchSpawnPoint ( );
-		}		
+		}
 	}
 
 	// find a single player start spot
@@ -352,7 +352,7 @@ void BodySink( gentity_t *ent ) {
 		// the body ques are never actually freed, they are just unlinked
 		trap_UnlinkEntity( ent );
 		ent->physicsObject = qfalse;
-		return;	
+		return;
 	}
 	ent->nextthink = level.time + 100;
 	ent->s.pos.trBase[2] -= 1;
@@ -747,7 +747,7 @@ void ClientUserinfoChanged( int clientNum ) {
 
 	if ( client->pers.connected == CON_CONNECTED ) {
 		if ( strcmp( oldname, client->pers.netname ) ) {
-			trap_SendServerCommand( -1, va("print \"%s" S_COLOR_WHITE " renamed to %s\n\"", oldname, 
+			trap_SendServerCommand( -1, va("print \"%s" S_COLOR_WHITE " renamed to %s\n\"", oldname,
 				client->pers.netname) );
 		}
 	}
@@ -864,12 +864,12 @@ void ClientUserinfoChanged( int clientNum ) {
 	// print scoreboards, display models, and play custom sounds
 	if ( ent->r.svFlags & SVF_BOT ) {
 		s = va("n\\%s\\t\\%i\\model\\%s\\hmodel\\%s\\c1\\%s\\c2\\%s\\hc\\%i\\w\\%i\\l\\%i\\skill\\%s\\tt\\%d\\tl\\%d",
-			client->pers.netname, team, model, headModel, c1, c2, 
+			client->pers.netname, team, model, headModel, c1, c2,
 			client->pers.maxHealth, client->sess.wins, client->sess.losses,
 			Info_ValueForKey( userinfo, "skill" ), teamTask, teamLeader );
 	} else {
 		s = va("n\\%s\\t\\%i\\model\\%s\\hmodel\\%s\\g_redteam\\%s\\g_blueteam\\%s\\c1\\%s\\c2\\%s\\hc\\%i\\w\\%i\\l\\%i\\tt\\%d\\tl\\%d",
-			client->pers.netname, client->sess.sessionTeam, model, headModel, redTeam, blueTeam, c1, c2, 
+			client->pers.netname, client->sess.sessionTeam, model, headModel, redTeam, blueTeam, c1, c2,
 			client->pers.maxHealth, client->sess.wins, client->sess.losses, teamTask, teamLeader);
 	}
 
@@ -999,12 +999,12 @@ void ClientBegin( int clientNum ) {
 	ent = g_entities + clientNum;
 
 	client = level.clients + clientNum;
-	
-	client->pers.homing_status = 0;	//rkh homing mod
-	client->pers.plasma_bounce = 1; //rkh bounce mod - hard-code default enabled
-	client->pers.bfg_bounce = 1; //rkh bfg bounce mod - hard-code default enabled
+
+	//client->pers.homing_status = 0;	//rkh homing mod
+	client->pers.plasma_bounce = 0; //rkh bounce mod - hard-code default enabled
+	client->pers.bfg_bounce = 0; //rkh bfg bounce mod - hard-code default enabled
 	client->pers.homing_parent = 0;
-	client->pers.homing_parent_only = 0;	
+	client->pers.homing_parent_only = 0;
 	client->pers.osc_send_client = 0;
 	client->pers.osc_send_projectile = 0;
 
@@ -1079,13 +1079,13 @@ void ClientSpawn(gentity_t *ent) {
 	// do it before setting health back up, so farthest
 	// ranging doesn't count this client
 	if ( client->sess.sessionTeam == TEAM_SPECTATOR ) {
-		spawnPoint = SelectSpectatorSpawnPoint ( 
+		spawnPoint = SelectSpectatorSpawnPoint (
 						spawn_origin, spawn_angles);
 	} else if (g_gametype.integer >= GT_CTF ) {
 		// all base oriented team games use the CTF spawn points
-		spawnPoint = SelectCTFSpawnPoint ( 
-						client->sess.sessionTeam, 
-						client->pers.teamState.state, 
+		spawnPoint = SelectCTFSpawnPoint (
+						client->sess.sessionTeam,
+						client->pers.teamState.state,
 						spawn_origin, spawn_angles);
 	} else {
 		do {
@@ -1095,8 +1095,8 @@ void ClientSpawn(gentity_t *ent) {
 				spawnPoint = SelectInitialSpawnPoint( spawn_origin, spawn_angles );
 			} else {
 				// don't spawn near existing origin if possible
-				spawnPoint = SelectSpawnPoint ( 
-					client->ps.origin, 
+				spawnPoint = SelectSpawnPoint (
+					client->ps.origin,
 					spawn_origin, spawn_angles);
 			}
 
@@ -1178,27 +1178,27 @@ void ClientSpawn(gentity_t *ent) {
 	ent->waterlevel = 0;
 	ent->watertype = 0;
 	ent->flags = 0;
-	
+
 	VectorCopy (playerMins, ent->r.mins);
 	VectorCopy (playerMaxs, ent->r.maxs);
 
 	client->ps.clientNum = index;
 // rkh - comment out to start with no weapons
-//	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_MACHINEGUN );
-//	if ( g_gametype.integer == GT_TEAM ) {
-//		client->ps.ammo[WP_MACHINEGUN] = 50;
-//	} else {
-//		client->ps.ammo[WP_MACHINEGUN] = 100;
-//	}
+	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_MACHINEGUN );
+	if ( g_gametype.integer == GT_TEAM ) {
+		client->ps.ammo[WP_MACHINEGUN] = 50;
+	} else {
+		client->ps.ammo[WP_MACHINEGUN] = 100;
+	}
 // rkh - comment out to start with no weapons
-//	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
-//	client->ps.ammo[WP_GAUNTLET] = -1;
-//	client->ps.ammo[WP_GRAPPLING_HOOK] = -1;
+	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
+	client->ps.ammo[WP_GAUNTLET] = -1;
+	client->ps.ammo[WP_GRAPPLING_HOOK] = -1;
 
-//	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_PLASMAGUN ); //rkh - added
-	client->ps.stats[STAT_WEAPONS] = (1 << WP_PLASMAGUN) | (1 << WP_BFG);
+	//client->ps.stats[STAT_WEAPONS] = ( 1 << WP_PLASMAGUN ); //rkh - added
+//	client->ps.stats[STAT_WEAPONS] = (1 << WP_PLASMAGUN) | (1 << WP_BFG);
 //	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_BFG ); //rkh - added
-	client->ps.ammo[WP_BFG] = -1; // rkh - added
+	//client->ps.ammo[WP_BFG] = -1; // rkh - added
 	client->ps.ammo[WP_PLASMAGUN] = -1; // rkh - added
 
 	// health will count down towards max_health
@@ -1221,10 +1221,10 @@ void ClientSpawn(gentity_t *ent) {
 
 		// force the base weapon up
 //		rkh - comment out to start with no weapons
-//		client->ps.weapon = WP_MACHINEGUN;
-//		client->ps.weaponstate = WEAPON_READY;
-		client->ps.weapon = WP_PLASMAGUN; // rkh - added
-		client->ps.weaponstate = WEAPON_READY; // rkh -added
+		client->ps.weapon = WP_MACHINEGUN;
+		client->ps.weaponstate = WEAPON_READY;
+//		client->ps.weapon = WP_PLASMAGUN; // rkh - added
+//		client->ps.weaponstate = WEAPON_READY; // rkh -added
 
 	}
 
@@ -1249,14 +1249,14 @@ void ClientSpawn(gentity_t *ent) {
 		// select the highest weapon number available, after any
 		// spawn given items have fired
 		// rkh - commented out below and set hard to Plasma Gun to start
-		client->ps.weapon = 8;
-//		client->ps.weapon = 1;
-//		for ( i = WP_NUM_WEAPONS - 1 ; i > 0 ; i-- ) {
-//			if ( client->ps.stats[STAT_WEAPONS] & ( 1 << i ) ) {
-//				client->ps.weapon = i;
-//				break;
-//			}
-//		}
+//		client->ps.weapon = 8;
+		//client->ps.weapon = 1;
+		for ( i = WP_NUM_WEAPONS - 1 ; i > 0 ; i-- ) {
+			if ( client->ps.stats[STAT_WEAPONS] & ( 1 << i ) ) {
+				client->ps.weapon = i;
+				break;
+			}
+		}
 	}
 
 	// run a client frame to drop exactly to the floor,
@@ -1316,7 +1316,7 @@ void ClientDisconnect( int clientNum ) {
 	}
 
 	// send effect if they were completely connected
-	if ( ent->client->pers.connected == CON_CONNECTED 
+	if ( ent->client->pers.connected == CON_CONNECTED
 		&& ent->client->sess.sessionTeam != TEAM_SPECTATOR ) {
 		tent = G_TempEntity( ent->client->ps.origin, EV_PLAYER_TELEPORT_OUT );
 		tent->s.clientNum = ent->s.clientNum;
