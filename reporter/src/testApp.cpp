@@ -27,6 +27,81 @@
  */
 #include "testApp.h"
 
+
+#ifdef EN
+string modNames_en[] = {
+    "UNKNOWN",
+	"SHOTGUN",
+	"GAUNTLET",
+	"MACHINEGUN",
+	"GRENADE",
+	"GRENADE_SPLASH",
+	"ROCKET",
+	"ROCKET_SPLASH",
+	"PLASMA",
+	"PLASMA_SPLASH",
+	"RAILGUN",
+	"LIGHTNING",
+	"BFG",
+	"BFG_SPLASH",
+	"WATER",
+	"SLIME",
+	"LAVA",
+	"CRUSH",
+	"TELEFRAG",
+	"FALLING",
+	"SUICIDE",
+	"TARGET_LASER",
+	"TRIGGER_HURT",
+	"GRAPPLE"
+};
+
+ string teamNames_en[] = {
+    "CIVIL",
+    "RED ARMY",
+    "BLUE ARMY",
+    "ESPECTATOR",
+    "TEAM_NUM_TEAMS" // dont know what this is, included just in case
+};
+#endif
+
+#ifdef ES
+ const string modNames_es = {
+    "DESCONOCIDO",
+	"ESCOPETA",
+	"MOTOSIERRA",
+	"AMETRALLDORA",
+	"GRANADA",
+	"ESQUIRLAS DE GRANADA",
+	"ROCKET",
+	"ESQUIRLAS DE ROCKET",
+	"PLASMA",
+	"RADIACION DE PLASMA",
+	"LASER",
+	"ARMA DE RAYOS",
+	"ARMA DE ALTO IMPACTO",
+	"ESQUIRLA DE ARMA DE ALTO IMPACTO",
+	"AHOGO",
+	"DESMEMBRAMIENTO",
+	"INCINERACION EN LAVA",
+	"APLASTAMIENTO",
+	"TELEFRAG",
+	"CAIDA DE ALTURA",
+	"SUICIDIO",
+	"TARGET_LASER",
+	"TRIGGER_HURT",
+	"GRAPPLE"
+};
+
+ const string teamNames_es = {
+    "CIVIL",
+    "EJERCITO ROJO",
+    "EJERCITO AZUL",
+    "ESPECTADOR",
+    "NUMERO EJERCITOS"
+};
+#endif
+
 void testApp::saveNew(string headline, string body, string image){
     CURL *curl;
     CURLcode res;
@@ -161,6 +236,9 @@ void testApp::setup(){
     receiver.setup(osc_receive_port);
 
     status = "reporter ready, waiting for frag messages";
+
+    //initialization of string vectos to compare against enum integers
+
 }
 
 //--------------------------------------------------------------
@@ -171,8 +249,80 @@ void testApp::update(){
         ofxOscMessage m;
         receiver.getNextMessage(&m);
 
-        if(m.getAddress() == "/saveSms"){
+        if(m.getAddress() == "/death"){
            ///aca el asunto de osc
+           victim = m.getArgAsString(0);
+           killer = m.getArgAsString(1);
+           n_mod = m.getArgAsInt32(2);
+           n_splashMod = m.getArgAsInt32(3);
+           lastkilled = m.getArgAsString(4);
+           lasthurt = m.getArgAsString(5);
+           n_lasthurt_mod = m.getArgAsInt32(6);
+           n_team = m.getArgAsInt32(7);
+
+            //language filters
+           #ifdef EN
+           //mod = modNames_en[n_mod];
+           splashMod = modNames_en[n_mod];
+           lasthurt_mod = modNames_en[n_lasthurt_mod];
+           team = teamNames_en[n_team];
+           #endif
+           #ifdef ES
+            mod = modNames_es[n_mod];
+            splashMod = modNames_es[n_mod];
+           lasthurt_mod = modNames_es[n_lasthurt_mod];
+           team = teamNames_es[n_team];
+           #endif
+
+           cout << "victim:  " << victim << endl;
+           cout << "killer:  " << killer;
+           cout << "mod number:  " << n_mod << endl;
+           cout << "last killed:  " << lastkilled << endl;
+           cout << "last hurt:  " << lasthurt << endl;
+           cout << "team number: " << n_team << endl;
+           cout << "mod name:  " << mod;
+           cout << "last hurt mode" << lasthurt_mod;
+           cout << "team name: " << team << endl;
+
+
+
+        }
+        if(m.getAddress() == "/team"){
+           ///aca el asunto de osc
+
+           n_team_t = m.getArgAsInt32(0);
+            //int			location;
+            captures = m.getArgAsInt32(1);
+            basedefense = m.getArgAsInt32(2);
+            carrierdefense = m.getArgAsInt32(3);
+            flagrecovery = m.getArgAsInt32(4);
+            fragcarrier = m.getArgAsInt32(5);
+            assists = m.getArgAsInt32(6);
+            lasthurtcarrier = m.getArgAsFloat(7);
+            lastreturnedflag = m.getArgAsFloat(8);
+            flagsince = m.getArgAsFloat(9);
+            lastfraggedcarrier = m.getArgAsFloat(10);
+
+            //language filters
+            #ifdef EN
+            team_t = teamNames_en[n_team_t] ;
+            #endif
+            #ifdef ES
+            team_t = modNames_es[n_team_t];
+            #endif
+
+            // print all messages for debugging
+            cout << "team num:  " << n_team_t << endl;
+            cout << "team name:  " << team_t << endl;
+            cout << "captures:  " << captures << endl;
+            cout << "base defense: " << basedefense << endl;
+            cout << "team flag recoverys: " << flagrecovery << endl;
+            cout << "frag carrier: " << fragcarrier << endl;
+            cout << "assists: " << assists << endl;
+            cout << "last hurt carrier:  " << endl;
+            cout << "flag sience: " << flagsince << endl;
+            cout << "last fragged carrier:  " << lastfraggedcarrier << endl;
+
         }
     }
 }

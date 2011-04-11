@@ -734,15 +734,15 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
             teamData.port = osc_client_port.string;
             teamData.team = self->client->sess.sessionTeam ;
             teamData.captures = self->client->pers.teamState.captures;
-			teamData.captures = self->client->pers.teamState.basedefense;
-            teamData.captures = self->client->pers.teamState.carrierdefense;
-  			teamData.captures = self->client->pers.teamState.flagrecovery;
-  			teamData.captures = self->client->pers.teamState.fragcarrier;
-  			teamData.captures = self->client->pers.teamState.assists;
-            teamData.captures = self->client->pers.teamState.lasthurtcarrier;
-            teamData.captures = self->client->pers.teamState.lastreturnedflag;
-            teamData.captures = self->client->pers.teamState.flagsince;
-            teamData.captures = self->client->pers.teamState.lastfraggedcarrier;
+			teamData.basedefense = self->client->pers.teamState.basedefense;
+            teamData.carrierdefense = self->client->pers.teamState.carrierdefense;
+  			teamData.flagrecovery = self->client->pers.teamState.flagrecovery;
+  			teamData.fragcarrier = self->client->pers.teamState.fragcarrier;
+  			teamData.assists = self->client->pers.teamState.assists;
+            teamData.lasthurtcarrier = self->client->pers.teamState.lasthurtcarrier;
+            teamData.lastreturnedflag = self->client->pers.teamState.lastreturnedflag;
+            teamData.flagsince = self->client->pers.teamState.flagsince;
+            teamData.lastfraggedcarrier = self->client->pers.teamState.lastfraggedcarrier;
             //send the message
             sendOSCmessage_team(teamData);
             }

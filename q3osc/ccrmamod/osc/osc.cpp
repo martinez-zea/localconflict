@@ -176,18 +176,8 @@ void sendOSCmessage_death(osc_death_vars currentClient)
         << currentClient.lastkilled	// last client that this client killed
         <<currentClient.lasthurt	// last client that damaged this client
         <<(int)currentClient.lasthurt_mod
-        //team info
 	    <<(int)currentClient.team
-        <<(int)currentClient.captures
-        <<(int)currentClient.basedefense
-        //<<(int)currentClient.carrierdefense
-        //<<(int)currentClient.flagrecovery
-        //<<(int)currentClient.fragcarrier
-//        <<(int)currentClient.assists
-//        <<(float)currentClient.lasthurtcarrier
-//        <<(float)currentClient.lastreturnedflag
-//        <<(float)currentClient.flagsince
-//        <<(float)currentClient.lastfraggedcarrier
+
 	  << osc::EndMessage;
 
    if(p.IsReady()){ socket.Send( p.Data(), p.Size() );}
