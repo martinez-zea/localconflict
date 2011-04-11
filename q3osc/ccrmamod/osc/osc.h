@@ -68,36 +68,57 @@ typedef struct {
 //          int year;
 } osc_misc_vars;
 
+
+//MZ
 typedef struct {
   char *hostname;
   char *port;
   char *victim;
   char *killer;
-  char *cause;
-  char *team;
- //int clientnum;
-  //float origin[3];
-  //int pm_flags;
-  //int weapon;
-  //int weaponstate;
-  //int jumppad_ent;
-  //int damageEvent;
-  //int damageYaw;
-  //int damagePitch;
-  //int damageCount;
-  //int surfaceFlags;
-  //int groundEntityNum;
-  //char *classname;
+  int  methodOfDeath;
+  int  splashMethodOfDeath;
+  char *lastkilled;	// last client that this client killed
+  char   *lasthurt;	// last client that damaged this client
+  int   lasthurt_mod;		// type of damage the client did
+
+   //team info variables
+  //char *team;
+  int team;
+  //int			location;
+  int			captures;
+  int			basedefense;
+  int			carrierdefense;
+//  int			flagrecovery;
+//  int			fragcarrier;
+//  int			assists;
+//  float		lasthurtcarrier;
+//  float		lastreturnedflag;
+//  float		flagsince;
+//  float		lastfraggedcarrier;
   char *hostnames[20]; // rkh - added array of client IPs
-//	int clientnum;
-//	float origin1;
-//	float origin2;
-//	float origin3;
-//          char name[64];
-//         char course[128];
-//          int age;
-//          int year;
+
 } osc_death_vars;
+
+typedef struct {
+  char *hostname;
+  char *port;
+   //team info variables
+  //char *team;
+  int team;
+  //int			location;
+  int			captures;
+  int			basedefense;
+  int			carrierdefense;
+  int			flagrecovery;
+  int			fragcarrier;
+  int			assists;
+  float		lasthurtcarrier;
+  float		lastreturnedflag;
+  float		flagsince;
+  float		lastfraggedcarrier;
+  char *hostnames[20]; // rkh - added array of client IPs
+
+} osc_team_vars;
 
 
 typedef struct {
@@ -126,6 +147,7 @@ void	sendOSCmessage_projectile(osc_projectile_vars currentProjectile); //, char 
 
 void sendOSCmessage_misc(osc_misc_vars currentClient);
 void sendOSCmessage_death(osc_death_vars currentClient);
+void sendOSCmessage_team(osc_team_vars teamData);
 
 /*
 class fooClass

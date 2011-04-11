@@ -668,18 +668,18 @@ void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 #endif
 		//MZ mod
 
-		case EV_JUMP:
-			if (osc_send_client.integer == 1)
-			{
-			osc_misc_vars currentClient;
-			currentClient.hostname = osc_client_hostname.string;
-			currentClient.port = osc_client_port.string;
-			currentClient.msg =  "!hop";
-			sendOSCmessage_misc(currentClient);
-
-			}
-
-			break;
+//		case EV_JUMP:
+//			if (osc_send_client.integer == 1)
+//			{
+//			osc_misc_vars currentClient;
+//			currentClient.hostname = osc_client_hostname.string;
+//			currentClient.port = osc_client_port.string;
+//			currentClient.msg =  "!hop";
+//			sendOSCmessage_misc(currentClient);
+//
+//			}
+//
+//			break;
 		//MZ mod
 
 		default:

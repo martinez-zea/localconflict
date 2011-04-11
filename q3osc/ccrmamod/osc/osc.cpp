@@ -154,6 +154,7 @@ void sendOSCmessage_misc(osc_misc_vars currentClient)
    if(p.IsReady()){ socket.Send( p.Data(), p.Size() );}
 }
 
+
 void sendOSCmessage_death(osc_death_vars currentClient)
 {
 	std::string str(currentClient.port);
@@ -170,8 +171,54 @@ void sendOSCmessage_death(osc_death_vars currentClient)
 	p << osc::BeginMessage( "/death" )
 	    << currentClient.victim
         << currentClient.killer
-	    << currentClient.cause
-	    << currentClient.team
+	    << (int)currentClient.methodOfDeath
+	    << (int)currentClient.splashMethodOfDeath
+        << currentClient.lastkilled	// last client that this client killed
+        <<currentClient.lasthurt	// last client that damaged this client
+        <<(int)currentClient.lasthurt_mod
+        //team info
+	    <<(int)currentClient.team
+        <<(int)currentClient.captures
+        <<(int)currentClient.basedefense
+        //<<(int)currentClient.carrierdefense
+        //<<(int)currentClient.flagrecovery
+        //<<(int)currentClient.fragcarrier
+//        <<(int)currentClient.assists
+//        <<(float)currentClient.lasthurtcarrier
+//        <<(float)currentClient.lastreturnedflag
+//        <<(float)currentClient.flagsince
+//        <<(float)currentClient.lastfraggedcarrier
+	  << osc::EndMessage;
+
+   if(p.IsReady()){ socket.Send( p.Data(), p.Size() );}
+}
+
+void sendOSCmessage_team(osc_team_vars teamData)
+{
+	std::string str(teamData.port);
+	std::istringstream strin(str);
+	int port;
+	strin >> port;
+
+   char buffer[OUTPUT_BUFFER_SIZE];
+
+   osc::OutboundPacketStream p( buffer, OUTPUT_BUFFER_SIZE );
+   UdpTransmitSocket socket( IpEndpointName( teamData.hostname, port ));
+   p.Clear();
+
+	p << osc::BeginMessage( "/team" )
+
+	    <<(int)teamData.team
+        <<(int)teamData.captures
+        <<(int)teamData.basedefense
+        <<(int)teamData.carrierdefense
+        <<(int)teamData.flagrecovery
+        <<(int)teamData.fragcarrier
+        <<(int)teamData.assists
+        <<(float)teamData.lasthurtcarrier
+        <<(float)teamData.lastreturnedflag
+        <<(float)teamData.flagsince
+       <<(float)teamData.lastfraggedcarrier
 	  << osc::EndMessage;
 
    if(p.IsReady()){ socket.Send( p.Data(), p.Size() );}

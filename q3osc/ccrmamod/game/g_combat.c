@@ -318,6 +318,8 @@ char	*modNames[] = {
 	"MOD_GRAPPLE"
 };
 
+
+
 #ifdef MISSIONPACK
 /*
 ==================
@@ -507,7 +509,6 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	self->enemy = attacker;
 
 	self->client->ps.persistant[PERS_KILLED]++;
-
 	if (attacker && attacker->client) {
 		attacker->client->lastkilled_client = self->s.number;
 
@@ -689,13 +690,64 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 		currentClient.port = osc_client_port.string;
         currentClient.victim = self->client->pers.netname;
         currentClient.killer = killerName;
-	    currentClient.cause = "means of death";
-	    currentClient.team = "team";
+	    currentClient.methodOfDeath = meansOfDeath;
 
-		sendOSCmessage_death(currentClient);
+        gclient_t	*who;
+        //check if killed before
+        if(self->client->lastkilled_client >=0){
+            who = &level.clients[level.sortedClients[self->client->lastkilled_client]];
+            currentClient.lastkilled = who->pers.netname;
+        }else{
+            currentClient.lastkilled = "None";
+        }
+        if(self->client->lasthurt_client >= 0){
+            who = &level.clients[level.sortedClients[self->client->lasthurt_client]];
+            currentClient.lasthurt = who->pers.netname;
+            currentClient.lasthurt_mod = self->client->lasthurt_mod;		// type of damage the client did
+        }else{
+            currentClient.lasthurt = "None";
+            currentClient.lasthurt_mod = self->client->lasthurt_mod;		// type of damage the client did
+        }
+//    PERS_SCORE,						// !!! MUST NOT CHANGE, SERVER AND GAME BOTH REFERENCE !!!
+//	PERS_HITS,						// total points damage inflicted so damage beeps can sound on change
+//	PERS_RANK,						// player rank or team rank
+//	PERS_TEAM,						// player team
+//	PERS_SPAWN_COUNT,				// incremented every respawn
+//	PERS_PLAYEREVENTS,				// 16 bits that can be flipped for events
+//	PERS_ATTACKER,					// clientnum of last damage inflicter
+//	PERS_ATTACKEE_ARMOR,			// health/armor of last person we attacked
+//	PERS_KILLED,					// count of the number of times you died
+//	// player awards tracking
+//	PERS_IMPRESSIVE_COUNT,			// two railgun hits in a row
+//	PERS_EXCELLENT_COUNT,			// two successive kills in a short amount of time
+//	PERS_DEFEND_COUNT,				// defend awards
+//	PERS_ASSIST_COUNT,				// assist awards
+//	PERS_GAUNTLET_FRAG_COUNT,		// kills with the guantlet
+//	PERS_CAPTURES
 
 
-	}
+        sendOSCmessage_death(currentClient);
+
+        if ( g_gametype.integer == GT_CTF ) {
+            osc_team_vars teamData;
+            teamData.hostname = osc_client_hostname.string;
+            teamData.port = osc_client_port.string;
+            teamData.team = self->client->sess.sessionTeam ;
+            teamData.captures = self->client->pers.teamState.captures;
+			teamData.captures = self->client->pers.teamState.basedefense;
+            teamData.captures = self->client->pers.teamState.carrierdefense;
+  			teamData.captures = self->client->pers.teamState.flagrecovery;
+  			teamData.captures = self->client->pers.teamState.fragcarrier;
+  			teamData.captures = self->client->pers.teamState.assists;
+            teamData.captures = self->client->pers.teamState.lasthurtcarrier;
+            teamData.captures = self->client->pers.teamState.lastreturnedflag;
+            teamData.captures = self->client->pers.teamState.flagsince;
+            teamData.captures = self->client->pers.teamState.lastfraggedcarrier;
+            //send the message
+            sendOSCmessage_team(teamData);
+            }
+
+        }
     //MZ
 
 }
