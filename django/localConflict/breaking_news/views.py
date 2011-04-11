@@ -5,6 +5,7 @@ from django.template import RequestContext
 
 def index(request):
     all_news = new.objects.all().order_by('-when')
+   
     return render_to_response('breaking_news/index.html', {'all_news' : all_news}, context_instance=RequestContext(request))
 
 def add(request):
