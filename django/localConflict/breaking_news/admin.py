@@ -3,8 +3,8 @@ from django.contrib import admin
 from sorl.thumbnail.admin import AdminImageMixin
  
 class newAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ('when', 'team', 'message', 'weapon')
-    list_filter= ['when', 'team', 'weapon']
+    list_display = ('when', 'headline', 'body')
+    list_filter= ['when',]
     date_hierarchy = 'when'
     
 admin.site.register(new, newAdmin)

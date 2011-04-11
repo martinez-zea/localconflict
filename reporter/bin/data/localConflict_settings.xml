@@ -1,0 +1,6 @@
+<lc>
+	<server>
+		<osc_receive_port>9000</osc_receive_port>
+                <post_url>http://localconflict.local.lab:8001/breaking_news/api/new/</post_url>
+	</server>
+</lc>

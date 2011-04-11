@@ -8,14 +8,15 @@ class newHandler(BaseHandler):
     model = new
     
     def create(self, request):
-        m = request.REQUEST["murder"]
-        d = request.REQUEST["dead"]
-        t = request.REQUEST["team"]
-        w = request.REQUEST["weapon"]
-        ms = request.REQUEST["message"]
-        im = request.FILES["img"]
+        h = request.REQUEST["headline"]
+        b = request.REQUEST["body"]
         
-        nw = new(murder=m, dead=d, team=t, weapon=w, message=ms, img=im)
+        if('image' in request.FILES):
+            im = request.FILES["image"]
+            nw = new(headline=h, body=b, image=im)
+            
+        else:
+            nw = new(headline=h, body=b)
+                                   
         nw.save()
-        
         return rc.ALL_OK
