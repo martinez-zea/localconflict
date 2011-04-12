@@ -59,6 +59,7 @@ class testApp : public ofBaseApp{
 
 		///interact with django app
 		void saveNew(string headline, string body, string image);
+		void saveNew(string headline, string body);
 
 		string status;
 

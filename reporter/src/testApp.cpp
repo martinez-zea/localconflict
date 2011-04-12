@@ -36,7 +36,6 @@ void testApp::saveNew(string headline, string body, string image){
     struct curl_slist *headerlist = NULL;
     static const char buff[] = "Expect:";
 
-    //string *m = "painter";
 
     curl_global_init(CURL_GLOBAL_ALL);
 
@@ -59,6 +58,61 @@ void testApp::saveNew(string headline, string body, string image){
                  CURLFORM_COPYNAME, "image",
                  CURLFORM_FILE, image.c_str(),
                  CURLFORM_END) << endl;
+
+    // fill the submit field
+    curl_formadd(&formpost,
+                 &lastptr,
+                 CURLFORM_COPYNAME, "submit",
+                 CURLFORM_COPYCONTENTS, "send",
+                 CURLFORM_END);
+
+    curl = curl_easy_init();
+
+    headerlist = curl_slist_append(headerlist, buff);
+
+    if(curl){
+
+        curl_easy_setopt(curl, CURLOPT_URL, url_post.c_str());
+
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
+        curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
+
+        res = curl_easy_perform(curl);
+
+        status = "upload done";
+
+        //cleanup
+        curl_easy_cleanup(curl);
+        curl_formfree(formpost);
+        curl_slist_free_all(headerlist);
+    }
+}
+
+void testApp::saveNew(string headline, string body){
+    CURL *curl;
+    CURLcode res;
+
+    struct curl_httppost *formpost=NULL;
+    struct curl_httppost *lastptr=NULL;
+    struct curl_slist *headerlist = NULL;
+    static const char buff[] = "Expect:";
+
+
+    curl_global_init(CURL_GLOBAL_ALL);
+
+    //fill the message field
+    curl_formadd(&formpost,
+                 &lastptr,
+                 CURLFORM_COPYNAME, "headline",
+                 CURLFORM_COPYCONTENTS, headline.c_str(),
+                 CURLFORM_END);
+
+
+    curl_formadd(&formpost,
+                 &lastptr,
+                 CURLFORM_COPYNAME, "body",
+                 CURLFORM_COPYCONTENTS, body.c_str(),
+                 CURLFORM_END);
 
     // fill the submit field
     curl_formadd(&formpost,
@@ -135,6 +189,7 @@ void testApp::draw(){
 void testApp::keyPressed(int key){
     if(key == 's') {
         saveNew("hola", "oueaaoen.", "data/img/conflicto_local_1.png");
+        saveNew("otra", "sin imagen");
     }
 }
 
