@@ -58,7 +58,7 @@ class testApp : public ofBaseApp{
         string url_post; //where to post data
 
 		///interact with django app
-		string saveNew(string headline, string body, string image);
+		void saveNew(string headline, string body, string image);
 
 		string status;
 

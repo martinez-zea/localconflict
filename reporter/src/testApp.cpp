@@ -27,7 +27,7 @@
  */
 #include "testApp.h"
 
-string testApp::saveNew(string headline, string body, string image){
+void testApp::saveNew(string headline, string body, string image){
     CURL *curl;
     CURLcode res;
 
@@ -47,17 +47,18 @@ string testApp::saveNew(string headline, string body, string image){
                  CURLFORM_COPYCONTENTS, headline.c_str(),
                  CURLFORM_END);
 
+
     curl_formadd(&formpost,
                  &lastptr,
                  CURLFORM_COPYNAME, "body",
                  CURLFORM_COPYCONTENTS, body.c_str(),
                  CURLFORM_END);
 
-    curl_formadd(&formpost,
+    cout << curl_formadd(&formpost,
                  &lastptr,
                  CURLFORM_COPYNAME, "image",
-                 CURLFORM_COPYCONTENTS, image.c_str(),
-                 CURLFORM_END);
+                 CURLFORM_FILE, image.c_str(),
+                 CURLFORM_END) << endl;
 
     // fill the submit field
     curl_formadd(&formpost,
@@ -71,12 +72,15 @@ string testApp::saveNew(string headline, string body, string image){
     headerlist = curl_slist_append(headerlist, buff);
 
     if(curl){
+
         curl_easy_setopt(curl, CURLOPT_URL, url_post.c_str());
 
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
         curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
 
         res = curl_easy_perform(curl);
+
+        status = "upload done";
 
         //cleanup
         curl_easy_cleanup(curl);
@@ -96,7 +100,7 @@ void testApp::setup(){
     XML.loadFile("localConflict_settings.xml");
 
     osc_receive_port = XML.getValue("lc:server:osc_receive_port", 1234);
-    url_post = XML.getValue("lc:server:url_post", " ");
+    url_post = XML.getValue("lc:server:post_url", " ");
 
 
     //osc
@@ -129,7 +133,9 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-    if(key == 's') saveNew("headline", "body" ,"data/img/conflicto_local_1.png");
+    if(key == 's') {
+        saveNew("hola", "oueaaoen.", "data/img/conflicto_local_1.png");
+    }
 }
 
 //--------------------------------------------------------------
