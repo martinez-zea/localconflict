@@ -823,7 +823,7 @@ extern	vmCvar_t	g_enableDust;
 extern	vmCvar_t	g_enableBreath;
 extern	vmCvar_t	g_singlePlayer;
 extern	vmCvar_t	g_proxMineTimeout;
-
+extern  vmCvar_t    takePic;
 /* RKH - plasma vars*/
 //extern  vmCvar_t        g_plasma_speed;
 //extern  vmCvar_t        g_plasma_time;

@@ -1100,7 +1100,11 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 	case EV_DEATH2:
 	case EV_DEATH3:
 		DEBUGNAME("EV_DEATHx");
-        trap_SendConsoleCommand( "screenshot" );
+		//MZ  take a screenshot on death
+		//if(takePic == 1){
+            //trap_SendConsoleCommand( "screenshotJPEG" );
+            //takePic.integer = 0;
+		//}
 		trap_S_StartSound( NULL, es->number, CHAN_VOICE,
 				CG_CustomSound( es->number, va("*death%i.wav", event - EV_DEATH1 + 1) ) );
 		break;
@@ -1160,11 +1164,17 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 		DEBUGNAME("EV_DEBUG_LINE");
 		CG_Beam( cent );
 		break;
-
+    //MZ
+    case EV_DEATHPIC:
+        DEBUGNAME("EV_DEATHPIC");
+        trap_SendConsoleCommand( "screenshotJPEG" );
+        break;
 	default:
 		DEBUGNAME("UNKNOWN");
 		CG_Error( "Unknown event: %i", event );
 		break;
+
+
 	}
 
 }

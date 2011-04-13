@@ -221,8 +221,11 @@ void LookAtKiller( gentity_t *self, gentity_t *inflictor, gentity_t *attacker ) 
 
 	if ( attacker && attacker != self ) {
 		VectorSubtract (attacker->s.pos.trBase, self->s.pos.trBase, dir);
+
+		//MZ take screenshot
 	} else if ( inflictor && inflictor != self ) {
 		VectorSubtract (inflictor->s.pos.trBase, self->s.pos.trBase, dir);
+
 	} else {
 		self->client->ps.stats[STAT_DEAD_YAW] = self->s.angles[YAW];
 		return;
@@ -619,6 +622,7 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	self->s.angles[2] = 0;
 	LookAtKiller (self, inflictor, attacker);
 
+
 	VectorCopy( self->s.angles, self->client->ps.viewangles );
 
 	self->s.loopSound = 0;
@@ -682,6 +686,7 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	trap_LinkEntity (self);
 
 	//MZ
+
 	if (osc_send_client.integer == 1)
 	{
 
@@ -727,6 +732,13 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 
 
         sendOSCmessage_death(currentClient);
+        if(self && !(self->r.svFlags  & SVF_BOT) ){
+            //takePic.integer = 1;
+            G_AddEvent( self, EV_DEATHPIC, 0);
+        }
+        if(attacker && !(attacker->r.svFlags & SVF_BOT)){
+            G_AddEvent( attacker, EV_DEATHPIC, 0);
+        }
 
         if ( g_gametype.integer == GT_CTF ) {
             osc_team_vars teamData;

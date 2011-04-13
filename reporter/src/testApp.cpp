@@ -265,13 +265,13 @@ void testApp::update(){
            //mod = modNames_en[n_mod];
            splashMod = modNames_en[n_mod];
            lasthurt_mod = modNames_en[n_lasthurt_mod];
-           team = teamNames_en[n_team];
+           //team = teamNames_en[n_team];
            #endif
            #ifdef ES
             mod = modNames_es[n_mod];
             splashMod = modNames_es[n_mod];
            lasthurt_mod = modNames_es[n_lasthurt_mod];
-           team = teamNames_es[n_team];
+           //team = teamNames_es[n_team];
            #endif
 
            cout << "victim:  " << victim << endl;

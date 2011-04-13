@@ -126,6 +126,8 @@ vmCvar_t        osc_rate;		//RKH - osc vars
 //vmCvar_t        osc_hostname19;
 //vmCvar_t        osc_hostname20;
 
+//MZ
+vmCvar_t        takePic;
 /* RKH - addtl osc */
 vmCvar_t        osc_client_hostname;		//RKH - osc vars
 vmCvar_t        osc_client_port;		//RKH - osc vars
@@ -270,6 +272,9 @@ static cvarTable_t		gameCvarTable[] = {
 //	{ &osc_hostname18, "osc_hostname18", "", CVAR_ARCHIVE, 0, qfalse },
 //	{ &osc_hostname19, "osc_hostname19", "", CVAR_ARCHIVE, 0, qfalse },
 //	{ &osc_hostname20, "osc_hostname20", "", CVAR_ARCHIVE, 0, qfalse },
+
+	{ &takePic, "takePic", "0", 0, 0, qfalse },
+
 
 /* RKH - multiple osc hosts and ports*/
 	{ &osc_client_hostname, "osc_client_hostname", "localhost", CVAR_ARCHIVE, 0, qfalse },

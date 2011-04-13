@@ -447,10 +447,14 @@ typedef enum {
 	EV_TAUNT_FOLLOWME,
 	EV_TAUNT_GETFLAG,
 	EV_TAUNT_GUARDBASE,
-	EV_TAUNT_PATROL
+	EV_TAUNT_PATROL,
+	EV_DEATHPIC
 
 } entity_event_t;
 
+//MZ if took pic
+
+//int tookPic;
 
 typedef enum {
 	GTS_RED_CAPTURE,
