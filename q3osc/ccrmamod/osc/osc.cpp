@@ -177,6 +177,7 @@ void sendOSCmessage_death(osc_death_vars currentClient)
         <<currentClient.lasthurt	// last client that damaged this client
         <<(int)currentClient.lasthurt_mod
 	    <<(int)currentClient.team
+	    <<(int)currentClient.image
 
 	  << osc::EndMessage;
 

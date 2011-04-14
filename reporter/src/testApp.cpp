@@ -28,6 +28,7 @@
 #include "testApp.h"
 
 
+//initialization of string vectos to compare against enum integers
 #ifdef EN
 string modNames_en[] = {
     "UNKNOWN",
@@ -237,7 +238,31 @@ void testApp::setup(){
 
     status = "reporter ready, waiting for frag messages";
 
-    //initialization of string vectos to compare against enum integers
+
+
+    //files watch for screenshot directory
+
+        IMG_DIR.setVerbose(false);
+        filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
+
+        if(filesInDir == 0){
+            //lastImageName = NULL;
+            currentImageName = "";
+
+        }else{
+            for(int i = 0; i < filesInDir; i++){
+                cout << IMG_DIR.getName(i) << endl;
+            }
+            currentImageName = IMG_DIR.getPath(0);
+            lastPicture.setUseTexture(true);
+            lastPicture.loadImage(currentImageName);
+            cout << "loaded: " << IMG_DIR.getName(0) << endl;
+            //lastImageName = currentImageName;
+        }
+        cout << "files: " << filesInDir<< endl;
+        lastFilesInDir = filesInDir;
+        newImage = false;
+
 
 }
 
@@ -248,7 +273,7 @@ void testApp::update(){
     while(receiver.hasWaitingMessages()){
         ofxOscMessage m;
         receiver.getNextMessage(&m);
-
+        //messages with info about death and the player
         if(m.getAddress() == "/death"){
            ///aca el asunto de osc
            victim = m.getArgAsString(0);
@@ -259,7 +284,7 @@ void testApp::update(){
            lasthurt = m.getArgAsString(5);
            n_lasthurt_mod = m.getArgAsInt32(6);
            n_team = m.getArgAsInt32(7);
-
+            newscreenshot = m.getArgAsInt32(8);
             //language filters
            #ifdef EN
            //mod = modNames_en[n_mod];
@@ -273,20 +298,20 @@ void testApp::update(){
            lasthurt_mod = modNames_es[n_lasthurt_mod];
            //team = teamNames_es[n_team];
            #endif
-
+            cout << "========== player info ==========" <<endl;
            cout << "victim:  " << victim << endl;
-           cout << "killer:  " << killer;
+           cout << "killer:  " << killer << endl;
            cout << "mod number:  " << n_mod << endl;
            cout << "last killed:  " << lastkilled << endl;
            cout << "last hurt:  " << lasthurt << endl;
            cout << "team number: " << n_team << endl;
-           cout << "mod name:  " << mod;
-           cout << "last hurt mode" << lasthurt_mod;
+           cout << "mod name:  " << mod << endl;
+           cout << "last hurt mode: " << lasthurt_mod << endl;
            cout << "team name: " << team << endl;
-
-
+            cout << "new image: " << newscreenshot << endl;
 
         }
+        // messages w info about team, only for CTF gamemode'
         if(m.getAddress() == "/team"){
            ///aca el asunto de osc
 
@@ -303,6 +328,7 @@ void testApp::update(){
             flagsince = m.getArgAsFloat(9);
             lastfraggedcarrier = m.getArgAsFloat(10);
 
+
             //language filters
             #ifdef EN
             team_t = teamNames_en[n_team_t] ;
@@ -312,6 +338,7 @@ void testApp::update(){
             #endif
 
             // print all messages for debugging
+            cout << "========== team info ==========" << endl;
             cout << "team num:  " << n_team_t << endl;
             cout << "team name:  " << team_t << endl;
             cout << "captures:  " << captures << endl;
@@ -323,12 +350,35 @@ void testApp::update(){
             cout << "flag sience: " << flagsince << endl;
             cout << "last fragged carrier:  " << lastfraggedcarrier << endl;
 
+
         }
     }
+
+    //files watch
+    IMG_DIR.reset();
+    filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
+
+    if(lastFilesInDir != filesInDir){
+        newImage = true;
+        //currentImageName = IMG_DIR.getPath(filesInDir - 1);
+        lastPicture.setUseTexture(true);
+        lastPicture.loadImage(IMG_DIR.getPath(0));
+        cout << "New File Written: " << IMG_DIR.getName(0) << endl;
+    }else{
+        newImage = false;
+    }
+    lastFilesInDir = filesInDir;
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+
+    //image display
+    if(filesInDir > 0){
+
+        lastPicture.draw(0, 0);
+    }
+
     ofDrawBitmapString("osc receive port: " + ofToString(osc_receive_port), 10, 20);
     ofDrawBitmapString("posting to: " + url_post, 10, 40);
     ofDrawBitmapString("---------------------------", 10, 70);

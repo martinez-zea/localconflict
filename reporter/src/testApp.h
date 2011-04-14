@@ -35,6 +35,7 @@
 #include <curl/curl.h>
 #include <curl/types.h>
 #include <curl/easy.h>
+#include "ofxDirList.h"
 
 #define IN_PORT 6662
 #define EN  //idioma de los reportajes
@@ -56,12 +57,26 @@ class testApp : public ofBaseApp{
 
 		///XML stuff
 		ofxXmlSettings XML;
+
+		ofImage lastPicture;
+		//image directory
+
 		int osc_receive_port;
         string url_post; //where to post data
 
 		///interact with django app
 		void saveNew(string headline, string body, string image);
 		void saveNew(string headline, string body);
+
+        int num_victims; //victims since started reporting
+
+        ofxDirList IMG_DIR;
+        int filesInDir; //total images in dir
+        int lastFilesInDir;
+        //to check if theres new images in directory
+        string lastImageName;
+        string currentImageName;
+        bool    newImage;
 
 		string status;
 
@@ -81,6 +96,7 @@ class testApp : public ofBaseApp{
   string splashMod;
   string lasthurt_mod;
   string team;
+  int newscreenshot;
 //team info
 
   int n_team_t;
@@ -96,6 +112,8 @@ class testApp : public ofBaseApp{
   float		lastreturnedflag;
   float		flagsince;
   float		lastfraggedcarrier;
+
+
 
 //methos of dead enum
 enum mods{

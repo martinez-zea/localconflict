@@ -45,6 +45,7 @@ typedef struct {
   char *port;
   char *msg;
   char *hostnames[20]; // rkh - added array of client IPs
+
 } osc_misc_vars;
 
 
@@ -60,7 +61,7 @@ typedef struct {
   char   *lasthurt;	// last client that damaged this client
   int   lasthurt_mod;		// type of damage the client did
   int team;
-
+  int image;
   char *hostnames[20]; // rkh - added array of client IPs
 
 } osc_death_vars;

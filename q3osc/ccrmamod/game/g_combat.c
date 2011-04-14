@@ -713,32 +713,21 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
             currentClient.lasthurt = "None";
             currentClient.lasthurt_mod = self->client->lasthurt_mod;		// type of damage the client did
         }
-//    PERS_SCORE,						// !!! MUST NOT CHANGE, SERVER AND GAME BOTH REFERENCE !!!
-//	PERS_HITS,						// total points damage inflicted so damage beeps can sound on change
-//	PERS_RANK,						// player rank or team rank
-//	PERS_TEAM,						// player team
-//	PERS_SPAWN_COUNT,				// incremented every respawn
-//	PERS_PLAYEREVENTS,				// 16 bits that can be flipped for events
-//	PERS_ATTACKER,					// clientnum of last damage inflicter
-//	PERS_ATTACKEE_ARMOR,			// health/armor of last person we attacked
-//	PERS_KILLED,					// count of the number of times you died
-//	// player awards tracking
-//	PERS_IMPRESSIVE_COUNT,			// two railgun hits in a row
-//	PERS_EXCELLENT_COUNT,			// two successive kills in a short amount of time
-//	PERS_DEFEND_COUNT,				// defend awards
-//	PERS_ASSIST_COUNT,				// assist awards
-//	PERS_GAUNTLET_FRAG_COUNT,		// kills with the guantlet
-//	PERS_CAPTURES
 
+        //MZ add screenchot event if killer or victim not a bot;
+        if(self && !(self->r.svFlags  & SVF_BOT) ){
+            G_AddEvent( self, EV_DEATHPIC, 0);
+            currentClient.image = 1;
+
+        }else if(attacker && !(attacker->r.svFlags & SVF_BOT)){
+            G_AddEvent( attacker, EV_DEATHPIC, 0);
+            currentClient.image = 1;
+        }else{
+            currentClient.image  = 0;
+        }
+        //notify the reporter when an image have been taken
 
         sendOSCmessage_death(currentClient);
-        if(self && !(self->r.svFlags  & SVF_BOT) ){
-            //takePic.integer = 1;
-            G_AddEvent( self, EV_DEATHPIC, 0);
-        }
-        if(attacker && !(attacker->r.svFlags & SVF_BOT)){
-            G_AddEvent( attacker, EV_DEATHPIC, 0);
-        }
 
         if ( g_gametype.integer == GT_CTF ) {
             osc_team_vars teamData;
@@ -755,13 +744,12 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
             teamData.lastreturnedflag = self->client->pers.teamState.lastreturnedflag;
             teamData.flagsince = self->client->pers.teamState.flagsince;
             teamData.lastfraggedcarrier = self->client->pers.teamState.lastfraggedcarrier;
+
             //send the message
             sendOSCmessage_team(teamData);
             }
-
         }
     //MZ
-
 }
 
 

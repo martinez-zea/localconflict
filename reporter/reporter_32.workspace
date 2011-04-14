@@ -5,5 +5,6 @@
 			<Depends filename="../../../libs/openFrameworksCompiled/project/linux/libopenFrameworks.cbp" />
 		</Project>
 		<Project filename="../../../libs/openFrameworksCompiled/project/linux/libopenFrameworks.cbp" />
+		<Project filename="../q3osc/q3osc.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
