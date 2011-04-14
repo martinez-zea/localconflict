@@ -1,9 +1,11 @@
 from django.conf.urls.defaults import *
+from breaking_news.feeds import LatestEntriesFeed
 
 urlpatterns = patterns('breaking_news.views',
     (r'^$', 'index'),
     (r'^add/$', 'add'),
     (r'^saved/$', 'saved'),
-    (r'^search/(?P<death_id>\d+)/$', 'search'),
+    (r'^detail/(?P<death_id>\d+)/$', 'search'),
     (r'^api/', include('localConflict.api.urls')),
+    (r'^feed/$', LatestEntriesFeed()),
 )

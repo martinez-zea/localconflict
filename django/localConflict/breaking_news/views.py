@@ -17,3 +17,4 @@ def saved(request):
 def search(request, death_id):
     n = get_object_or_404(new, pk=death_id)
     return render_to_response('breaking_news/detail.html', {'new':n}, context_instance=RequestContext(request))
+
