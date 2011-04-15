@@ -275,12 +275,12 @@ void testApp::update(){
            #endif
 
            cout << "victim:  " << victim << endl;
-           cout << "killer:  " << killer;
+           cout << "killer:  " << killer << endl;
            cout << "mod number:  " << n_mod << endl;
            cout << "last killed:  " << lastkilled << endl;
            cout << "last hurt:  " << lasthurt << endl;
            cout << "team number: " << n_team << endl;
-           cout << "mod name:  " << mod;
+           cout << "mod name:  " << mod << endl;
            cout << "last hurt mode" << lasthurt_mod;
            cout << "team name: " << team << endl;
 
@@ -302,6 +302,7 @@ void testApp::update(){
             lastreturnedflag = m.getArgAsFloat(8);
             flagsince = m.getArgAsFloat(9);
             lastfraggedcarrier = m.getArgAsFloat(10);
+			image = 
 
             //language filters
             #ifdef EN
@@ -319,10 +320,9 @@ void testApp::update(){
             cout << "team flag recoverys: " << flagrecovery << endl;
             cout << "frag carrier: " << fragcarrier << endl;
             cout << "assists: " << assists << endl;
-            cout << "last hurt carrier:  " << endl;
+            cout << "last hurt carrier:  " << lastfraggedcarrier << endl;
             cout << "flag sience: " << flagsince << endl;
             cout << "last fragged carrier:  " << lastfraggedcarrier << endl;
-
         }
     }
 }
