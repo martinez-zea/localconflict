@@ -7,7 +7,7 @@ class LatestEntriesFeed(Feed):
     description = "ultimos acontecimientos en conflicto local"
     
     def items(self):
-        return new.objects.order_by('-when')[:5]
+        return new.objects.order_by('when')[:10]
     
     def item_title(self, item):
         return item.headline

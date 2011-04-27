@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
+     (r'^$', 'django.views.generic.simple.redirect_to', {'url':'/breaking_news/'}),
      (r'^breaking_news/', include('breaking_news.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
