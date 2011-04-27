@@ -94,6 +94,7 @@ string modNames_es[] = {
 	"GRAPPLE"
 };
 
+
  string teamNames_es[] = {
     "CIVIL",
     "EJERCITO ROJO",
@@ -232,7 +233,8 @@ void testApp::setup(){
     osc_receive_port = XML.getValue("lc:server:osc_receive_port", 1234);
     url_post = XML.getValue("lc:server:post_url", " ");
 
-
+    BASE_PATH = XML.getValue("q3:screenshot_path","");
+    cout << "path: " << BASE_PATH << endl;
     //osc
     receiver.setup(osc_receive_port);
 
@@ -243,7 +245,7 @@ void testApp::setup(){
     //files watch for screenshot directory
 
         IMG_DIR.setVerbose(false);
-        filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
+        filesInDir = IMG_DIR.listDirAlpha(BASE_PATH); //TODO set this in xml
 
         if(filesInDir == 0){
             //lastImageName = NULL;
@@ -276,7 +278,7 @@ void testApp::update(){
 
         //files watch
     IMG_DIR.reset();
-    filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
+    filesInDir = IMG_DIR.listDirAlpha(BASE_PATH); //TODO set this in xml
 
     if(lastFilesInDir != filesInDir){
         newImage = true;
@@ -392,7 +394,7 @@ void testApp::update(){
 
                 case 2:
                     heading = "Mas victimas en combates entre Rojos y Azules";
-                    victim_message = victim + " ,del " + team_t + ", fue asesinado por " + killer + " quen uso " + mod + ".  El heccho ocurre en medio de el duro enfrentamiento que se desarrolla por el control de las banderas enemigas entre el Ejercito Rojo y Azul";
+                    victim_message = victim + " ,del " + team_t + ", fue asesinado por " + killer + " quien uso " + mod + ".  El hecho ocurre en medio de el duro enfrentamiento que se desarrolla por el control de las banderas enemigas entre el Ejercito Rojo y Azul";
                     break;
             }
 
@@ -403,7 +405,6 @@ void testApp::update(){
             }else if(newscreenshot == 0){
                 saveNew(heading, victim_message);
                 cout << "sent message " << endl;
-
 
             }
         }

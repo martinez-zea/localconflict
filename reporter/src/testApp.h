@@ -70,6 +70,7 @@ class testApp : public ofBaseApp{
         int num_victims; //victims since started reporting
 
         ofxDirList IMG_DIR;
+        string BASE_PATH;
         int filesInDir; //total images in dir
         int lastFilesInDir;
         //to check if theres new images in directory
