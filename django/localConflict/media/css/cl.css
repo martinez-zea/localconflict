@@ -1,8 +1,39 @@
+#body{
+	
+}
+
 #header{
    background-color: #CA0002;
    height: 84px;
    color: white;
 }
+
+#header img{
+	padding-left: 18px;
+}
+
+#nav_bar{
+	background-color: #770000;
+	height: 23px;
+	color: #e7e7e7;
+	font-size: 15px;
+}
+
+#nav_bar a{
+	color: #e7e7e7;
+	text-decoration: none;
+}
+
+#nav_bar a:hover{
+	color: black;;
+	text-decoration: underline;
+}
+
+#nav_bar span{
+	padding: 3px;
+}
+
+
 
 #title{
    color: white;
@@ -31,4 +62,20 @@
 
 #detail_time{
    color: gray;
+}
+
+.n_body{
+	background-color: #e7e7e7;
+	padding: 7px;
+	height: 155px;
+}
+
+.n_body a{
+	color: black;
+	text-decoration: none;
+}
+
+.n_body a:hover{
+	color: gray;
+	text-decoration: none;
 }

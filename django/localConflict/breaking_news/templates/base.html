@@ -2,9 +2,9 @@
 <html>
    <head>
       <title>Conflicto Local</title>
-      <meta name="generator" content="Bluefish 1.0.7">
-      <meta name="author" content="Gabriel Zea">
-      <meta name="date" content="2011-04-01T14:54:10-0300">
+      <meta name="generator" content="Bluefish 2.0.3" >
+      <meta name="author" content="Unknown" >
+      <meta name="date" content="2011-04-26T16:45:35-0300" >
       <meta name="copyright" content="nope">
       <meta name="keywords" content="war info-war twitter social-networks art bot openarena ioquake openframeworks django">
       <meta name="description" content="Seguimiento del conflicto entre dos equipos que intentan derrotarse el uno al otro">
@@ -24,10 +24,16 @@
       {% endblock %}
    </head>
    <body>
-      <div  id="header" class="prepend-1 append-1" >
-         <div id="title" align="center">Conflicto Local</div>
+      <div  id="header" class=" append-1" >
+         <img src="{{MEDIA_URL}}/img/header.png" alt="" />
       </div>
-      
+      <div id="nav_bar">
+      	<div class="prepend-3">
+			|<span ><a href="/">inicio</a></span> |
+			<span ><a href="/breaking_news/all/">informe completo</a></span>|      	
+      	</div>
+		</div>
+		      
       <div class="container append-bottom prepend-top ">
          <div id="content" class="">
             {% block content %}
@@ -39,7 +45,7 @@
       <div  id="footer" class="prepend-1 append-1 prepend-top append-bottom">
          <hr/>
          <div id="info">
-            <div align="center">Conflicto local © 2011 !mz | Some Rights Reserved | <a href="/about_us/">About Us</a> | <a href="/terms_of_service/">Terms of service</a> | <a href="/help/">Help</a></div>
+            <div align="center">| Conflicto local © 2011 !mz | Some Rights Reserved | <a href="http://martinez-zea.info">About Us</a> | </div>
          </div>
       </div>
 

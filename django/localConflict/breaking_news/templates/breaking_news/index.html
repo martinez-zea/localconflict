@@ -3,21 +3,38 @@
 
 {% block content %}
 
-<h2>Todas las muertes registradas en la base de datos</h2>
+<div id="img_news" class="span-24 append-bottom">
+<h2>Actualmente</h2>
 
-{% if all_news %}
-   {% for s in all_news %}
+{% if with_img %}
+   {% for s in with_img %}
       <div class="{% cycle 'span-7 prepend-1 append-bottom' 'span-7 append-bottom' 'span-7 append-bottom last' %}">
-         {% thumbnail s.img "x169" as im %}
-         <a href="/breaking_news/search/{{s.id}}/"><img border="0" alt="{{s.team}}" src="{{im.url}}" width="{{im.x}}" height="{{im.y}}"></a>
+         {% thumbnail s.image "x169" as im %}
+         <a href="/breaking_news/detail/{{s.id}}/"><img border="0" alt="{{s.headline}}" src="{{im.url}}" width="{{im.x}}" height="{{im.y}}"></a>
          {% endthumbnail %}
          <div class="headline">
-            <a href="/breaking_news/search/{{s.id}}/"><b>Muere miembro del equipo {{s.team}}</b></a>
+            <a href="/breaking_news/detail/{{s.id}}/"><b>{{s.headline}}</b></a>
          </div>
       </div> 
    {% endfor %}
 {% else %}
 <h1>No hay eventos registrados en la base de datos</h1>
 {% endif %}
+</div>
 
+
+<div id="txt_news" class="span-24 append-bottom">
+<h2>Otros incidentes</h2>
+{% if without_img %}
+   {% for s in without_img %}
+      <div class="{% cycle 'span-7 prepend-1 append-bottom' 'span-7 append-bottom' 'span-7 append-bottom last' %}">
+         <div class="headline">
+            <a href="/breaking_news/detail/{{s.id}}/"><b>{{s.headline}}</b></a>
+         </div>
+      </div> 
+   {% endfor %}
+{% else %}
+<h1>No hay eventos registrados en la base de datos</h1>
+{% endif %}
+</div>
 {% endblock content %}

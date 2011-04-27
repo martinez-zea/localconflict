@@ -9,5 +9,8 @@ class new(models.Model):
     image = models.ImageField(upload_to="img_up", blank = True)
     
     def get_absolute_url(self):
-        return "/breaking_news/detail/%i" % self.id
+        return "/breaking_news/detail/%i/" % self.id
+        
+    def __unicode__(self):
+    	  return self.headline
     

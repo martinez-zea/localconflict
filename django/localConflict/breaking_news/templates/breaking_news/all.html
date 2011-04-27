@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+
+<h2>Todos los incidentes registrados</h2>
+
+
+{% if all_news %}
+   {% for s in all_news %}
+      <div class="{% cycle 'span-7 prepend-1 append-bottom' 'span-7 append-bottom' 'span-7 append-bottom last' %}">
+      	{% if s.image %}
+        		{% thumbnail s.image "x169" as im %}
+         		<a href="/breaking_news/detail/{{s.id}}/"><img border="0" alt="{{s.headline}}" src="{{im.url}}" width="{{im.x}}" height="{{im.y}}"></a>
+          	{% endthumbnail %}
+		         <div class="headline">
+      		      <a href="/breaking_news/detail/{{s.id}}/"><b>{{s.headline}}</b></a>
+         		</div>
+         {% else %}
+		         <div class="headline">
+      		      <a href="/breaking_news/detail/{{s.id}}/"><b>{{s.headline}}</b></a>
+         		</div>
+         		<div class="n_body">
+         			<a href="/breaking_news/detail/{{s.id}}/">{{s.body|truncatewords:50}}</a>
+         		</div>
+         {% endif %}
+      </div> 
+   {% endfor %}
+{% else %}
+<h1>No hay eventos registrados en la base de datos</h1>
+{% endif %}
+
+{% endblock content %}
