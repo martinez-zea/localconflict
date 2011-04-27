@@ -1,6 +1,6 @@
 <lc>
 	<server>
 		<osc_receive_port>6662</osc_receive_port>
-                <post_url>http://localconflict.local.lab:8001/breaking_news/api/new/</post_url>
+                <post_url>http://conflictolocal.co.cc/breaking_news/api/new/</post_url>
 	</server>
 </lc>

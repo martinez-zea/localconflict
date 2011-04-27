@@ -28,7 +28,6 @@
 
  ----------------------------------------------------------
  */
-
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
 #include "ofxOsc.h"
@@ -38,7 +37,7 @@
 #include "ofxDirList.h"
 
 #define IN_PORT 6662
-#define EN  //idioma de los reportajes
+#define ES  //idioma de los reportajes
 
 class testApp : public ofBaseApp{
 
@@ -114,7 +113,8 @@ class testApp : public ofBaseApp{
   float		lastfraggedcarrier;
 
 
-
+//general info
+    int killcount;
 //methos of dead enum
 enum mods{
 	MOD_UNKNOWN,
@@ -143,7 +143,8 @@ enum mods{
 	MOD_GRAPPLE
 };
 
-
+string victim_message;
+string heading;
 
 };
 

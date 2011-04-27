@@ -67,7 +67,7 @@ string modNames_en[] = {
 #endif
 
 #ifdef ES
- const string modNames_es = {
+string modNames_es[] = {
     "DESCONOCIDO",
 	"ESCOPETA",
 	"MOTOSIERRA",
@@ -94,7 +94,7 @@ string modNames_en[] = {
 	"GRAPPLE"
 };
 
- const string teamNames_es = {
+ string teamNames_es[] = {
     "CIVIL",
     "EJERCITO ROJO",
     "EJERCITO AZUL",
@@ -263,11 +263,31 @@ void testApp::setup(){
         lastFilesInDir = filesInDir;
         newImage = false;
 
+        victim_message = "";
+        killcount = 0;
+
 
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
+
+    int num_message;
+
+        //files watch
+    IMG_DIR.reset();
+    filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
+
+    if(lastFilesInDir != filesInDir){
+        newImage = true;
+        //currentImageName = IMG_DIR.getPath(filesInDir - 1);
+        lastPicture.setUseTexture(true);
+        lastPicture.loadImage(IMG_DIR.getPath(0));
+        cout << "New File Written: " << IMG_DIR.getName(0) << endl;
+    }else{
+        newImage = false;
+    }
+    lastFilesInDir = filesInDir;
 
     //receive osc msg
     while(receiver.hasWaitingMessages()){
@@ -275,6 +295,11 @@ void testApp::update(){
         receiver.getNextMessage(&m);
         //messages with info about death and the player
         if(m.getAddress() == "/death"){
+
+            //adds to killingcount
+            killcount++;
+            num_message = int(ofRandom(0,3));
+
            ///aca el asunto de osc
            victim = m.getArgAsString(0);
            killer = m.getArgAsString(1);
@@ -287,15 +312,15 @@ void testApp::update(){
             newscreenshot = m.getArgAsInt32(8);
             //language filters
            #ifdef EN
-           //mod = modNames_en[n_mod];
-           splashMod = modNames_en[n_mod];
-           lasthurt_mod = modNames_en[n_lasthurt_mod];
+           mod = modNames_en[n_mod];
+           //splashMod = modNames_en[n_splashMod];
+           //lasthurt_mod = modNames_en[n_lasthurt_mod];
            //team = teamNames_en[n_team];
            #endif
            #ifdef ES
             mod = modNames_es[n_mod];
-            splashMod = modNames_es[n_mod];
-           lasthurt_mod = modNames_es[n_lasthurt_mod];
+            //splashMod = modNames_es[n_mod];
+           //lasthurt_mod = modNames_es[n_lasthurt_mod];
            //team = teamNames_es[n_team];
            #endif
             cout << "========== player info ==========" <<endl;
@@ -306,11 +331,7 @@ void testApp::update(){
            cout << "last hurt:  " << lasthurt << endl;
            cout << "team number: " << n_team << endl;
            cout << "mod name:  " << mod << endl;
-<<<<<<< local
            cout << "last hurt mode: " << lasthurt_mod << endl;
-=======
-           cout << "last hurt mode" << lasthurt_mod;
->>>>>>> other
            cout << "team name: " << team << endl;
             cout << "new image: " << newscreenshot << endl;
 
@@ -331,7 +352,6 @@ void testApp::update(){
             lastreturnedflag = m.getArgAsFloat(8);
             flagsince = m.getArgAsFloat(9);
             lastfraggedcarrier = m.getArgAsFloat(10);
-			image = 
 
 
             //language filters
@@ -339,7 +359,7 @@ void testApp::update(){
             team_t = teamNames_en[n_team_t] ;
             #endif
             #ifdef ES
-            team_t = modNames_es[n_team_t];
+            team_t = teamNames_es[n_team_t];
             #endif
 
             // print all messages for debugging
@@ -354,28 +374,44 @@ void testApp::update(){
             cout << "last hurt carrier:  " << lastfraggedcarrier << endl;
             cout << "flag sience: " << flagsince << endl;
             cout << "last fragged carrier:  " << lastfraggedcarrier << endl;
-<<<<<<< local
 
 
-=======
->>>>>>> other
+            //create victim message
+
+            switch(num_message){
+                case 0:
+                    heading = "Otra baja en el " + team_t;
+                    victim_message = "El soldado " + victim + " del " + team_t + " murio por impacto de " + mod + " durante intensos enfrentamientos sostenidos entre las fuerzas del Ejercito Azul y los rebeldes del Ejercito Rojo";
+                    //cout << "victim message :" << victim_message << endl;
+                    break;
+                case 1:
+
+                    heading = "Muere otro combatiente en el conflicto local";
+                    victim_message = "Muere un integrante del " + team_t + " durante un intercambio armado con " + mod + ". Van " + ofToString(killcount) + " muertos desde el comienzo del conflicto armado entre el Ejercito Azul y el Ejercito Rojo";
+                    break;
+
+                case 2:
+                    heading = "Mas victimas en combates entre Rojos y Azules";
+                    victim_message = victim + " ,del " + team_t + ", fue asesinado por " + killer + " quen uso " + mod + ".  El heccho ocurre en medio de el duro enfrentamiento que se desarrolla por el control de las banderas enemigas entre el Ejercito Rojo y Azul";
+                    break;
+            }
+
+            //send the message to the web app
+            if(newscreenshot == 1){
+                saveNew(heading, victim_message, IMG_DIR.getPath(0));
+                cout << "sent message and image" << endl;
+            }else if(newscreenshot == 0){
+                saveNew(heading, victim_message);
+                cout << "sent message " << endl;
+
+
+            }
         }
     }
 
-    //files watch
-    IMG_DIR.reset();
-    filesInDir = IMG_DIR.listDirAlpha("/home/cmart/.openarena/ccrma/screenshots/"); //TODO set this in xml
 
-    if(lastFilesInDir != filesInDir){
-        newImage = true;
-        //currentImageName = IMG_DIR.getPath(filesInDir - 1);
-        lastPicture.setUseTexture(true);
-        lastPicture.loadImage(IMG_DIR.getPath(0));
-        cout << "New File Written: " << IMG_DIR.getName(0) << endl;
-    }else{
-        newImage = false;
-    }
-    lastFilesInDir = filesInDir;
+
+
 }
 
 //--------------------------------------------------------------
