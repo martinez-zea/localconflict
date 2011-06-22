@@ -62,6 +62,7 @@ typedef struct {
   int   lasthurt_mod;		// type of damage the client did
   int team;
   int image;
+  int excellent;
   char *hostnames[20]; // rkh - added array of client IPs
 
 } osc_death_vars;
@@ -83,6 +84,9 @@ typedef struct {
   float		lastreturnedflag;
   float		flagsince;
   float		lastfraggedcarrier;
+  int       almostCapture;
+  int       carryingOwnFlag;
+  int       carryingEnemyFlag;
   char *hostnames[20]; // rkh - added array of client IPs
 
 } osc_team_vars;

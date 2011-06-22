@@ -178,6 +178,7 @@ void sendOSCmessage_death(osc_death_vars currentClient)
         <<(int)currentClient.lasthurt_mod
 	    <<(int)currentClient.team
 	    <<(int)currentClient.image
+	    <<(int)currentClient.excellent
 
 	  << osc::EndMessage;
 
@@ -210,6 +211,9 @@ void sendOSCmessage_team(osc_team_vars teamData)
         <<(float)teamData.lastreturnedflag
         <<(float)teamData.flagsince
        <<(float)teamData.lastfraggedcarrier
+       <<(int)teamData.almostCapture
+       <<(int)teamData.carryingOwnFlag
+       <<(int)teamData.carryingEnemyFlag
 	  << osc::EndMessage;
 
    if(p.IsReady()){ socket.Send( p.Data(), p.Size() );}

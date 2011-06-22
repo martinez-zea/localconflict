@@ -398,10 +398,64 @@ void CheckAlmostCapture( gentity_t *self, gentity_t *attacker ) {
 				self->client->ps.persistant[PERS_PLAYEREVENTS] ^= PLAYEREVENT_HOLYSHIT;
 				if ( attacker->client ) {
 					attacker->client->ps.persistant[PERS_PLAYEREVENTS] ^= PLAYEREVENT_HOLYSHIT;
+					//MZ add very close notice
 				}
 			}
 		}
 	}
+}
+/*
+==================
+CheckAlmostCaptureReturn
+==================
+*/
+int CheckAlmostCaptureReturn( gentity_t *self, gentity_t *attacker ) {
+	gentity_t	*ent;
+	vec3_t		dir;
+	char		*classname;
+
+	// if this player was carrying a flag
+	if ( self->client->ps.powerups[PW_REDFLAG] ||
+		self->client->ps.powerups[PW_BLUEFLAG] ||
+		self->client->ps.powerups[PW_NEUTRALFLAG] ) {
+		// get the goal flag this player should have been going for
+		if ( g_gametype.integer == GT_CTF ) {
+			if ( self->client->sess.sessionTeam == TEAM_BLUE ) {
+				classname = "team_CTF_blueflag";
+			}
+			else {
+				classname = "team_CTF_redflag";
+			}
+		}
+		else {
+			if ( self->client->sess.sessionTeam == TEAM_BLUE ) {
+				classname = "team_CTF_redflag";
+			}
+			else {
+				classname = "team_CTF_blueflag";
+			}
+		}
+		ent = NULL;
+		do
+		{
+			ent = G_Find(ent, FOFS(classname), classname);
+		} while (ent && (ent->flags & FL_DROPPED_ITEM));
+		// if we found the destination flag and it's not picked up
+		if (ent && !(ent->r.svFlags & SVF_NOCLIENT) ) {
+			// if the player was *very* close
+			VectorSubtract( self->client->ps.origin, ent->s.origin, dir );
+			if ( VectorLength(dir) < 200 ) {
+				self->client->ps.persistant[PERS_PLAYEREVENTS] ^= PLAYEREVENT_HOLYSHIT;
+				if ( attacker->client ) {
+					attacker->client->ps.persistant[PERS_PLAYEREVENTS] ^= PLAYEREVENT_HOLYSHIT;
+					//MZ add very close notice
+					return 1;
+				}
+			} else {
+                return 0;
+			}
+		}
+	} return 0;
 }
 
 /*
@@ -409,6 +463,8 @@ void CheckAlmostCapture( gentity_t *self, gentity_t *attacker ) {
 CheckAlmostScored
 ==================
 */
+
+
 void CheckAlmostScored( gentity_t *self, gentity_t *attacker ) {
 	gentity_t	*ent;
 	vec3_t		dir;
@@ -449,6 +505,15 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	int			killer;
 	int			i;
 	char		*killerName, *obit;
+    int excellent;
+    int carryingOwnFlag;
+    int carryingEnemyFlag;
+    int almostCapture;
+
+    excellent = 0;
+    carryingOwnFlag = 0;
+    carryingEnemyFlag = 0;
+    almostCapture = 0;
 
 	if ( self->client->ps.pm_type == PM_DEAD ) {
 		return;
@@ -460,6 +525,9 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 
 	// check for an almost capture
 	CheckAlmostCapture( self, attacker );
+
+	//MZ add almost capture notice
+	almostCapture = CheckAlmostCaptureReturn( self, attacker);
 	// check for a player that almost brought in cubes
 	CheckAlmostScored( self, attacker );
 
@@ -538,12 +606,18 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 			// if this is close enough to the last kill, give a reward sound
 			if ( level.time - attacker->client->lastKillTime < CARNAGE_REWARD_TIME ) {
 				// play excellent on player
+
+				//MZ here send excellent notice
+                excellent = 1;
+
 				attacker->client->ps.persistant[PERS_EXCELLENT_COUNT]++;
 
 				// add the sprite over the player's head
 				attacker->client->ps.eFlags &= ~(EF_AWARD_IMPRESSIVE | EF_AWARD_EXCELLENT | EF_AWARD_GAUNTLET | EF_AWARD_ASSIST | EF_AWARD_DEFEND | EF_AWARD_CAP );
 				attacker->client->ps.eFlags |= EF_AWARD_EXCELLENT;
 				attacker->client->rewardTime = level.time + REWARD_SPRITE_TIME;
+			} else {
+                excellent = 0;
 			}
 			attacker->client->lastKillTime = level.time;
 
@@ -563,13 +637,46 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 		}
 		else if ( self->client->ps.powerups[PW_REDFLAG] ) {		// only happens in standard CTF
 			Team_ReturnFlag( TEAM_RED );
+			//MZ add flag variable
 			self->client->ps.powerups[PW_REDFLAG] = 0;
 		}
 		else if ( self->client->ps.powerups[PW_BLUEFLAG] ) {	// only happens in standard CTF
 			Team_ReturnFlag( TEAM_BLUE );
+			//MZ add flag variable
 			self->client->ps.powerups[PW_BLUEFLAG] = 0;
 		}
 	}
+
+    //MZ check if carrying a flag
+    if(self->client->sess.sessionTeam == TEAM_RED){
+        //was carrying own flag
+        if(self->client->ps.powerups[PW_REDFLAG]){
+            carryingOwnFlag = 1;
+        } else {
+            carryingOwnFlag = 0;
+        }
+        //was carrying enemy flag
+        if ( self->client->ps.powerups[PW_BLUEFLAG]){
+            carryingEnemyFlag = 1;
+        } else {
+            carryingEnemyFlag = 0;
+        }
+    }
+    if(self->client->sess.sessionTeam == TEAM_BLUE){
+        //was carrying own flag
+        if(self->client->ps.powerups[PW_BLUEFLAG]){
+            carryingOwnFlag = 1;
+        } else {
+            carryingOwnFlag = 0;
+        }
+        //was carrying enemy's flag
+        if ( self->client->ps.powerups[PW_REDFLAG]){
+            carryingEnemyFlag = 1;
+        } else {
+            carryingEnemyFlag = 0;
+        }
+    }
+
 
 	// if client is in a nodrop area, don't drop anything (but return CTF flags!)
 	contents = trap_PointContents( self->r.currentOrigin, -1 );
@@ -689,8 +796,8 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 
 	if (osc_send_client.integer == 1)
 	{
+        osc_death_vars currentClient;
 
-		osc_death_vars currentClient;
 		currentClient.hostname = osc_client_hostname.string;
 		currentClient.port = osc_client_port.string;
         currentClient.victim = self->client->pers.netname;
@@ -725,12 +832,14 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
         }else{
             currentClient.image  = 0;
         }
+        currentClient.excellent = excellent;
         //notify the reporter when an image have been taken
 
         sendOSCmessage_death(currentClient);
 
         if ( g_gametype.integer == GT_CTF ) {
             osc_team_vars teamData;
+
             teamData.hostname = osc_client_hostname.string;
             teamData.port = osc_client_port.string;
             teamData.team = self->client->sess.sessionTeam ;
@@ -744,7 +853,9 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
             teamData.lastreturnedflag = self->client->pers.teamState.lastreturnedflag;
             teamData.flagsince = self->client->pers.teamState.flagsince;
             teamData.lastfraggedcarrier = self->client->pers.teamState.lastfraggedcarrier;
-
+            teamData.almostCapture = almostCapture;
+            teamData.carryingOwnFlag = carryingOwnFlag;
+            teamData.carryingEnemyFlag = carryingEnemyFlag;
             //send the message
             sendOSCmessage_team(teamData);
             }

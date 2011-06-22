@@ -97,10 +97,12 @@ class testApp : public ofBaseApp{
   string lasthurt_mod;
   string team;
   int newscreenshot;
+  int excellent;
 //team info
 
   int n_team_t;
   string team_t;
+  string enemy_team_t;
   //int			location;
   int		captures;
   int		basedefense;
@@ -112,6 +114,9 @@ class testApp : public ofBaseApp{
   float		lastreturnedflag;
   float		flagsince;
   float		lastfraggedcarrier;
+  int       almost_capture;
+  int       carrying_own_flag;
+  int       carrying_enemy_flag;
 
 
 //general info
@@ -146,7 +151,12 @@ enum mods{
 
 string victim_message;
 string heading;
-
+string article;
+string victims_complement;
+string flag_complement;
+string almost_capture_complement;
+string excellent_complement;
+string captures_complement;
 };
 
 

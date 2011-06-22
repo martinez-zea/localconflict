@@ -102,6 +102,54 @@ string modNames_es[] = {
     "ESPECTADOR",
     "NUMERO EJERCITOS"
 };
+
+string numbers_male[] = {
+    "cero",
+    "uno",
+    "dos",
+    "tres",
+    "cuatro",
+    "cinco",
+    "seis",
+    "siete",
+    "ocho",
+    "nueve",
+    "diez",
+    "once",
+    "doce",
+    "trece",
+    "catorce",
+    "quince",
+    "dieciseis",
+    "diecisiete",
+    "dieciocho",
+    "diecinueve",
+    "veinte",
+    "veintiuno",
+    "treinta",
+    "cuarenta",
+    "cincuenta",
+    "sesenta",
+    "setenta",
+    "ochenta",
+    "noventa",
+    "cien",
+    "doscientos",
+    "trescientos",
+    "cuatrocientos",
+    "quinientos",
+    "seiscientos",
+    "setecientos",
+    "novecientos",
+    "mil",
+    "diez mil",
+    "cien mil",
+    "un millón",
+    "mil millones",
+    "un billón",
+    "mil billones",
+    "un trillón",
+};
 #endif
 
 void testApp::saveNew(string headline, string body, string image){
@@ -312,6 +360,8 @@ void testApp::update(){
            n_lasthurt_mod = m.getArgAsInt32(6);
            n_team = m.getArgAsInt32(7);
             newscreenshot = m.getArgAsInt32(8);
+            excellent = m.getArgAsInt32(9);
+
             //language filters
            #ifdef EN
            mod = modNames_en[n_mod];
@@ -325,6 +375,7 @@ void testApp::update(){
            //lasthurt_mod = modNames_es[n_lasthurt_mod];
            //team = teamNames_es[n_team];
            #endif
+           cout << "||||||||||||| new death |||||||||||" << endl;
             cout << "========== player info ==========" <<endl;
            cout << "victim:  " << victim << endl;
            cout << "killer:  " << killer << endl;
@@ -336,12 +387,12 @@ void testApp::update(){
            cout << "last hurt mode: " << lasthurt_mod << endl;
            cout << "team name: " << team << endl;
             cout << "new image: " << newscreenshot << endl;
+            cout << "excellent: " << excellent << endl;
 
         }
         // messages w info about team, only for CTF gamemode'
         if(m.getAddress() == "/team"){
            ///aca el asunto de osc
-
            n_team_t = m.getArgAsInt32(0);
             //int			location;
             captures = m.getArgAsInt32(1);
@@ -354,6 +405,9 @@ void testApp::update(){
             lastreturnedflag = m.getArgAsFloat(8);
             flagsince = m.getArgAsFloat(9);
             lastfraggedcarrier = m.getArgAsFloat(10);
+            almost_capture = m.getArgAsInt32(11);
+            carrying_own_flag = m.getArgAsInt32(12);
+            carrying_enemy_flag = m.getArgAsInt32(13);
 
 
             //language filters
@@ -362,6 +416,8 @@ void testApp::update(){
             #endif
             #ifdef ES
             team_t = teamNames_es[n_team_t];
+            if(team_t == "EJERCITO ROJO") enemy_team_t = "EJERCITO AZUL";
+            if(team_t == "EJERCITO AZUL") enemy_team_t = "EJERCITO ROJO";
             #endif
 
             // print all messages for debugging
@@ -376,20 +432,110 @@ void testApp::update(){
             cout << "last hurt carrier:  " << lastfraggedcarrier << endl;
             cout << "flag sience: " << flagsince << endl;
             cout << "last fragged carrier:  " << lastfraggedcarrier << endl;
-
-
+            cout << "almost capture: " << almost_capture << endl;
+            cout << "own flag: " << carrying_own_flag << endl;
+            cout << "enemy flag" << carrying_enemy_flag << endl;
+        }
             //create victim message
 
+            if(excellent == 1){
+                excellent_complement = "El " + enemy_team_t + " ha llevado a cabo una agresiva ofensiva militar, dando de baja a varios integrantes del " + team_t + " en un corto lapso de tiempo, otorgandole una ventaja militar sobre el oponente.";
+            } else if(excellent == 0){
+                excellent_complement = "";
+            }
+
+            if(carrying_own_flag == 1 && carrying_enemy_flag == 0){
+
+                flag_complement =  "El combatiente fue interceptado mientras intentaba recuperar la bandera oficial de su bando.  La posesion de la bandera enemiga es el principal objetivo militar que del conflicto, ya que esta concede el control de las posiciones enemigas al grupo que las capture.";
+
+            } else if(carrying_own_flag == 0 && carrying_enemy_flag == 1){
+
+                flag_complement = "El combatiente fue interceptado mientras intentaba capturar la bandera enemiga. La posesion de la bandera enemiga es el principal objetivo militar que del conflicto, ya que esta concede el control de las posiciones enemigas al grupo que las capture.";
+
+            } else if(carrying_enemy_flag == 0 && carrying_own_flag == 0){
+
+                flag_complement = "";
+
+            }
+
+            if(captures == 0){
+                captures_complement = "  En lo que va corrido del conflicto, el" + team_t + " no ha capturado la bandera del " + enemy_team_t + ".";
+            } else if(captures == 1){
+                captures_complement = "  En lo que va corrido del conflicto, el " + team_t + " ha capturado la bandera del " + enemy_team_t + " en una ocasion.";
+            }else if(captures > 1){
+                captures_complement = "  En lo que va corrido del conflicto, el " + team_t + " ha capturado la bandera del " + enemy_team_t + " en " + numbers_male[captures] + " ocasiones.";
+            }
+
+
+            if( killcount > 1 && killcount < 22){
+                victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[killcount] + " personas entre los combatientes de ambos bandos";
+            }else if(killcount >= 22){
+                switch(killcount){
+                    case 30:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[22] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 40:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[23] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 50:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[24] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 60:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[25] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 770:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[26] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 80:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[27] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 90:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[28] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 100:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[29] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 200:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[30] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 300:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[31] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 400:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[32] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 500:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[33] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 600:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[34] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 800:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[35] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 900:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[36] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 1000:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[37] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    case 10000:
+                        victims_complement = "  Segun fuentes oficiales, desde el comienzo de los enfrentamientos han muerto " + numbers_male[38] + " personas entre los combatientes de ambos bandos";
+                        break;
+                    default:
+                        victims_complement = "";
+                        break;
+                    }
             switch(num_message){
                 case 0:
                     heading = "Otra baja en el " + team_t;
-                    victim_message = "El soldado " + victim + " del " + team_t + " murio por impacto de " + mod + " durante intensos enfrentamientos sostenidos entre las fuerzas del Ejercito Azul y los rebeldes del Ejercito Rojo";
+                    victim_message = "El soldado " + victim + " del " + team_t + " murio por impacto de " + mod + " durante intensos enfrentamientos sostenidos entre las fuerzas del Ejercito Azul y los rebeldes del Ejercito Rojo." + excellent_complement;
                     //cout << "victim message :" << victim_message << endl;
                     break;
                 case 1:
 
                     heading = "Muere otro combatiente en el conflicto local";
-                    victim_message = "Muere un integrante del " + team_t + " durante un intercambio armado con " + mod + ". Van " + ofToString(killcount) + " muertos desde el comienzo del conflicto armado entre el Ejercito Azul y el Ejercito Rojo";
+                    victim_message = "Muere un integrante del " + team_t + " durante un intercambio armado con " + mod + ".";
                     break;
 
                 case 2:
@@ -398,12 +544,14 @@ void testApp::update(){
                     break;
             }
 
+
+            article = victim_message + excellent_complement + flag_complement + captures_complement + victims_complement;
             //send the message to the web app
             if(newscreenshot == 1){
-                saveNew(heading, victim_message, IMG_DIR.getPath(0));
+                saveNew(heading, article, IMG_DIR.getPath(0));
                 cout << "sent message and image" << endl;
             }else if(newscreenshot == 0){
-                saveNew(heading, victim_message);
+                saveNew(heading, article);
                 cout << "sent message " << endl;
 
             }
@@ -468,3 +616,12 @@ void testApp::windowResized(int w, int h){
 
 }
 
+/*
+Continua la pugna entre el Ejercito Azul y los Rebeldes Rojos por el control del complejo arquitectonico Hydronex
+
+Desde las(time) del dia (date), son frecuentes los enfrentamientos entre las fuerzas azules y los rebeldes rojos, facciones que se pelean por el control de las baderas del oponente.  Hasta el momento (kills) han resultado muertos como causa de la violencia. Los voceros de ambos bandos no han manifestado voluntad de negociacion, por el contrario, se espera que los combates continuen hasta que alguna de las partes logre la captura de 3 banderas enemigas, lo que significaria el control del territorio enemigo.
+
+
+
+
+*/
