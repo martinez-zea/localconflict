@@ -1,0 +1,15 @@
+Local Conflict
+==============
+
+Local Conflict o Conflicto local es un sistema de seguimiento de ciertos
+eventos ocurridos durante un juego de quake3. Los eventos violentos, como
+muertes, son utililzados para crear un flujo de noticias en la web, que queda
+registrado en un sitio y una red social como twitter.
+
+El trabajo se basa en una version de quake3 modificada para enviar mensajes de
+osc ( q3osc ). Estos mensajes son capturados y procesados por un programa que
+genera la información y crea un flujo noticioso, albergado en una aplicacion en
+la red. 
+
+http://martinez-zea.info/wiki/index.php/LocalConflict/LocalConflict
+
